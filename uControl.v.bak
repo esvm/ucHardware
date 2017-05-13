@@ -1,0 +1,14 @@
+module uControl(
+		input clk,
+		input reset,
+		
+);
+
+initial
+begin
+
+
+end
+
+
+endmodule
