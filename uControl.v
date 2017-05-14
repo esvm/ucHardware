@@ -1,4 +1,4 @@
-module uCtrl(
+module uControl(
 		//inputs
 		input clk,
 		input reset,
@@ -6,8 +6,8 @@ module uCtrl(
 		input gtf,
 		input ov,
 		input div0,
-		input [5..0] funct,
-		input [5..0] opCode,
+		input [5:0] funct,
+		input [5:0] opCode,
 		//outputs
 		output reg MemCtrl,
 		output reg PCCtrl,
@@ -17,20 +17,20 @@ module uCtrl(
 		output reg ShiftAmt,
 		output reg IRWrite,
 		output reg RegWrite,
-		output reg AluOutCtrl,
+		output reg ALUOutCtrl,
 		output reg EPCCtrl,
 		output reg HILOWrite,
-		output reg[1..0] IorD,
-		output reg[1..0] ALUSrcA,
-		output reg[1..0] ALUSrcB,
-		output reg[1..0] RegDst,
-		output reg[1..0] LSCtrl,
-		output reg[1..0] SSCtrl,
-		output reg[1..0] ExcptCtrl,
-		output reg[2..0] ShiftCtrl,
-		output reg[2..0] PCSrc,
-		output reg[2..0] ALUCtrl,
-		output reg[3..0] DataSrc
+		output reg [1:0] IorD,
+		output reg [1:0] ALUSrcA,
+		output reg [1:0] ALUSrcB,
+		output reg [1:0] RegDst,
+		output reg [1:0] LSCtrl,
+		output reg [1:0] SSCtrl,
+		output reg [1:0] ExcptCtrl,
+		output reg [2:0] ShiftCtrl,
+		output reg [2:0] PCSrc,
+		output reg [2:0] ALUCtrl,
+		output reg [3:0] DataSrc
 );
 
 	initial begin
@@ -42,12 +42,12 @@ module uCtrl(
 		ShiftAmt = 0;
 		IRWrite = 0;
 		RegWrite = 0;
-		AluOutCtrl = 0;
+		ALUOutCtrl = 0;
 		EPCCtrl = 0;
 		HILOWrite = 0;
 		IorD = 2'b00;
-		AluSrcA = 2'b00;
-		AluSrcB = 2'b00;
+		ALUSrcA = 2'b00;
+		ALUSrcB = 2'b00;
 		RegDst = 2'b00;
 		LSCtrl = 2'b00;
 		SSCtrl = 2'b00;
@@ -91,52 +91,52 @@ module uCtrl(
 	parameter stateSTART3			= 5'b11011;
 	parameter stateSTART4			= 5'b11100;
 	parameter stateSTART5			= 5'b11101;
-	//Valores para AluCtrl
+	//Valores para ALUCtrl
 	parameter ulaSA 					= 3'b000;
 	parameter ulaADD 					= 3'b001;
 	parameter ulaSUB 					= 3'b010;
 	parameter ulaAND 					= 3'b011;
 	//Valores para as operaçoes
 	//FORMATO R
-	parameter ADD 						= 	{ 1'b0, 6'b100000 }
-	parameter AND 						= 	{ 1'b0, 6'b100100 }
-	parameter DIV 						= 	{ 1'b0, 6'b011010 }
-	parameter MULT						= 	{ 1'b0, 6'b011000 }
-	parameter JR 						= 	{ 1'b0, 6'b001000 }
-	parameter MFHI 					= 	{ 1'b0, 6'b010000 }
-	parameter MFLO 					= 	{ 1'b0, 6'b010010 }
-	parameter SLL						=	{ 1'b0, 6'b000000 }
-	parameter SLLV						=	{ 1'b0, 6'b000100 }
-	parameter SLT						=	{ 1'b0, 6'b101010 }
-	parameter SRA						=	{ 1'b0, 6'b000011 }
-	parameter SRAV						=	{ 1'b0, 6'b000111 }
-	parameter SRL 						=	{ 1'b0, 6'b000010 }
-	parameter SUB 						= 	{ 1'b0, 6'b100010 }
-	parameter BREAK 					=	{ 1'b0, 6'b001101 }
-	parameter RTE						=	{ 1'b0, 6'b010011 }
+	parameter ADD 						= 	{ 1'b0, 6'b100000 };
+	parameter AND 						= 	{ 1'b0, 6'b100100 };
+	parameter DIV 						= 	{ 1'b0, 6'b011010 };
+	parameter MULT						= 	{ 1'b0, 6'b011000 };
+	parameter JR 						= 	{ 1'b0, 6'b001000 };
+	parameter MFHI 					= 	{ 1'b0, 6'b010000 };
+	parameter MFLO 					= 	{ 1'b0, 6'b010010 };
+	parameter SLL						=	{ 1'b0, 6'b000000 };
+	parameter SLLV						=	{ 1'b0, 6'b000100 };
+	parameter SLT						=	{ 1'b0, 6'b101010 };
+	parameter SRA						=	{ 1'b0, 6'b000011 };
+	parameter SRAV						=	{ 1'b0, 6'b000111 };
+	parameter SRL 						=	{ 1'b0, 6'b000010 };
+	parameter SUB 						= 	{ 1'b0, 6'b100010 };
+	parameter BREAK 					=	{ 1'b0, 6'b001101 };
+	parameter RTE						=	{ 1'b0, 6'b010011 };
 	//FORMATO I
-	parameter ADDI 					= 	{ 1'b1, 6'b001000 }
-	parameter ADDIU 					= 	{ 1'b1, 6'b001001 }
-	parameter BEQ 						= 	{ 1'b1, 6'b000100 }
-	parameter BNE						= 	{ 1'b1, 6'b000101 }
-	parameter BLE 						= 	{ 1'b1, 6'b000110 }
-	parameter BGT	 					= 	{ 1'b1, 6'b000111	}
-	parameter BEQM 					= 	{ 1'b1, 6'b000001 }
-	parameter LB						=	{ 1'b1, 6'b100000 }
-	parameter LH						=	{ 1'b1, 6'b100001 }
-	parameter LUI						=	{ 1'b1, 6'b001111 }
-	parameter LW						=	{ 1'b1, 6'b100011	}
-	parameter SB						=	{ 1'b1, 6'b101000 }
-	parameter SH 						=	{ 1'b1, 6'b101001 }
-	parameter SLTI						= 	{ 1'b1, 6'b001010	}
-	parameter SW	 					=	{ 1'b1, 6'b101011 }
+	parameter ADDI 					= 	{ 1'b1, 6'b001000 };
+	parameter ADDIU 					= 	{ 1'b1, 6'b001001 };
+	parameter BEQ 						= 	{ 1'b1, 6'b000100 };
+	parameter BNE						= 	{ 1'b1, 6'b000101 };
+	parameter BLE 						= 	{ 1'b1, 6'b000110 };
+	parameter BGT	 					= 	{ 1'b1, 6'b000111	};
+	parameter BEQM 					= 	{ 1'b1, 6'b000001 };
+	parameter LB						=	{ 1'b1, 6'b100000 };
+	parameter LH						=	{ 1'b1, 6'b100001 };
+	parameter LUI						=	{ 1'b1, 6'b001111 };
+	parameter LW						=	{ 1'b1, 6'b100011	};
+	parameter SB						=	{ 1'b1, 6'b101000 };
+	parameter SH 						=	{ 1'b1, 6'b101001 };
+	parameter SLTI						= 	{ 1'b1, 6'b001010	};
+	parameter SW	 					=	{ 1'b1, 6'b101011 };
 	//FORMATO J
-	parameter J							=	{ 1'b1, 6'b000010	}
-	parameter JAL						=	{ 1'b1, 6'b000011	}
+	parameter J							=	{ 1'b1, 6'b000010	};
+	parameter JAL						=	{ 1'b1, 6'b000011	};
 
 	//Variables
-	reg[5..0] op;
-	reg[4..0] currentState = stateSTART;
+	reg [5:0] op;
+	reg [4:0] currentState = stateSTART;
 	reg op404;
 	reg start;
 	reg counter = 0;
@@ -152,12 +152,12 @@ module uCtrl(
 			ShiftAmt = 0;
 			IRWrite = 0;
 			RegWrite = 0;
-			AluOutCtrl = 0;
+			ALUOutCtrl = 0;
 			EPCCtrl = 0;
 			HILOWrite = 0;
 			IorD = 2'b00;
-			AluSrcA = 2'b00;
-			AluSrcB = 2'b00;
+			ALUSrcA = 2'b00;
+			ALUSrcB = 2'b00;
 			RegDst = 2'b00;
 			LSCtrl = 2'b00;
 			SSCtrl = 2'b00;
@@ -186,16 +186,16 @@ module uCtrl(
 				stateSTART3:
 				begin
 					PCSrc = 000;
-					PCWrite = 1;
+					PCCtrl = 1;
 					IRWrite = 1;
 					SECtrl = 0;
 					currentState = stateSTART4;
 				end
 				stateSTART4:
 				begin
-					ALUSrcA = 00
-					ALUSrcB = 11
-					ALUCtrl = 001
+					ALUSrcA = 00;
+					ALUSrcB = 11;
+					ALUCtrl = 001;
 					currentState = stateSTART5;
 				end
 				stateSTART5:
@@ -283,7 +283,7 @@ module uCtrl(
 					RegWrite = 1;
 					RegDst = 11;
 					PCSrc = 010;
-					PCWrite = 1;
+					PCCtrl = 1;
 					currentState = stateWAIT;
 				end
 				stateWAIT:
@@ -328,9 +328,9 @@ module uCtrl(
 						end
 						SW:
 						begin
-							SSCtrl = 10
-							MemCtrl =  1
-							IorD = 10
+							SSCtrl = 10;
+							MemCtrl =  1;
+							IorD = 10;
 						end
 					endcase
 					currentState = stateWAIT;
@@ -369,9 +369,9 @@ module uCtrl(
 				end
 				stateBEQM:
 				begin
-					ALUOutCtrl = 0
-					IorD = 01
-					MemCtrl = 0
+					ALUOutCtrl = 0;
+					IorD = 01;
+					MemCtrl = 0;
 					currentState = stateMEMWAIT;
 				end
 				stateBEQM2:
@@ -380,15 +380,15 @@ module uCtrl(
 					ALUSrcA = 10;
 					ALUSrcB = 00;
 					ALUCtrl = 111;
-					if (eqf == 1b'1)
+					if (eqf == 1'b1)
 							currentState = stateBRANCH;
 					else
 							currentState = stateWAIT;
 				end
 				stateBRANCH:
 				begin
-					PCSrc = 01
-					PCWrite = 1
+					PCSrc = 01;
+					PCCtrl = 1;
 					currentState = stateWAIT;
 				end
 				stateEXCP:
@@ -414,7 +414,7 @@ module uCtrl(
 				stateOF:
 				begin
 					EPCCtrl = 1;
-					ExcpCtrl = 01;
+					ExcptCtrl = 01;
 					MemCtrl = 0; 
 					IorD = 11;
 					currentState = stateEXCP2;
@@ -422,7 +422,7 @@ module uCtrl(
 				stateDIV0:
 				begin
 					EPCCtrl = 1;
-					ExcpCtrl = 10;
+					ExcptCtrl = 10;
 					MemCtrl = 0;
 					IorD = 11;
 					currentState = stateEXCP2;
@@ -430,7 +430,7 @@ module uCtrl(
 				stateOPCODE:
 				begin
 					EPCCtrl = 1;
-					ExcpCtrl = 00;
+					ExcptCtrl = 00;
 					MemCtrl = 0;
 					IorD = 11;
 					currentState = stateEXCP2;
@@ -456,7 +456,7 @@ module uCtrl(
 				stateEXCP4:
 				begin
 					PCSrc = 000;
-					PCWrite = 1;
+					PCCtrl = 1;
 					currentState = stateWAIT;
 				end
 				
@@ -519,9 +519,9 @@ module uCtrl(
 						end
 						SLLV, SRAV:
 						begin
-							ShiftSrc = 1
-							ShiftAmt = 1
-							ShiftCtrl = 001
+							ShiftSrc = 1;
+							ShiftAmt = 1;
+							ShiftCtrl = 001;
 							currentState = stateSHIFT;
 						end
 						SLT:
@@ -547,24 +547,24 @@ module uCtrl(
 						end
 						RTE:
 						begin
-							PCSrc = 100
-							PCCtrl = 1
+							PCSrc = 100;
+							PCCtrl = 1;
 							currentState = stateWAIT;
 						end
 						ADDI:
 						begin
-							ALUSrcA = 01
-							ALUSrcB = 10
-							SECtrl =1 
-							ALUCtrl = 001
+							ALUSrcA = 01;
+							ALUSrcB = 10;
+							SECtrl =1;
+							ALUCtrl = 001;
 							currentState = ov ? stateEXCP : stateRESULT;
 						end
 						ADDIU:
 						begin
-							ALUSrcA = 01
-							ALUSrcB = 10
-							SECtrl = 0
-							ALUCtrl = 001
+							ALUSrcA = 01;
+							ALUSrcB = 10;
+							SECtrl = 0;
+							ALUCtrl = 001;
 							currentState = stateRESULT;
 						end
 						BEQ, BNE, BLE, BGT:
@@ -573,8 +573,8 @@ module uCtrl(
 							ALUSrcB = 00;
 							ALUCtrl = 111;
 							if (
-									(op == BEQ && eqf == 1b'1) || (op == BNE && eqf == 1b'0) ||
-									(op == BGT && gtf == 1b'1) || (op == BLE && (eqf == 1b'1 || gtf == 1b'0))
+									(op == BEQ && eqf == 1'b1) || (op == BNE && eqf == 1'b0) ||
+									(op == BGT && gtf == 1'b1) || (op == BLE && (eqf == 1'b1 || gtf == 1'b0))
 								) currentState = stateBRANCH;
 							else
 								currentState = stateWAIT;
@@ -612,12 +612,12 @@ module uCtrl(
 						J:
 						begin
 							PCSrc = 010;
-							PCWrite = 1;
+							PCCtrl = 1;
 							currentState = stateWAIT;
 						end
 						JAL:
 						begin
-							AluSrcA = 00;
+							ALUSrcA = 00;
 							ALUCtrl = 000;
 							currentState = stateRESULT;
 						end

@@ -3,6 +3,6 @@ module ShiftLeft16 (
 	output [31:0] out
 	);
 
-assign out = {in, 16'b0};
+assign out = {in, 16'b0}
 
 endmodule
