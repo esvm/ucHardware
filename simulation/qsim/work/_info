@@ -1,0 +1,85 @@
+m255
+K3
+13
+cModel Technology
+Z0 d/home/pet/Documents/Hardware/simulation/qsim
+vDiv
+Z1 !s100 =Omh]AnF3E;Q564@6YW^02
+Z2 I`68oa]5h]ERgW^@Oi;a2A0
+Z3 V>R55=aA9PjnMcP23HKi>[1
+Z4 d/home/pet/Documents/Hardware/simulation/qsim
+Z5 w1494741894
+Z6 8uc.vo
+Z7 Fuc.vo
+L0 31
+Z8 OV;L;10.1d;51
+r1
+31
+Z9 !s90 -work|work|uc.vo|
+Z10 o-work work -O0
+n@div
+!i10b 1
+!s85 0
+Z11 !s108 1494741894.940447
+Z12 !s107 uc.vo|
+!s101 -O0
+vDiv_vlg_check_tst
+!i10b 1
+Z13 !s100 [1b:FeHeeco:ZnoPIQK2z1
+Z14 IQ?;mihMPS>KKL_YeNnl:91
+Z15 VZMNP[3n;F0d0geV72zlg22
+R4
+Z16 w1494741889
+Z17 8div.vwf.vt
+Z18 Fdiv.vwf.vt
+L0 63
+R8
+r1
+!s85 0
+31
+Z19 !s108 1494741894.973792
+Z20 !s107 div.vwf.vt|
+Z21 !s90 -work|work|div.vwf.vt|
+!s101 -O0
+R10
+Z22 n@div_vlg_check_tst
+vDiv_vlg_sample_tst
+!i10b 1
+Z23 !s100 M^ULV;nO]Y5B_F0kG5kK@1
+Z24 I88@2PSLDfc33NX6]73CPM1
+Z25 VakT1HYPc9GD<lahbE`@]K0
+R4
+R16
+R17
+R18
+L0 29
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+Z26 n@div_vlg_sample_tst
+vDiv_vlg_vec_tst
+!i10b 1
+Z27 !s100 j?a3]:VE76J]m4hgf`Vmz3
+Z28 IC1EHkdAN?9=Qi2dke3^h32
+Z29 VoT0MjWQz>ib<;4hPS<7A71
+R4
+R16
+R17
+R18
+Z30 L0 1442
+R8
+r1
+!s85 0
+31
+R19
+R20
+R21
+!s101 -O0
+R10
+Z31 n@div_vlg_vec_tst

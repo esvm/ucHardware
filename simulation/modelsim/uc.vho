@@ -16,10 +16,10 @@
 -- PROGRAM "Quartus II 64-Bit"
 -- VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition"
 
--- DATE "05/13/2017 22:37:17"
+-- DATE "05/14/2017 02:32:11"
 
 -- 
--- Device: Altera 5M80ZT100C4 Package TQFP100
+-- Device: Altera 5M570ZF256C4 Package FBGA256
 -- 
 
 -- 
@@ -31,101 +31,153 @@ LIBRARY MAXV;
 USE IEEE.STD_LOGIC_1164.ALL;
 USE MAXV.MAXV_COMPONENTS.ALL;
 
-ENTITY 	uControl IS
+ENTITY 	Div IS
     PORT (
 	clk : IN std_logic;
 	reset : IN std_logic;
-	eqf : IN std_logic;
-	gtf : IN std_logic;
-	ov : IN std_logic;
-	div0 : IN std_logic;
-	funct : IN std_logic_vector(5 DOWNTO 0);
-	opCode : IN std_logic_vector(5 DOWNTO 0);
-	MemCtrl : BUFFER std_logic;
-	PCCtrl : BUFFER std_logic;
-	MDCtrl : BUFFER std_logic;
-	SECtrl : BUFFER std_logic;
-	ShiftSrc : BUFFER std_logic;
-	ShiftAmt : BUFFER std_logic;
-	IRWrite : BUFFER std_logic;
-	RegWrite : BUFFER std_logic;
-	ALUOutCtrl : BUFFER std_logic;
-	EPCCtrl : BUFFER std_logic;
-	HILOWrite : BUFFER std_logic;
-	IorD : BUFFER std_logic_vector(1 DOWNTO 0);
-	ALUSrcA : BUFFER std_logic_vector(1 DOWNTO 0);
-	ALUSrcB : BUFFER std_logic_vector(1 DOWNTO 0);
-	RegDst : BUFFER std_logic_vector(1 DOWNTO 0);
-	LSCtrl : BUFFER std_logic_vector(1 DOWNTO 0);
-	SSCtrl : BUFFER std_logic_vector(1 DOWNTO 0);
-	ExcptCtrl : BUFFER std_logic_vector(1 DOWNTO 0);
-	ShiftCtrl : BUFFER std_logic_vector(2 DOWNTO 0);
-	PCSrc : BUFFER std_logic_vector(2 DOWNTO 0);
-	ALUCtrl : BUFFER std_logic_vector(2 DOWNTO 0);
-	DataSrc : BUFFER std_logic_vector(3 DOWNTO 0)
+	A : IN std_logic_vector(31 DOWNTO 0);
+	B : IN std_logic_vector(31 DOWNTO 0);
+	LO : BUFFER std_logic_vector(31 DOWNTO 0);
+	HI : BUFFER std_logic_vector(31 DOWNTO 0);
+	div0 : BUFFER std_logic
 	);
-END uControl;
+END Div;
 
 -- Design Ports Information
--- clk	=>  Location: PIN_3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- reset	=>  Location: PIN_39,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- eqf	=>  Location: PIN_58,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- gtf	=>  Location: PIN_5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- ov	=>  Location: PIN_56,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- div0	=>  Location: PIN_62,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- funct[0]	=>  Location: PIN_20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- funct[1]	=>  Location: PIN_14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- funct[2]	=>  Location: PIN_66,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- funct[3]	=>  Location: PIN_15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- funct[4]	=>  Location: PIN_18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- funct[5]	=>  Location: PIN_35,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- opCode[0]	=>  Location: PIN_68,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- opCode[1]	=>  Location: PIN_69,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- opCode[2]	=>  Location: PIN_67,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- opCode[3]	=>  Location: PIN_7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- opCode[4]	=>  Location: PIN_19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- opCode[5]	=>  Location: PIN_28,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
--- MemCtrl	=>  Location: PIN_4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- PCCtrl	=>  Location: PIN_51,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- MDCtrl	=>  Location: PIN_100,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- SECtrl	=>  Location: PIN_74,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ShiftSrc	=>  Location: PIN_33,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ShiftAmt	=>  Location: PIN_99,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- IRWrite	=>  Location: PIN_53,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- RegWrite	=>  Location: PIN_44,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ALUOutCtrl	=>  Location: PIN_30,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- EPCCtrl	=>  Location: PIN_77,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- HILOWrite	=>  Location: PIN_6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- IorD[0]	=>  Location: PIN_17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- IorD[1]	=>  Location: PIN_16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ALUSrcA[0]	=>  Location: PIN_72,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ALUSrcA[1]	=>  Location: PIN_40,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ALUSrcB[0]	=>  Location: PIN_43,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ALUSrcB[1]	=>  Location: PIN_26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- RegDst[0]	=>  Location: PIN_75,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- RegDst[1]	=>  Location: PIN_54,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- LSCtrl[0]	=>  Location: PIN_97,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- LSCtrl[1]	=>  Location: PIN_21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- SSCtrl[0]	=>  Location: PIN_98,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- SSCtrl[1]	=>  Location: PIN_34,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ExcptCtrl[0]	=>  Location: PIN_76,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ExcptCtrl[1]	=>  Location: PIN_57,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ShiftCtrl[0]	=>  Location: PIN_37,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ShiftCtrl[1]	=>  Location: PIN_12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ShiftCtrl[2]	=>  Location: PIN_49,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- PCSrc[0]	=>  Location: PIN_73,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- PCSrc[1]	=>  Location: PIN_41,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- PCSrc[2]	=>  Location: PIN_71,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ALUCtrl[0]	=>  Location: PIN_55,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ALUCtrl[1]	=>  Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- ALUCtrl[2]	=>  Location: PIN_47,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- DataSrc[0]	=>  Location: PIN_48,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- DataSrc[1]	=>  Location: PIN_8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- DataSrc[2]	=>  Location: PIN_38,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
--- DataSrc[3]	=>  Location: PIN_52,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- clk	=>  Location: PIN_N14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- reset	=>  Location: PIN_P2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[0]	=>  Location: PIN_B12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[1]	=>  Location: PIN_T12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[2]	=>  Location: PIN_D4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[3]	=>  Location: PIN_M15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[4]	=>  Location: PIN_T5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[5]	=>  Location: PIN_K16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[6]	=>  Location: PIN_L2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[7]	=>  Location: PIN_M4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[8]	=>  Location: PIN_E14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[9]	=>  Location: PIN_E13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[10]	=>  Location: PIN_L13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[11]	=>  Location: PIN_C10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[12]	=>  Location: PIN_P11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[13]	=>  Location: PIN_A5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[14]	=>  Location: PIN_R7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[15]	=>  Location: PIN_M1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[16]	=>  Location: PIN_A10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[17]	=>  Location: PIN_A11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[18]	=>  Location: PIN_D2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[19]	=>  Location: PIN_R16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[20]	=>  Location: PIN_P5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[21]	=>  Location: PIN_H15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[22]	=>  Location: PIN_G16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[23]	=>  Location: PIN_P8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[24]	=>  Location: PIN_F14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[25]	=>  Location: PIN_K3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[26]	=>  Location: PIN_B9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[27]	=>  Location: PIN_K14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[28]	=>  Location: PIN_A12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[29]	=>  Location: PIN_N13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[30]	=>  Location: PIN_M13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- A[31]	=>  Location: PIN_D11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[0]	=>  Location: PIN_D14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[1]	=>  Location: PIN_E16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[2]	=>  Location: PIN_N2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[3]	=>  Location: PIN_H12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[4]	=>  Location: PIN_C15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[5]	=>  Location: PIN_P14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[6]	=>  Location: PIN_M16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[7]	=>  Location: PIN_C7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[8]	=>  Location: PIN_L4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[9]	=>  Location: PIN_J16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[10]	=>  Location: PIN_M8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[11]	=>  Location: PIN_B16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[12]	=>  Location: PIN_A6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[13]	=>  Location: PIN_M3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[14]	=>  Location: PIN_C14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[15]	=>  Location: PIN_K2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[16]	=>  Location: PIN_E2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[17]	=>  Location: PIN_P9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[18]	=>  Location: PIN_J2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[19]	=>  Location: PIN_J14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[20]	=>  Location: PIN_H1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[21]	=>  Location: PIN_N12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[22]	=>  Location: PIN_D16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[23]	=>  Location: PIN_K15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[24]	=>  Location: PIN_G15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[25]	=>  Location: PIN_C11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[26]	=>  Location: PIN_A13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[27]	=>  Location: PIN_G2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[28]	=>  Location: PIN_R5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[29]	=>  Location: PIN_A8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[30]	=>  Location: PIN_P12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- B[31]	=>  Location: PIN_B8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- LO[0]	=>  Location: PIN_B10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[1]	=>  Location: PIN_J12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[2]	=>  Location: PIN_D13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[3]	=>  Location: PIN_E1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[4]	=>  Location: PIN_F2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[5]	=>  Location: PIN_L14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[6]	=>  Location: PIN_E4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[7]	=>  Location: PIN_C12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[8]	=>  Location: PIN_H16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[9]	=>  Location: PIN_F1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[10]	=>  Location: PIN_H2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[11]	=>  Location: PIN_R3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[12]	=>  Location: PIN_F3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[13]	=>  Location: PIN_G1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[14]	=>  Location: PIN_C8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[15]	=>  Location: PIN_T4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[16]	=>  Location: PIN_B13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[17]	=>  Location: PIN_N3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[18]	=>  Location: PIN_A2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[19]	=>  Location: PIN_F15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[20]	=>  Location: PIN_R11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[21]	=>  Location: PIN_R4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[22]	=>  Location: PIN_B5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[23]	=>  Location: PIN_A9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[24]	=>  Location: PIN_L3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[25]	=>  Location: PIN_B11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[26]	=>  Location: PIN_A15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[27]	=>  Location: PIN_B4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[28]	=>  Location: PIN_M2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[29]	=>  Location: PIN_J15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[30]	=>  Location: PIN_H5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- LO[31]	=>  Location: PIN_N16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[0]	=>  Location: PIN_P4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[1]	=>  Location: PIN_D1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[2]	=>  Location: PIN_D3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[3]	=>  Location: PIN_N1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[4]	=>  Location: PIN_G14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[5]	=>  Location: PIN_T6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[6]	=>  Location: PIN_G3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[7]	=>  Location: PIN_R1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[8]	=>  Location: PIN_P13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[9]	=>  Location: PIN_N15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[10]	=>  Location: PIN_P15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[11]	=>  Location: PIN_C13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[12]	=>  Location: PIN_J5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[13]	=>  Location: PIN_M14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[14]	=>  Location: PIN_H3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[15]	=>  Location: PIN_R6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[16]	=>  Location: PIN_F16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[17]	=>  Location: PIN_C9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[18]	=>  Location: PIN_J3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[19]	=>  Location: PIN_K1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[20]	=>  Location: PIN_B1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[21]	=>  Location: PIN_L1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[22]	=>  Location: PIN_T2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[23]	=>  Location: PIN_R8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[24]	=>  Location: PIN_T10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[25]	=>  Location: PIN_N5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[26]	=>  Location: PIN_T9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[27]	=>  Location: PIN_R9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[28]	=>  Location: PIN_P10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[29]	=>  Location: PIN_E15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[30]	=>  Location: PIN_T8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- HI[31]	=>  Location: PIN_M9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+-- div0	=>  Location: PIN_C3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 
 
-ARCHITECTURE structure OF uControl IS
+ARCHITECTURE structure OF Div IS
 SIGNAL gnd : std_logic := '0';
 SIGNAL vcc : std_logic := '1';
 SIGNAL unknown : std_logic := 'X';
@@ -137,72 +189,26 @@ SIGNAL ww_devclrn : std_logic;
 SIGNAL ww_devpor : std_logic;
 SIGNAL ww_clk : std_logic;
 SIGNAL ww_reset : std_logic;
-SIGNAL ww_eqf : std_logic;
-SIGNAL ww_gtf : std_logic;
-SIGNAL ww_ov : std_logic;
+SIGNAL ww_A : std_logic_vector(31 DOWNTO 0);
+SIGNAL ww_B : std_logic_vector(31 DOWNTO 0);
+SIGNAL ww_LO : std_logic_vector(31 DOWNTO 0);
+SIGNAL ww_HI : std_logic_vector(31 DOWNTO 0);
 SIGNAL ww_div0 : std_logic;
-SIGNAL ww_funct : std_logic_vector(5 DOWNTO 0);
-SIGNAL ww_opCode : std_logic_vector(5 DOWNTO 0);
-SIGNAL ww_MemCtrl : std_logic;
-SIGNAL ww_PCCtrl : std_logic;
-SIGNAL ww_MDCtrl : std_logic;
-SIGNAL ww_SECtrl : std_logic;
-SIGNAL ww_ShiftSrc : std_logic;
-SIGNAL ww_ShiftAmt : std_logic;
-SIGNAL ww_IRWrite : std_logic;
-SIGNAL ww_RegWrite : std_logic;
-SIGNAL ww_ALUOutCtrl : std_logic;
-SIGNAL ww_EPCCtrl : std_logic;
-SIGNAL ww_HILOWrite : std_logic;
-SIGNAL ww_IorD : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_ALUSrcA : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_ALUSrcB : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_RegDst : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_LSCtrl : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_SSCtrl : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_ExcptCtrl : std_logic_vector(1 DOWNTO 0);
-SIGNAL ww_ShiftCtrl : std_logic_vector(2 DOWNTO 0);
-SIGNAL ww_PCSrc : std_logic_vector(2 DOWNTO 0);
-SIGNAL ww_ALUCtrl : std_logic_vector(2 DOWNTO 0);
-SIGNAL ww_DataSrc : std_logic_vector(3 DOWNTO 0);
 
 BEGIN
 
 ww_clk <= clk;
 ww_reset <= reset;
-ww_eqf <= eqf;
-ww_gtf <= gtf;
-ww_ov <= ov;
-ww_div0 <= div0;
-ww_funct <= funct;
-ww_opCode <= opCode;
-MemCtrl <= ww_MemCtrl;
-PCCtrl <= ww_PCCtrl;
-MDCtrl <= ww_MDCtrl;
-SECtrl <= ww_SECtrl;
-ShiftSrc <= ww_ShiftSrc;
-ShiftAmt <= ww_ShiftAmt;
-IRWrite <= ww_IRWrite;
-RegWrite <= ww_RegWrite;
-ALUOutCtrl <= ww_ALUOutCtrl;
-EPCCtrl <= ww_EPCCtrl;
-HILOWrite <= ww_HILOWrite;
-IorD <= ww_IorD;
-ALUSrcA <= ww_ALUSrcA;
-ALUSrcB <= ww_ALUSrcB;
-RegDst <= ww_RegDst;
-LSCtrl <= ww_LSCtrl;
-SSCtrl <= ww_SSCtrl;
-ExcptCtrl <= ww_ExcptCtrl;
-ShiftCtrl <= ww_ShiftCtrl;
-PCSrc <= ww_PCSrc;
-ALUCtrl <= ww_ALUCtrl;
-DataSrc <= ww_DataSrc;
+ww_A <= A;
+ww_B <= B;
+LO <= ww_LO;
+HI <= ww_HI;
+div0 <= ww_div0;
 ww_devoe <= devoe;
 ww_devclrn <= devclrn;
 ww_devpor <= devpor;
 
--- Location: PIN_3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_N14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \clk~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -212,7 +218,7 @@ PORT MAP (
 	oe => GND,
 	padio => ww_clk);
 
--- Location: PIN_39,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_P2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
 \reset~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
@@ -222,583 +228,1360 @@ PORT MAP (
 	oe => GND,
 	padio => ww_reset);
 
--- Location: PIN_58,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\eqf~I\ : maxv_io
+-- Location: PIN_B12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[0]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "input")
 -- pragma translate_on
 PORT MAP (
 	oe => GND,
-	padio => ww_eqf);
+	padio => ww_A(0));
 
--- Location: PIN_5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\gtf~I\ : maxv_io
+-- Location: PIN_T12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[1]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "input")
 -- pragma translate_on
 PORT MAP (
 	oe => GND,
-	padio => ww_gtf);
+	padio => ww_A(1));
 
--- Location: PIN_56,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\ov~I\ : maxv_io
+-- Location: PIN_D4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[2]~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
 	operation_mode => "input")
 -- pragma translate_on
 PORT MAP (
 	oe => GND,
-	padio => ww_ov);
+	padio => ww_A(2));
 
--- Location: PIN_62,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+-- Location: PIN_M15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[3]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(3));
+
+-- Location: PIN_T5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[4]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(4));
+
+-- Location: PIN_K16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[5]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(5));
+
+-- Location: PIN_L2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[6]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(6));
+
+-- Location: PIN_M4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[7]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(7));
+
+-- Location: PIN_E14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[8]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(8));
+
+-- Location: PIN_E13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[9]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(9));
+
+-- Location: PIN_L13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[10]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(10));
+
+-- Location: PIN_C10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[11]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(11));
+
+-- Location: PIN_P11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[12]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(12));
+
+-- Location: PIN_A5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[13]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(13));
+
+-- Location: PIN_R7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[14]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(14));
+
+-- Location: PIN_M1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[15]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(15));
+
+-- Location: PIN_A10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[16]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(16));
+
+-- Location: PIN_A11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[17]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(17));
+
+-- Location: PIN_D2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[18]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(18));
+
+-- Location: PIN_R16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[19]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(19));
+
+-- Location: PIN_P5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[20]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(20));
+
+-- Location: PIN_H15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[21]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(21));
+
+-- Location: PIN_G16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[22]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(22));
+
+-- Location: PIN_P8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[23]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(23));
+
+-- Location: PIN_F14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[24]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(24));
+
+-- Location: PIN_K3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[25]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(25));
+
+-- Location: PIN_B9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[26]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(26));
+
+-- Location: PIN_K14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[27]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(27));
+
+-- Location: PIN_A12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[28]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(28));
+
+-- Location: PIN_N13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[29]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(29));
+
+-- Location: PIN_M13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[30]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(30));
+
+-- Location: PIN_D11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\A[31]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_A(31));
+
+-- Location: PIN_D14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[0]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(0));
+
+-- Location: PIN_E16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[1]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(1));
+
+-- Location: PIN_N2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[2]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(2));
+
+-- Location: PIN_H12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[3]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(3));
+
+-- Location: PIN_C15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[4]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(4));
+
+-- Location: PIN_P14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[5]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(5));
+
+-- Location: PIN_M16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[6]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(6));
+
+-- Location: PIN_C7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[7]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(7));
+
+-- Location: PIN_L4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[8]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(8));
+
+-- Location: PIN_J16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[9]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(9));
+
+-- Location: PIN_M8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[10]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(10));
+
+-- Location: PIN_B16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[11]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(11));
+
+-- Location: PIN_A6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[12]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(12));
+
+-- Location: PIN_M3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[13]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(13));
+
+-- Location: PIN_C14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[14]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(14));
+
+-- Location: PIN_K2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[15]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(15));
+
+-- Location: PIN_E2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[16]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(16));
+
+-- Location: PIN_P9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[17]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(17));
+
+-- Location: PIN_J2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[18]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(18));
+
+-- Location: PIN_J14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[19]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(19));
+
+-- Location: PIN_H1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[20]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(20));
+
+-- Location: PIN_N12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[21]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(21));
+
+-- Location: PIN_D16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[22]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(22));
+
+-- Location: PIN_K15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[23]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(23));
+
+-- Location: PIN_G15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[24]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(24));
+
+-- Location: PIN_C11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[25]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(25));
+
+-- Location: PIN_A13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[26]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(26));
+
+-- Location: PIN_G2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[27]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(27));
+
+-- Location: PIN_R5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[28]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(28));
+
+-- Location: PIN_A8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[29]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(29));
+
+-- Location: PIN_P12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[30]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(30));
+
+-- Location: PIN_B8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
+\B[31]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "input")
+-- pragma translate_on
+PORT MAP (
+	oe => GND,
+	padio => ww_B(31));
+
+-- Location: PIN_B10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[0]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(0));
+
+-- Location: PIN_J12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[1]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(1));
+
+-- Location: PIN_D13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[2]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(2));
+
+-- Location: PIN_E1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[3]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(3));
+
+-- Location: PIN_F2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[4]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(4));
+
+-- Location: PIN_L14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[5]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(5));
+
+-- Location: PIN_E4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[6]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(6));
+
+-- Location: PIN_C12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[7]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(7));
+
+-- Location: PIN_H16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[8]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(8));
+
+-- Location: PIN_F1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[9]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(9));
+
+-- Location: PIN_H2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[10]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(10));
+
+-- Location: PIN_R3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[11]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(11));
+
+-- Location: PIN_F3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[12]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(12));
+
+-- Location: PIN_G1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[13]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(13));
+
+-- Location: PIN_C8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[14]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(14));
+
+-- Location: PIN_T4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[15]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(15));
+
+-- Location: PIN_B13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[16]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(16));
+
+-- Location: PIN_N3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[17]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(17));
+
+-- Location: PIN_A2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[18]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(18));
+
+-- Location: PIN_F15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[19]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(19));
+
+-- Location: PIN_R11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[20]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(20));
+
+-- Location: PIN_R4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[21]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(21));
+
+-- Location: PIN_B5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[22]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(22));
+
+-- Location: PIN_A9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[23]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(23));
+
+-- Location: PIN_L3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[24]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(24));
+
+-- Location: PIN_B11,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[25]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(25));
+
+-- Location: PIN_A15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[26]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(26));
+
+-- Location: PIN_B4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[27]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(27));
+
+-- Location: PIN_M2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[28]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(28));
+
+-- Location: PIN_J15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[29]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(29));
+
+-- Location: PIN_H5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[30]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(30));
+
+-- Location: PIN_N16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\LO[31]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_LO(31));
+
+-- Location: PIN_P4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[0]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(0));
+
+-- Location: PIN_D1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[1]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(1));
+
+-- Location: PIN_D3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[2]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(2));
+
+-- Location: PIN_N1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[3]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(3));
+
+-- Location: PIN_G14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[4]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(4));
+
+-- Location: PIN_T6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[5]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(5));
+
+-- Location: PIN_G3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[6]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(6));
+
+-- Location: PIN_R1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[7]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(7));
+
+-- Location: PIN_P13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[8]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(8));
+
+-- Location: PIN_N15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[9]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(9));
+
+-- Location: PIN_P15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[10]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(10));
+
+-- Location: PIN_C13,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[11]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(11));
+
+-- Location: PIN_J5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[12]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(12));
+
+-- Location: PIN_M14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[13]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(13));
+
+-- Location: PIN_H3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[14]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(14));
+
+-- Location: PIN_R6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[15]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(15));
+
+-- Location: PIN_F16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[16]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(16));
+
+-- Location: PIN_C9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[17]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(17));
+
+-- Location: PIN_J3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[18]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(18));
+
+-- Location: PIN_K1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[19]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(19));
+
+-- Location: PIN_B1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[20]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(20));
+
+-- Location: PIN_L1,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[21]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(21));
+
+-- Location: PIN_T2,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[22]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(22));
+
+-- Location: PIN_R8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[23]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(23));
+
+-- Location: PIN_T10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[24]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(24));
+
+-- Location: PIN_N5,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[25]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(25));
+
+-- Location: PIN_T9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[26]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(26));
+
+-- Location: PIN_R9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[27]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(27));
+
+-- Location: PIN_P10,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[28]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(28));
+
+-- Location: PIN_E15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[29]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(29));
+
+-- Location: PIN_T8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[30]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(30));
+
+-- Location: PIN_M9,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
+\HI[31]~I\ : maxv_io
+-- pragma translate_off
+GENERIC MAP (
+	operation_mode => "output")
+-- pragma translate_on
+PORT MAP (
+	datain => GND,
+	oe => VCC,
+	padio => ww_HI(31));
+
+-- Location: PIN_C3,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
 \div0~I\ : maxv_io
 -- pragma translate_off
 GENERIC MAP (
-	operation_mode => "input")
+	operation_mode => "output")
 -- pragma translate_on
 PORT MAP (
-	oe => GND,
+	datain => GND,
+	oe => VCC,
 	padio => ww_div0);
-
--- Location: PIN_20,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\funct[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_funct(0));
-
--- Location: PIN_14,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\funct[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_funct(1));
-
--- Location: PIN_66,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\funct[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_funct(2));
-
--- Location: PIN_15,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\funct[3]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_funct(3));
-
--- Location: PIN_18,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\funct[4]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_funct(4));
-
--- Location: PIN_35,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\funct[5]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_funct(5));
-
--- Location: PIN_68,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\opCode[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_opCode(0));
-
--- Location: PIN_69,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\opCode[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_opCode(1));
-
--- Location: PIN_67,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\opCode[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_opCode(2));
-
--- Location: PIN_7,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\opCode[3]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_opCode(3));
-
--- Location: PIN_19,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\opCode[4]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_opCode(4));
-
--- Location: PIN_28,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: Default
-\opCode[5]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "input")
--- pragma translate_on
-PORT MAP (
-	oe => GND,
-	padio => ww_opCode(5));
-
--- Location: PIN_4,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\MemCtrl~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_MemCtrl);
-
--- Location: PIN_51,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\PCCtrl~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_PCCtrl);
-
--- Location: PIN_100,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\MDCtrl~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_MDCtrl);
-
--- Location: PIN_74,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\SECtrl~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_SECtrl);
-
--- Location: PIN_33,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ShiftSrc~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ShiftSrc);
-
--- Location: PIN_99,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ShiftAmt~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ShiftAmt);
-
--- Location: PIN_53,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\IRWrite~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_IRWrite);
-
--- Location: PIN_44,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\RegWrite~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_RegWrite);
-
--- Location: PIN_30,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ALUOutCtrl~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ALUOutCtrl);
-
--- Location: PIN_77,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\EPCCtrl~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_EPCCtrl);
-
--- Location: PIN_6,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\HILOWrite~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_HILOWrite);
-
--- Location: PIN_17,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\IorD[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_IorD(0));
-
--- Location: PIN_16,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\IorD[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_IorD(1));
-
--- Location: PIN_72,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ALUSrcA[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ALUSrcA(0));
-
--- Location: PIN_40,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ALUSrcA[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ALUSrcA(1));
-
--- Location: PIN_43,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ALUSrcB[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ALUSrcB(0));
-
--- Location: PIN_26,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ALUSrcB[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ALUSrcB(1));
-
--- Location: PIN_75,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\RegDst[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_RegDst(0));
-
--- Location: PIN_54,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\RegDst[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_RegDst(1));
-
--- Location: PIN_97,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\LSCtrl[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_LSCtrl(0));
-
--- Location: PIN_21,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\LSCtrl[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_LSCtrl(1));
-
--- Location: PIN_98,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\SSCtrl[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_SSCtrl(0));
-
--- Location: PIN_34,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\SSCtrl[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_SSCtrl(1));
-
--- Location: PIN_76,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ExcptCtrl[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ExcptCtrl(0));
-
--- Location: PIN_57,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ExcptCtrl[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ExcptCtrl(1));
-
--- Location: PIN_37,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ShiftCtrl[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ShiftCtrl(0));
-
--- Location: PIN_12,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ShiftCtrl[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ShiftCtrl(1));
-
--- Location: PIN_49,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ShiftCtrl[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ShiftCtrl(2));
-
--- Location: PIN_73,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\PCSrc[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_PCSrc(0));
-
--- Location: PIN_41,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\PCSrc[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_PCSrc(1));
-
--- Location: PIN_71,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\PCSrc[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_PCSrc(2));
-
--- Location: PIN_55,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ALUCtrl[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ALUCtrl(0));
-
--- Location: PIN_84,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ALUCtrl[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ALUCtrl(1));
-
--- Location: PIN_47,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\ALUCtrl[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_ALUCtrl(2));
-
--- Location: PIN_48,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\DataSrc[0]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_DataSrc(0));
-
--- Location: PIN_8,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\DataSrc[1]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_DataSrc(1));
-
--- Location: PIN_38,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\DataSrc[2]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_DataSrc(2));
-
--- Location: PIN_52,	 I/O Standard: 3.3-V LVTTL,	 Current Strength: 16mA
-\DataSrc[3]~I\ : maxv_io
--- pragma translate_off
-GENERIC MAP (
-	operation_mode => "output")
--- pragma translate_on
-PORT MAP (
-	datain => GND,
-	oe => VCC,
-	padio => ww_DataSrc(3));
 END structure;
 
 

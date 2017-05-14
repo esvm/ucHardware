@@ -1,5 +1,5 @@
 Analysis & Synthesis report for uc
-Sat May 13 22:36:38 2017
+Sun May 14 03:03:41 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -14,8 +14,8 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Parameter Settings for User Entity Instance: Top-level Entity: |uControl
- 10. Analysis & Synthesis Messages
+  9. Analysis & Synthesis Messages
+ 10. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -41,13 +41,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sat May 13 22:36:38 2017      ;
+; Analysis & Synthesis Status ; Successful - Sun May 14 03:03:41 2017      ;
 ; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name               ; uc                                         ;
-; Top-level Entity Name       ; uControl                                   ;
+; Top-level Entity Name       ; Div                                        ;
 ; Family                      ; MAX V                                      ;
 ; Total logic elements        ; 0                                          ;
-; Total pins                  ; 56                                         ;
+; Total pins                  ; 137                                        ;
 ; Total virtual pins          ; 0                                          ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
 +-----------------------------+--------------------------------------------+
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; uControl           ; uc                 ;
+; Top-level entity name                                                      ; Div                ; uc                 ;
 ; Family name                                                                ; MAX V              ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -142,13 +142,13 @@ applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                          ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path            ; Library ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
-; uControl.v                       ; yes             ; User Verilog HDL File  ; /home/pet/Documents/Hardware/uControl.v ;         ;
-+----------------------------------+-----------------+------------------------+-----------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                     ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path       ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
+; Div.v                            ; yes             ; User Verilog HDL File  ; /home/pet/Documents/Hardware/Div.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -177,7 +177,7 @@ applicable agreement for further details.
 ;     -- asynchronous clear/load mode         ; 0     ;
 ;                                             ;       ;
 ; Total registers                             ; 0     ;
-; I/O pins                                    ; 56    ;
+; I/O pins                                    ; 137   ;
 +---------------------------------------------+-------+
 
 
@@ -186,7 +186,7 @@ applicable agreement for further details.
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |uControl                  ; 0 (0)       ; 0            ; 0          ; 56   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |uControl           ; work         ;
+; |Div                       ; 0 (0)       ; 0            ; 0          ; 137  ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Div                ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -206,89 +206,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Top-level Entity: |uControl ;
-+----------------+---------+-----------------------------------------------+
-; Parameter Name ; Value   ; Type                                          ;
-+----------------+---------+-----------------------------------------------+
-; stateSTART     ; 00000   ; Unsigned Binary                               ;
-; stateSHIFT     ; 00001   ; Unsigned Binary                               ;
-; stateSSAVE     ; 00010   ; Unsigned Binary                               ;
-; stateRESULT    ; 00011   ; Unsigned Binary                               ;
-; stateRSAVE     ; 00100   ; Unsigned Binary                               ;
-; stateISAVE     ; 00101   ; Unsigned Binary                               ;
-; stateJR        ; 00110   ; Unsigned Binary                               ;
-; stateBREAK     ; 00111   ; Unsigned Binary                               ;
-; stateSLT       ; 01000   ; Unsigned Binary                               ;
-; stateJAL       ; 01001   ; Unsigned Binary                               ;
-; stateWAIT      ; 01010   ; Unsigned Binary                               ;
-; stateLS        ; 01011   ; Unsigned Binary                               ;
-; stateMEMWAIT   ; 01100   ; Unsigned Binary                               ;
-; stateHILO      ; 01101   ; Unsigned Binary                               ;
-; stateMEM       ; 01110   ; Unsigned Binary                               ;
-; stateBEQM      ; 01111   ; Unsigned Binary                               ;
-; stateBEQM2     ; 10000   ; Unsigned Binary                               ;
-; stateBRANCH    ; 10001   ; Unsigned Binary                               ;
-; stateEXCP      ; 10010   ; Unsigned Binary                               ;
-; stateOF        ; 10011   ; Unsigned Binary                               ;
-; stateDIV0      ; 10100   ; Unsigned Binary                               ;
-; stateOPCODE    ; 10101   ; Unsigned Binary                               ;
-; stateEXCP2     ; 10110   ; Unsigned Binary                               ;
-; stateEXCP3     ; 10111   ; Unsigned Binary                               ;
-; stateEXCP4     ; 11000   ; Unsigned Binary                               ;
-; stateOP        ; 11001   ; Unsigned Binary                               ;
-; stateSTART2    ; 11010   ; Unsigned Binary                               ;
-; stateSTART3    ; 11011   ; Unsigned Binary                               ;
-; stateSTART4    ; 11100   ; Unsigned Binary                               ;
-; stateSTART5    ; 11101   ; Unsigned Binary                               ;
-; ulaSA          ; 000     ; Unsigned Binary                               ;
-; ulaADD         ; 001     ; Unsigned Binary                               ;
-; ulaSUB         ; 010     ; Unsigned Binary                               ;
-; ulaAND         ; 011     ; Unsigned Binary                               ;
-; ADD            ; 0100000 ; Unsigned Binary                               ;
-; AND            ; 0100100 ; Unsigned Binary                               ;
-; DIV            ; 0011010 ; Unsigned Binary                               ;
-; MULT           ; 0011000 ; Unsigned Binary                               ;
-; JR             ; 0001000 ; Unsigned Binary                               ;
-; MFHI           ; 0010000 ; Unsigned Binary                               ;
-; MFLO           ; 0010010 ; Unsigned Binary                               ;
-; SLL            ; 0000000 ; Unsigned Binary                               ;
-; SLLV           ; 0000100 ; Unsigned Binary                               ;
-; SLT            ; 0101010 ; Unsigned Binary                               ;
-; SRA            ; 0000011 ; Unsigned Binary                               ;
-; SRAV           ; 0000111 ; Unsigned Binary                               ;
-; SRL            ; 0000010 ; Unsigned Binary                               ;
-; SUB            ; 0100010 ; Unsigned Binary                               ;
-; BREAK          ; 0001101 ; Unsigned Binary                               ;
-; RTE            ; 0010011 ; Unsigned Binary                               ;
-; ADDI           ; 1001000 ; Unsigned Binary                               ;
-; ADDIU          ; 1001001 ; Unsigned Binary                               ;
-; BEQ            ; 1000100 ; Unsigned Binary                               ;
-; BNE            ; 1000101 ; Unsigned Binary                               ;
-; BLE            ; 1000110 ; Unsigned Binary                               ;
-; BGT            ; 1000111 ; Unsigned Binary                               ;
-; BEQM           ; 1000001 ; Unsigned Binary                               ;
-; LB             ; 1100000 ; Unsigned Binary                               ;
-; LH             ; 1100001 ; Unsigned Binary                               ;
-; LUI            ; 1001111 ; Unsigned Binary                               ;
-; LW             ; 1100011 ; Unsigned Binary                               ;
-; SB             ; 1101000 ; Unsigned Binary                               ;
-; SH             ; 1101001 ; Unsigned Binary                               ;
-; SLTI           ; 1001010 ; Unsigned Binary                               ;
-; SW             ; 1101011 ; Unsigned Binary                               ;
-; J              ; 1000010 ; Unsigned Binary                               ;
-; JAL            ; 1000011 ; Unsigned Binary                               ;
-+----------------+---------+-----------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sat May 13 22:36:35 2017
+    Info: Processing started: Sun May 14 03:03:39 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uc -c uc
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file ShiftLeft16.v
@@ -299,72 +223,162 @@ Info (12021): Found 1 design units, including 1 entities, in source file SignExt
     Info (12023): Found entity 1: SignExtend1to32
 Info (12021): Found 1 design units, including 1 entities, in source file uControl.v
     Info (12023): Found entity 1: uControl
-Info (12127): Elaborating entity "uControl" for the top level hierarchy
+Info (12021): Found 1 design units, including 1 entities, in source file Div.v
+    Info (12023): Found entity 1: Div
+Info (12127): Elaborating entity "Div" for the top level hierarchy
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "MemCtrl" is stuck at GND
-    Warning (13410): Pin "PCCtrl" is stuck at GND
-    Warning (13410): Pin "MDCtrl" is stuck at GND
-    Warning (13410): Pin "SECtrl" is stuck at GND
-    Warning (13410): Pin "ShiftSrc" is stuck at GND
-    Warning (13410): Pin "ShiftAmt" is stuck at GND
-    Warning (13410): Pin "IRWrite" is stuck at GND
-    Warning (13410): Pin "RegWrite" is stuck at GND
-    Warning (13410): Pin "ALUOutCtrl" is stuck at GND
-    Warning (13410): Pin "EPCCtrl" is stuck at GND
-    Warning (13410): Pin "HILOWrite" is stuck at GND
-    Warning (13410): Pin "IorD[0]" is stuck at GND
-    Warning (13410): Pin "IorD[1]" is stuck at GND
-    Warning (13410): Pin "ALUSrcA[0]" is stuck at GND
-    Warning (13410): Pin "ALUSrcA[1]" is stuck at GND
-    Warning (13410): Pin "ALUSrcB[0]" is stuck at GND
-    Warning (13410): Pin "ALUSrcB[1]" is stuck at GND
-    Warning (13410): Pin "RegDst[0]" is stuck at GND
-    Warning (13410): Pin "RegDst[1]" is stuck at GND
-    Warning (13410): Pin "LSCtrl[0]" is stuck at GND
-    Warning (13410): Pin "LSCtrl[1]" is stuck at GND
-    Warning (13410): Pin "SSCtrl[0]" is stuck at GND
-    Warning (13410): Pin "SSCtrl[1]" is stuck at GND
-    Warning (13410): Pin "ExcptCtrl[0]" is stuck at GND
-    Warning (13410): Pin "ExcptCtrl[1]" is stuck at GND
-    Warning (13410): Pin "ShiftCtrl[0]" is stuck at GND
-    Warning (13410): Pin "ShiftCtrl[1]" is stuck at GND
-    Warning (13410): Pin "ShiftCtrl[2]" is stuck at GND
-    Warning (13410): Pin "PCSrc[0]" is stuck at GND
-    Warning (13410): Pin "PCSrc[1]" is stuck at GND
-    Warning (13410): Pin "PCSrc[2]" is stuck at GND
-    Warning (13410): Pin "ALUCtrl[0]" is stuck at GND
-    Warning (13410): Pin "ALUCtrl[1]" is stuck at GND
-    Warning (13410): Pin "ALUCtrl[2]" is stuck at GND
-    Warning (13410): Pin "DataSrc[0]" is stuck at GND
-    Warning (13410): Pin "DataSrc[1]" is stuck at GND
-    Warning (13410): Pin "DataSrc[2]" is stuck at GND
-    Warning (13410): Pin "DataSrc[3]" is stuck at GND
-Warning (21074): Design contains 18 input pin(s) that do not drive logic
+    Warning (13410): Pin "LO[0]" is stuck at GND
+    Warning (13410): Pin "LO[1]" is stuck at GND
+    Warning (13410): Pin "LO[2]" is stuck at GND
+    Warning (13410): Pin "LO[3]" is stuck at GND
+    Warning (13410): Pin "LO[4]" is stuck at GND
+    Warning (13410): Pin "LO[5]" is stuck at GND
+    Warning (13410): Pin "LO[6]" is stuck at GND
+    Warning (13410): Pin "LO[7]" is stuck at GND
+    Warning (13410): Pin "LO[8]" is stuck at GND
+    Warning (13410): Pin "LO[9]" is stuck at GND
+    Warning (13410): Pin "LO[10]" is stuck at GND
+    Warning (13410): Pin "LO[11]" is stuck at GND
+    Warning (13410): Pin "LO[12]" is stuck at GND
+    Warning (13410): Pin "LO[13]" is stuck at GND
+    Warning (13410): Pin "LO[14]" is stuck at GND
+    Warning (13410): Pin "LO[15]" is stuck at GND
+    Warning (13410): Pin "LO[16]" is stuck at GND
+    Warning (13410): Pin "LO[17]" is stuck at GND
+    Warning (13410): Pin "LO[18]" is stuck at GND
+    Warning (13410): Pin "LO[19]" is stuck at GND
+    Warning (13410): Pin "LO[20]" is stuck at GND
+    Warning (13410): Pin "LO[21]" is stuck at GND
+    Warning (13410): Pin "LO[22]" is stuck at GND
+    Warning (13410): Pin "LO[23]" is stuck at GND
+    Warning (13410): Pin "LO[24]" is stuck at GND
+    Warning (13410): Pin "LO[25]" is stuck at GND
+    Warning (13410): Pin "LO[26]" is stuck at GND
+    Warning (13410): Pin "LO[27]" is stuck at GND
+    Warning (13410): Pin "LO[28]" is stuck at GND
+    Warning (13410): Pin "LO[29]" is stuck at GND
+    Warning (13410): Pin "LO[30]" is stuck at GND
+    Warning (13410): Pin "LO[31]" is stuck at GND
+    Warning (13410): Pin "HI[0]" is stuck at GND
+    Warning (13410): Pin "HI[1]" is stuck at GND
+    Warning (13410): Pin "HI[2]" is stuck at GND
+    Warning (13410): Pin "HI[3]" is stuck at GND
+    Warning (13410): Pin "HI[4]" is stuck at GND
+    Warning (13410): Pin "HI[5]" is stuck at GND
+    Warning (13410): Pin "HI[6]" is stuck at GND
+    Warning (13410): Pin "HI[7]" is stuck at GND
+    Warning (13410): Pin "HI[8]" is stuck at GND
+    Warning (13410): Pin "HI[9]" is stuck at GND
+    Warning (13410): Pin "HI[10]" is stuck at GND
+    Warning (13410): Pin "HI[11]" is stuck at GND
+    Warning (13410): Pin "HI[12]" is stuck at GND
+    Warning (13410): Pin "HI[13]" is stuck at GND
+    Warning (13410): Pin "HI[14]" is stuck at GND
+    Warning (13410): Pin "HI[15]" is stuck at GND
+    Warning (13410): Pin "HI[16]" is stuck at GND
+    Warning (13410): Pin "HI[17]" is stuck at GND
+    Warning (13410): Pin "HI[18]" is stuck at GND
+    Warning (13410): Pin "HI[19]" is stuck at GND
+    Warning (13410): Pin "HI[20]" is stuck at GND
+    Warning (13410): Pin "HI[21]" is stuck at GND
+    Warning (13410): Pin "HI[22]" is stuck at GND
+    Warning (13410): Pin "HI[23]" is stuck at GND
+    Warning (13410): Pin "HI[24]" is stuck at GND
+    Warning (13410): Pin "HI[25]" is stuck at GND
+    Warning (13410): Pin "HI[26]" is stuck at GND
+    Warning (13410): Pin "HI[27]" is stuck at GND
+    Warning (13410): Pin "HI[28]" is stuck at GND
+    Warning (13410): Pin "HI[29]" is stuck at GND
+    Warning (13410): Pin "HI[30]" is stuck at GND
+    Warning (13410): Pin "HI[31]" is stuck at GND
+    Warning (13410): Pin "div0" is stuck at GND
+    Warning (13410): Pin "counter[0]" is stuck at GND
+    Warning (13410): Pin "counter[1]" is stuck at GND
+    Warning (13410): Pin "counter[2]" is stuck at GND
+    Warning (13410): Pin "counter[3]" is stuck at GND
+    Warning (13410): Pin "counter[4]" is stuck at GND
+    Warning (13410): Pin "counter[5]" is stuck at GND
+Warning (21074): Design contains 66 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "clk"
     Warning (15610): No output dependent on input pin "reset"
-    Warning (15610): No output dependent on input pin "eqf"
-    Warning (15610): No output dependent on input pin "gtf"
-    Warning (15610): No output dependent on input pin "ov"
-    Warning (15610): No output dependent on input pin "div0"
-    Warning (15610): No output dependent on input pin "funct[0]"
-    Warning (15610): No output dependent on input pin "funct[1]"
-    Warning (15610): No output dependent on input pin "funct[2]"
-    Warning (15610): No output dependent on input pin "funct[3]"
-    Warning (15610): No output dependent on input pin "funct[4]"
-    Warning (15610): No output dependent on input pin "funct[5]"
-    Warning (15610): No output dependent on input pin "opCode[0]"
-    Warning (15610): No output dependent on input pin "opCode[1]"
-    Warning (15610): No output dependent on input pin "opCode[2]"
-    Warning (15610): No output dependent on input pin "opCode[3]"
-    Warning (15610): No output dependent on input pin "opCode[4]"
-    Warning (15610): No output dependent on input pin "opCode[5]"
-Info (21057): Implemented 56 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 18 input pins
-    Info (21059): Implemented 38 output pins
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 58 warnings
+    Warning (15610): No output dependent on input pin "A[0]"
+    Warning (15610): No output dependent on input pin "A[1]"
+    Warning (15610): No output dependent on input pin "A[2]"
+    Warning (15610): No output dependent on input pin "A[3]"
+    Warning (15610): No output dependent on input pin "A[4]"
+    Warning (15610): No output dependent on input pin "A[5]"
+    Warning (15610): No output dependent on input pin "A[6]"
+    Warning (15610): No output dependent on input pin "A[7]"
+    Warning (15610): No output dependent on input pin "A[8]"
+    Warning (15610): No output dependent on input pin "A[9]"
+    Warning (15610): No output dependent on input pin "A[10]"
+    Warning (15610): No output dependent on input pin "A[11]"
+    Warning (15610): No output dependent on input pin "A[12]"
+    Warning (15610): No output dependent on input pin "A[13]"
+    Warning (15610): No output dependent on input pin "A[14]"
+    Warning (15610): No output dependent on input pin "A[15]"
+    Warning (15610): No output dependent on input pin "A[16]"
+    Warning (15610): No output dependent on input pin "A[17]"
+    Warning (15610): No output dependent on input pin "A[18]"
+    Warning (15610): No output dependent on input pin "A[19]"
+    Warning (15610): No output dependent on input pin "A[20]"
+    Warning (15610): No output dependent on input pin "A[21]"
+    Warning (15610): No output dependent on input pin "A[22]"
+    Warning (15610): No output dependent on input pin "A[23]"
+    Warning (15610): No output dependent on input pin "A[24]"
+    Warning (15610): No output dependent on input pin "A[25]"
+    Warning (15610): No output dependent on input pin "A[26]"
+    Warning (15610): No output dependent on input pin "A[27]"
+    Warning (15610): No output dependent on input pin "A[28]"
+    Warning (15610): No output dependent on input pin "A[29]"
+    Warning (15610): No output dependent on input pin "A[30]"
+    Warning (15610): No output dependent on input pin "A[31]"
+    Warning (15610): No output dependent on input pin "B[0]"
+    Warning (15610): No output dependent on input pin "B[1]"
+    Warning (15610): No output dependent on input pin "B[2]"
+    Warning (15610): No output dependent on input pin "B[3]"
+    Warning (15610): No output dependent on input pin "B[4]"
+    Warning (15610): No output dependent on input pin "B[5]"
+    Warning (15610): No output dependent on input pin "B[6]"
+    Warning (15610): No output dependent on input pin "B[7]"
+    Warning (15610): No output dependent on input pin "B[8]"
+    Warning (15610): No output dependent on input pin "B[9]"
+    Warning (15610): No output dependent on input pin "B[10]"
+    Warning (15610): No output dependent on input pin "B[11]"
+    Warning (15610): No output dependent on input pin "B[12]"
+    Warning (15610): No output dependent on input pin "B[13]"
+    Warning (15610): No output dependent on input pin "B[14]"
+    Warning (15610): No output dependent on input pin "B[15]"
+    Warning (15610): No output dependent on input pin "B[16]"
+    Warning (15610): No output dependent on input pin "B[17]"
+    Warning (15610): No output dependent on input pin "B[18]"
+    Warning (15610): No output dependent on input pin "B[19]"
+    Warning (15610): No output dependent on input pin "B[20]"
+    Warning (15610): No output dependent on input pin "B[21]"
+    Warning (15610): No output dependent on input pin "B[22]"
+    Warning (15610): No output dependent on input pin "B[23]"
+    Warning (15610): No output dependent on input pin "B[24]"
+    Warning (15610): No output dependent on input pin "B[25]"
+    Warning (15610): No output dependent on input pin "B[26]"
+    Warning (15610): No output dependent on input pin "B[27]"
+    Warning (15610): No output dependent on input pin "B[28]"
+    Warning (15610): No output dependent on input pin "B[29]"
+    Warning (15610): No output dependent on input pin "B[30]"
+    Warning (15610): No output dependent on input pin "B[31]"
+Info (21057): Implemented 137 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 66 input pins
+    Info (21059): Implemented 71 output pins
+Info (144001): Generated suppressed messages file /home/pet/Documents/Hardware/output_files/uc.map.smsg
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 139 warnings
     Info: Peak virtual memory: 661 megabytes
-    Info: Processing ended: Sat May 13 22:36:38 2017
-    Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:02
+    Info: Processing ended: Sun May 14 03:03:41 2017
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in /home/pet/Documents/Hardware/output_files/uc.map.smsg.
 
 

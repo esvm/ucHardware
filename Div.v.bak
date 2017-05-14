@@ -1,0 +1,10 @@
+module Div (
+	input clk,
+	input reset,
+	input reg[31:0] A,
+	input reg[31:0] B,
+	output reg div0
+);
+
+
+endmodule 
