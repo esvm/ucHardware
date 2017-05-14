@@ -1,22 +1,24 @@
-module uControl(
+module uCtrl(
 		//inputs
 		input clk,
 		input reset,
 		input eqf,
 		input gtf,
+		input ov,
 		input [5..0] funct,
 		input [5..0] opCode,
 		//outputs
 		output reg MemCtrl,
-		output reg PCControl,
-		output reg MDControl,
-		output reg SEControl,
+		output reg PCCtrl,
+		output reg MDCtrl,
+		output reg SECtrl,
 		output reg ShiftSrc,
 		output reg ShiftAmt,
 		output reg IRWrite,
 		output reg RegWrite,
 		output reg AluOutCtrl,
 		output reg EPCCtrl,
+		output reg HILOWrite,
 		output reg[1..0] IorD,
 		output reg[1..0] ALUSrcA,
 		output reg[1..0] ALUSrcB,
@@ -25,15 +27,34 @@ module uControl(
 		output reg[1..0] SSCtrl,
 		output reg[1..0] ExcptCtrl,
 		output reg[2..0] ShiftCtrl,
-		output reg[2..0] PCSource,
-		output reg[2..0] ALUControl,
+		output reg[2..0] PCSrc,
+		output reg[2..0] ALUCtrl,
 		output reg[3..0] DataSrc
 );
 
 initial begin
-	
-	
-	
+	MemCtrl = 0;
+	PCCtrl = 0;
+	MDCtrl = 0;
+	SECtrl = 0;
+	ShiftSrc = 0;
+	ShiftAmt = 0;
+	IRWrite = 0;
+	RegWrite = 0;
+	AluOutCtrl = 0;
+	EPCCtrl = 0;
+	HILOWrite = 0;
+	IorD = 2'b00;
+	AluSrcA = 2'b00;
+	AluSrcB = 2'b00;
+	RegDst = 2'b00;
+	LSCtrl = 2'b00;
+	SSCtrl = 2'b00;
+	ExcptCtrl = 2'b00;
+	ShiftCtrl = 3'b000;
+	PCSrc = 3'b000;
+	ALUCtrl = 3'b000;
+	DataSrc = 4'b0000;
 end
 
 //Defines
@@ -86,6 +107,8 @@ parameter JAL		=	{ 1'b1, 6'b000011	}
 reg[5..0] op;
 reg op404;
 reg start;
+reg counter = 0;
+reg mdrFlag = 0;
 
 always @ (posedge clk or negedge reset) begin
 	if(reset) begin
@@ -104,15 +127,15 @@ always @ (posedge clk or negedge reset) begin
 				case (op)
 					SLL, SLLV:
 					begin
-						ShiftControl = 3'b010;
+						ShiftCtrl = 3'b010;
 					end
 					SRA, SRAV:
 					begin
-						ShiftControl = 3'b100;
+						ShiftCtrl = 3'b100;
 					end
 					SRL:
 					begin
-						ShiftControl = 3'b011;
+						ShiftCtrl = 3'b011;
 					end
 				endcase
 				currentState = stateSSAVE;
@@ -162,8 +185,8 @@ always @ (posedge clk or negedge reset) begin
 			end
 			stateJR, stateBREAK:
 			begin
-				PCSource = 000;
-				PCControl = 1;
+				PCSrc = 000;
+				PCCtrl = 1;
 				currentState = stateWAIT;
 			end
 			stateSLT:
@@ -177,8 +200,8 @@ always @ (posedge clk or negedge reset) begin
 			begin
 				DataSrc = 0000;
 				RegWrite = 1;
-				RegDest = 11;
-				PCSource = 010;
+				RegDst = 11;
+				PCSrc = 010;
 				PCWrite = 1;
 				currentState = stateWAIT;
 			end
@@ -191,41 +214,41 @@ always @ (posedge clk or negedge reset) begin
 				case (op)
 					LB:
 					begin
-						LSControl = 00;
+						LSCtrl = 00;
 						RegDst = 00;
 						DataSrc = 0001;
 						RegWrite = 1;
 					end
 					LH:
 					begin
-						LSControl = 01;
+						LSCtrl = 01;
 						RegDst = 00;
 						DataSrc = 0001;
 						RegWrite = 1;
 					end
 					LW:	
 					begin
-						LSControl = 10;
+						LSCtrl = 10;
 						RegDst = 00;
 						DataSrc = 0001;
 						RegWrite = 1;
 					end
 					SB:
 					begin
-						SSControl = 00;
-						MemControl =  1;
+						SSCtrl = 00;
+						MemCtrl =  1;
 						IorD = 10;
 					end
 					SH:
 					begin
-						SSControl = 01;
-						MemControl =  1;
+						SSCtrl = 01;
+						MemCtrl =  1;
 						IorD = 10;
 					end
 					SW:
 					begin
-						SSControl = 10
-						MemControl =  1
+						SSCtrl = 10
+						MemCtrl =  1
 						IorD = 10
 					end
 				endcase
@@ -242,42 +265,125 @@ always @ (posedge clk or negedge reset) begin
 					begin
 						currentState = stateBEQM2;
 					end
+					DIV, MULT:
+					begin
+						start = 0;
+						if(counter < 40)
+							counter = counter + 1;
+						else 
+							currentState = stateHILO;
+					end
 				endcase
+			end
+			stateHILO:
+			begin
+				HILOWrite = 1;
+				currentState = stateWAIT;
 			end
 			stateMEM:
 			begin
 				IorD = 10;
-				MemControl = 0; 
+				MemCtrl = 0; 
 				currentState = stateMEMWAIT;
 			end
 			stateBEQM:
 			begin
 				ALUOutCtrl = 0
 				IorD = 01
-				MemControl = 0
+				MemCtrl = 0
 				currentState = stateMEMWAIT;
 			end
 			stateBEQM2:
 			begin
-				LSControl = 10;
+				LSCtrl = 10;
+				
 				ALUSrcA = 10;
 				ALUSrcB = 00;
-				ALUControl = 111;
+				ALUCtrl = 111;
 				if (eqf == 1b'1)
-					begin
 						currentState = stateBRANCH;
-					end
 				else
-					begin
 						currentState = stateWAIT;
-					end
 			end
 			stateBRANCH:
 			begin
-				PCSource = 01
+				PCSrc = 01
 				PCWrite = 1
 				currentState = stateWAIT;
 			end
+			stateEXCEP:
+			begin
+				ALUSrcA = 00;
+				ALUSrcB = 01;
+				ALUCtrl = 010;
+				case (op)
+					SUB:
+					begin
+						currentState = stateOF;
+					end
+					DIV:
+					begin
+						currentState = stateDIV0;
+					end
+					default:
+					begin
+						currentState = stateOPCODE;
+					end
+				endcase
+			end
+			stateOF:
+			begin
+				EPCCtrl = 1;
+				ExcpCtrl = 01;
+				MemCtrl = 0; 
+				IorD = 11;
+				currentState = stateEXCP;
+			end
+			stateDIV0:
+			begin
+				EPCCtrl = 1;
+				ExcpCtrl = 10;
+				MemCtrl = 0;
+				IorD = 11;
+				currentState = stateEXCP;
+			end
+			stateOPCODE:
+			begin
+				EPCCtrl = 1;
+				ExcpCtrl = 00;
+				MemCtrl = 0;
+				IorD = 11;
+				currentState = stateEXCP;
+			end
+			stateEXCP:
+			begin
+				if(!mdrFlag) begin
+					mdrFlag = 1;
+					currentState = stateEXCP;
+				end	
+				else begin
+					currentState = stateEXCP2;
+					mdrFlag = 0;
+				end
+			end
+			stateEXCP2:
+			begin
+				LSCtrl = 00;
+				ALUSrcA = 10;
+				ALUCtrl = 000;
+				currentState = stateEXCP3;
+			end
+			stateEXCP3:
+			begin
+				PCSrc = 000;
+				PCWrite = 1;
+				currentState = stateWAIT;
+			end
+			
+			
+			
+			
+			//todas as instruções
 			stateOP:
 			begin
 				case (op)
@@ -285,30 +391,32 @@ always @ (posedge clk or negedge reset) begin
 					begin
 						ALUSrcA = 01;
 						ALUSrcB = 00;
-						ALUControl = ulaADD;
-						currentState = result;
+						ALUCtrl = ulaADD;
+						currentState = ov ? stateEXCEP : stateRESULT;
 					end
 					AND:
 					begin
 						ALUSrcA = 01;
 						ALUSrcB = 00;
-						ALUControl = ulaAND;
-						currentState = result;
+						ALUCtrl = ulaAND;
+						currentState = stateRESULT;
 					end
 					DIV:
 					begin
-						MDControl = 1;
+						MDCtrl = 1;
 						start = 1;
+						currentState = stateMEMWAIT;
 					end
 					MULT:
 					begin
-						MDControl = 0;
+						MDCtrl = 0;
 						start = 1;
+						currentState = stateMEMWAIT;
 					end
 					JR:
 					begin
 						ALUSrcA = 01;
-						ALUControl = ulaSA;
+						ALUCtrl = ulaSA;
 						currentState = stateJR;
 					end
 					MFHI:
@@ -316,99 +424,97 @@ always @ (posedge clk or negedge reset) begin
 						DataSrc = 0010;
 						RegDst = 01;
 						RegWrite = 1;
+						currentState = stateWAIT;
 					end
 					MFLO:
 					begin
 						DataSrc = 0011;
 						RegDst = 01;
 						RegWrite = 1;
+						currentState = stateWAIT;
 					end
 					SLL, SRA, SRL:
 					begin
 						ShiftSrc = 0;
 						ShiftAmt = 0;
-						ShiftControl = 001;
+						ShiftCtrl = 001;
 						currentState = stateSHIFT;
 					end
 					SLLV, SRAV:
 					begin
 						ShiftSrc = 1
 						ShiftAmt = 1
-						ShiftControl = 001
+						ShiftCtrl = 001
 						currentState = stateSHIFT;
 					end
 					SLT:
 					begin
 						ALUSrcA = 01;
 						ALUSrcB = 00;
-						ALUControl = 111;
+						ALUCtrl = 111;
 						currentState = stateSLT;
 					end
 					SUB:
 					begin
 						ALUSrcA = 01;
 						ALUSrcB = 00;
-						ALUControl = ulaSUB;
-						currentState = result;
+						ALUCtrl = ulaSUB;
+						currentState = ov ? stateEXCEP : stateRESULT;
 					end
 					BREAK:
 					begin
 						ALUSrcA = 00;
 						ALUSrcB = 01;
-						ALUControl = 010;
+						ALUCtrl = 010;
 						currentState = stateBREAK;
 					end
 					RTE:
 					begin
-						PCSource = 100
-						PCControl = 1
+						PCSrc = 100
+						PCCtrl = 1
+						currentState = stateWAIT;
 					end
 					ADDI:
 					begin
 						ALUSrcA = 01
 						ALUSrcB = 10
-						SEControl =1 
-						ALUControl = 001
-						currentState = stateRESULT;
+						SECtrl =1 
+						ALUCtrl = 001
+						currentState = ov ? stateEXCEP : stateRESULT;
 					end
 					ADDIU:
 					begin
 						ALUSrcA = 01
 						ALUSrcB = 10
-						SEControl = 0
-						ALUControl = 001
+						SECtrl = 0
+						ALUCtrl = 001
 						currentState = stateRESULT;
 					end
 					BEQ, BNE, BLE, BGT:
 					begin
 						ALUSrcA = 01;
 						ALUSrcB = 00;
-						ALUControl = 111;
-						if ((op == BEQ && eqf == 1b'1) ||
-							 (op == BNE && eqf == 1b'0) ||
-							 (op == BGT && gtf == 1b'1) ||
-							 (op == BLE && (eqf == 1b'1 || gtf == 1b'0)))
-						begin
-							currentState = stateBRANCH;
-						end
+						ALUCtrl = 111;
+						if (
+								(op == BEQ && eqf == 1b'1) || (op == BNE && eqf == 1b'0) ||
+								(op == BGT && gtf == 1b'1) || (op == BLE && (eqf == 1b'1 || gtf == 1b'0))
+							) currentState = stateBRANCH;
 						else
-						begin
 							currentState = stateWAIT;
-						end
 					end
 					BEQM:
 					begin
-						ALUSrc =01;
+						ALUSrcA = 01;
 						ALUOutCtrl = 0;
-						ALUControl = 000;
+						ALUCtrl = 000;
 						currentState = stateBEQM;
 					end
 					LB, LH, LW, SB, SH, SW:
 					begin
 						ALUSrcA = 01;
 						ALUSrcB = 10;
-						SEControl = 0;
-						ALUControl = 001;
+						SECtrl = 0;
+						ALUCtrl = 001;
 						currentState = stateRESULT;
 					end
 					LUI:
@@ -416,24 +522,26 @@ always @ (posedge clk or negedge reset) begin
 						DataSrc = 0110;
 						RegDst = 00;
 						RegWrite = 1;
+						currentState = stateWAIT;
 					end
 					SLTI:
 					begin
-						SEControl = 1;
+						SECtrl = 1;
 						ALUSrcB = 10;
 						ALUSrcA=01;
-						ALUControl = 111;
+						ALUCtrl = 111;
 						currentState = stateSLT;
 					end
 					J:
 					begin
-						PCSource = 010;
+						PCSrc = 010;
 						PCWrite = 1;
+						currentState = stateWAIT;
 					end
 					JAL:
 					begin
 						AluSrcA = 00;
-						ALUControl = 000;
+						ALUCtrl = 000;
 						currentState = stateRESULT;
 					end
 				endcase
