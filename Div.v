@@ -12,7 +12,7 @@ module Div (
 	//variables
 	reg [31:0] a;
 	reg [31:0] b;
-	reg [31:0] q;
+	reg [31:0] q = 0;
 	reg [31:0] r = 0;
 	reg [31:0] p1 = 0;
 	
@@ -20,10 +20,15 @@ module Div (
 		a <= A;
 		b <= B;
 		p1 <= 0;
+		counter <= 0;
+		if(a[31] == 1)
+			a = 0 - a;
+		if(b[31] == 1)
+			b = 0 - b;
 	end
 	
-	always@(posedge clk or negedge reset) begin
-		if(reset) begin
+	always@(posedge clk or posedge reset) begin
+		if(reset == 1) begin
 			a <= A;
 			b <= B;
 			p1 <= 0;
@@ -36,12 +41,13 @@ module Div (
 				p1 <= {p1[30:0], a[31]};
 				a[31:1] <= a[30:0];
 				p1 <= p1 - b;
-				if(p1[7] == 1) begin
+				if(p1[31] == 1) begin
 					a[0] <= 0;
 					p1 <= p1 + b;
 				end
-				else
+				else begin
 					a[0] <= 1;
+				end	
 				counter <= counter + 1;
 			end
 			else begin

@@ -14,7 +14,7 @@
 
 
 // 
-// Device: Altera 5M570ZF256C4 Package FBGA256
+// Device: Altera 5M80ZT100C4 Package TQFP100
 // 
 
 // 
@@ -23,8 +23,8 @@
 
 (DELAYFILE
   (SDFVERSION "2.1")
-  (DESIGN "Div")
-  (DATE "05/14/2017 02:58:16")
+  (DESIGN "ShiftLeft16")
+  (DATE "05/14/2017 03:31:40")
   (VENDOR "Altera")
   (PROGRAM "Quartus II 64-Bit")
   (VERSION "Version 13.1.0 Build 162 10/23/2013 SJ Web Edition")
@@ -33,7 +33,7 @@
 
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[0\]\~I)
+    (INSTANCE out\[0\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -42,7 +42,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[1\]\~I)
+    (INSTANCE out\[1\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -51,7 +51,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[2\]\~I)
+    (INSTANCE out\[2\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -60,7 +60,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[3\]\~I)
+    (INSTANCE out\[3\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -69,7 +69,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[4\]\~I)
+    (INSTANCE out\[4\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -78,7 +78,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[5\]\~I)
+    (INSTANCE out\[5\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -87,7 +87,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[6\]\~I)
+    (INSTANCE out\[6\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -96,7 +96,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[7\]\~I)
+    (INSTANCE out\[7\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -105,7 +105,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[8\]\~I)
+    (INSTANCE out\[8\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -114,7 +114,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[9\]\~I)
+    (INSTANCE out\[9\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -123,7 +123,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[10\]\~I)
+    (INSTANCE out\[10\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -132,7 +132,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[11\]\~I)
+    (INSTANCE out\[11\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -141,7 +141,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[12\]\~I)
+    (INSTANCE out\[12\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -150,7 +150,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[13\]\~I)
+    (INSTANCE out\[13\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -159,7 +159,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[14\]\~I)
+    (INSTANCE out\[14\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -168,7 +168,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[15\]\~I)
+    (INSTANCE out\[15\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -177,7 +177,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[16\]\~I)
+    (INSTANCE out\[16\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -186,7 +186,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[17\]\~I)
+    (INSTANCE out\[17\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -195,7 +195,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[18\]\~I)
+    (INSTANCE out\[18\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -204,7 +204,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[19\]\~I)
+    (INSTANCE out\[19\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -213,7 +213,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[20\]\~I)
+    (INSTANCE out\[20\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -222,7 +222,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[21\]\~I)
+    (INSTANCE out\[21\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -231,7 +231,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[22\]\~I)
+    (INSTANCE out\[22\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -240,7 +240,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[23\]\~I)
+    (INSTANCE out\[23\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -249,7 +249,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[24\]\~I)
+    (INSTANCE out\[24\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -258,7 +258,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[25\]\~I)
+    (INSTANCE out\[25\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -267,7 +267,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[26\]\~I)
+    (INSTANCE out\[26\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -276,7 +276,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[27\]\~I)
+    (INSTANCE out\[27\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -285,7 +285,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[28\]\~I)
+    (INSTANCE out\[28\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -294,7 +294,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[29\]\~I)
+    (INSTANCE out\[29\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -303,7 +303,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[30\]\~I)
+    (INSTANCE out\[30\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
@@ -312,358 +312,7 @@
   )
   (CELL
     (CELLTYPE "maxv_io")
-    (INSTANCE LO\[31\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[0\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[1\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[2\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[3\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[4\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[5\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[6\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[7\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[8\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[9\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[10\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[11\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[12\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[13\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[14\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[15\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[16\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[17\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[18\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[19\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[20\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[21\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[22\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[23\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[24\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[25\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[26\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[27\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[28\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[29\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[30\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE HI\[31\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE div0\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE counter\[0\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE counter\[1\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE counter\[2\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE counter\[3\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE counter\[4\]\~I)
-    (DELAY
-      (ABSOLUTE
-        (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))
-      )
-    )
-  )
-  (CELL
-    (CELLTYPE "maxv_io")
-    (INSTANCE counter\[5\]\~I)
+    (INSTANCE out\[31\]\~I)
     (DELAY
       (ABSOLUTE
         (IOPATH datain padio (1762:1762:1762) (1762:1762:1762))

@@ -1,5 +1,5 @@
 EDA Netlist Writer report for uc
-Sun May 14 03:04:54 2017
+Sun May 14 04:17:24 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -36,7 +36,7 @@ applicable agreement for further details.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Sun May 14 03:04:54 2017 ;
+; EDA Netlist Writer Status ; Successful - Sun May 14 04:17:24 2017 ;
 ; Revision Name             ; uc                                    ;
 ; Top-level Entity Name     ; Div                                   ;
 ; Family                    ; MAX V                                 ;
@@ -93,12 +93,12 @@ Info: Running Quartus II 64-Bit EDA Netlist Writer
     Info: programming logic devices manufactured by Altera and sold by 
     Info: Altera or its authorized distributors.  Please refer to the 
     Info: applicable agreement for further details.
-    Info: Processing started: Sun May 14 03:04:53 2017
+    Info: Processing started: Sun May 14 04:17:23 2017
 Info: Command: quartus_eda --functional=on --flatten_buses=off --simulation=on --tool=modelsim_oem --format=verilog --output_directory=/home/pet/Documents/Hardware/simulation/qsim/ uc -c uc
 Info (204019): Generated file uc.vo in folder "/home/pet/Documents/Hardware/simulation/qsim//" for EDA simulation tool
 Info: Quartus II 64-Bit EDA Netlist Writer was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 858 megabytes
-    Info: Processing ended: Sun May 14 03:04:54 2017
+    Info: Processing ended: Sun May 14 04:17:24 2017
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for uc
-Sun May 14 03:04:07 2017
+Sun May 14 04:15:56 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -160,7 +160,7 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun May 14 03:04:06 2017
+    Info: Processing started: Sun May 14 04:15:54 2017
 Info: Command: quartus_sta uc -c uc
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -182,9 +182,9 @@ Info (332001): The selected device family is not supported by the report_metasta
 Info (332101): Design is fully constrained for setup requirements
 Info (332101): Design is fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 580 megabytes
-    Info: Processing ended: Sun May 14 03:04:07 2017
-    Info: Elapsed time: 00:00:01
+    Info: Peak virtual memory: 584 megabytes
+    Info: Processing ended: Sun May 14 04:15:56 2017
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
 
