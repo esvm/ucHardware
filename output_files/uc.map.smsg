@@ -1,2 +1,2 @@
-Info (10281): Verilog HDL Declaration information at Div.v(4): object "A" differs only in case from object "a" in the same scope
-Info (10281): Verilog HDL Declaration information at Div.v(5): object "B" differs only in case from object "b" in the same scope
+Info (10281): Verilog HDL Declaration information at Div.v(116): object "A" differs only in case from object "a" in the same scope
+Info (10281): Verilog HDL Declaration information at Div.v(117): object "B" differs only in case from object "b" in the same scope

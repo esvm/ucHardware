@@ -1,5 +1,5 @@
 Flow report for uc
-Sun May 14 04:17:24 2017
+Sun May 14 05:08:53 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -40,7 +40,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Flow Summary                                                           ;
 +---------------------------+--------------------------------------------+
-; Flow Status               ; Successful - Sun May 14 04:17:24 2017      ;
+; Flow Status               ; Successful - Sun May 14 05:08:53 2017      ;
 ; Quartus II 64-Bit Version ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name             ; uc                                         ;
 ; Top-level Entity Name     ; Div                                        ;
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/14/2017 04:15:29 ;
+; Start date & time ; 05/14/2017 05:07:21 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; uc                  ;
 +-------------------+---------------------+
@@ -70,7 +70,7 @@ applicable agreement for further details.
 +---------------------------------+-----------------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                 ; Value                                         ; Default Value ; Entity Name ; Section Id     ;
 +---------------------------------+-----------------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID           ; 189211247684705.149474612911497               ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID           ; 189211247684705.149474924112192               ; --            ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST ; On                                            ; --            ; --          ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR   ; /home/pet/Documents/Hardware/simulation/qsim/ ; --            ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT          ; Verilog Hdl                                   ; --            ; --          ; eda_simulation ;
@@ -87,9 +87,9 @@ applicable agreement for further details.
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 661 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:03     ; 1.0                     ; 789 MB              ; 00:00:03                           ;
+; Fitter                    ; 00:00:04     ; 1.0                     ; 789 MB              ; 00:00:03                           ;
 ; Assembler                 ; 00:00:01     ; 1.0                     ; 592 MB              ; 00:00:01                           ;
-; TimeQuest Timing Analyzer ; 00:00:02     ; 1.0                     ; 584 MB              ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 580 MB              ; 00:00:01                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 827 MB              ; 00:00:01                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 858 MB              ; 00:00:01                           ;
 ; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 858 MB              ; 00:00:01                           ;

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for uc
-Sun May 14 04:15:30 2017
+Sun May 14 05:07:23 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -41,7 +41,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun May 14 04:15:30 2017      ;
+; Analysis & Synthesis Status ; Successful - Sun May 14 05:07:23 2017      ;
 ; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name               ; uc                                         ;
 ; Top-level Entity Name       ; Div                                        ;
@@ -212,7 +212,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun May 14 04:15:28 2017
+    Info: Processing started: Sun May 14 05:07:21 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uc -c uc
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file ShiftLeft16.v
@@ -371,7 +371,7 @@ Info (21057): Implemented 137 device resources after synthesis - the final resou
 Info (144001): Generated suppressed messages file /home/pet/Documents/Hardware/output_files/uc.map.smsg
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 139 warnings
     Info: Peak virtual memory: 661 megabytes
-    Info: Processing ended: Sun May 14 04:15:30 2017
+    Info: Processing ended: Sun May 14 05:07:23 2017
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:01
 
