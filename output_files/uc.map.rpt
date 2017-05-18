@@ -1,5 +1,5 @@
 Analysis & Synthesis report for uc
-Sun May 14 05:07:23 2017
+Thu May 18 11:06:25 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -13,9 +13,12 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Analysis & Synthesis Messages
- 10. Analysis & Synthesis Suppressed Messages
+  8. State Machine - |multiplication|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |multiplication
+ 13. Analysis & Synthesis Messages
 
 
 
@@ -41,13 +44,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Sun May 14 05:07:23 2017      ;
+; Analysis & Synthesis Status ; Successful - Thu May 18 11:06:25 2017      ;
 ; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name               ; uc                                         ;
-; Top-level Entity Name       ; Div                                        ;
+; Top-level Entity Name       ; multiplication                             ;
 ; Family                      ; MAX V                                      ;
-; Total logic elements        ; 0                                          ;
-; Total pins                  ; 137                                        ;
+; Total logic elements        ; 667                                        ;
+; Total pins                  ; 131                                        ;
 ; Total virtual pins          ; 0                                          ;
 ; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
 +-----------------------------+--------------------------------------------+
@@ -58,7 +61,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; Div                ; uc                 ;
+; Top-level entity name                                                      ; multiplication     ; uc                 ;
 ; Family name                                                                ; MAX V              ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -125,30 +128,24 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-+------------------------------------------+
-; Parallel Compilation                     ;
-+----------------------------+-------------+
-; Processors                 ; Number      ;
-+----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
-;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
-;                            ;             ;
-; Usage by Processor         ; % Time Used ;
-;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;   0.0%      ;
-+----------------------------+-------------+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 4      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                     ;
-+----------------------------------+-----------------+------------------------+------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path       ; Library ;
-+----------------------------------+-----------------+------------------------+------------------------------------+---------+
-; Div.v                            ; yes             ; User Verilog HDL File  ; /home/pet/Documents/Hardware/Div.v ;         ;
-+----------------------------------+-----------------+------------------------+------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                       ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                         ; Library ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
+; multiplication.v                 ; yes             ; User Verilog HDL File  ; /home/CIN/esvm/Documents/ucHardware/multiplication.v ;         ;
++----------------------------------+-----------------+------------------------+------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------+
@@ -156,28 +153,33 @@ applicable agreement for further details.
 +---------------------------------------------+-------+
 ; Resource                                    ; Usage ;
 +---------------------------------------------+-------+
-; Total logic elements                        ; 0     ;
-;     -- Combinational with no register       ; 0     ;
-;     -- Register only                        ; 0     ;
-;     -- Combinational with a register        ; 0     ;
+; Total logic elements                        ; 667   ;
+;     -- Combinational with no register       ; 431   ;
+;     -- Register only                        ; 65    ;
+;     -- Combinational with a register        ; 171   ;
 ;                                             ;       ;
 ; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 0     ;
-;     -- 3 input functions                    ; 0     ;
-;     -- 2 input functions                    ; 0     ;
-;     -- 1 input functions                    ; 0     ;
+;     -- 4 input functions                    ; 237   ;
+;     -- 3 input functions                    ; 191   ;
+;     -- 2 input functions                    ; 170   ;
+;     -- 1 input functions                    ; 4     ;
 ;     -- 0 input functions                    ; 0     ;
 ;                                             ;       ;
 ; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 0     ;
-;     -- arithmetic mode                      ; 0     ;
+;     -- normal mode                          ; 473   ;
+;     -- arithmetic mode                      ; 194   ;
 ;     -- qfbk mode                            ; 0     ;
 ;     -- register cascade mode                ; 0     ;
 ;     -- synchronous clear/load mode          ; 0     ;
-;     -- asynchronous clear/load mode         ; 0     ;
+;     -- asynchronous clear/load mode         ; 228   ;
 ;                                             ;       ;
-; Total registers                             ; 0     ;
-; I/O pins                                    ; 137   ;
+; Total registers                             ; 236   ;
+; Total logic cells in carry chains           ; 199   ;
+; I/O pins                                    ; 131   ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 236   ;
+; Total fan-out                               ; 2590  ;
+; Average fan-out                             ; 3.25  ;
 +---------------------------------------------+-------+
 
 
@@ -186,9 +188,33 @@ applicable agreement for further details.
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 ; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Library Name ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
-; |Div                       ; 0 (0)       ; 0            ; 0          ; 137  ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Div                ; work         ;
+; |multiplication            ; 667 (667)   ; 236          ; 0          ; 131  ; 0            ; 431 (431)    ; 65 (65)           ; 171 (171)        ; 199 (199)       ; 0 (0)      ; |multiplication     ; work         ;
 +----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------+
+; State Machine - |multiplication|state                                ;
++---------------+------------+------------+------------+---------------+
+; Name          ; state.DONE ; state.MULT ; state.LOAD ; state.INITIAL ;
++---------------+------------+------------+------------+---------------+
+; state.INITIAL ; 0          ; 0          ; 0          ; 0             ;
+; state.LOAD    ; 0          ; 0          ; 1          ; 1             ;
+; state.MULT    ; 0          ; 1          ; 0          ; 1             ;
+; state.DONE    ; 1          ; 0          ; 0          ; 1             ;
++---------------+------------+------------+------------+---------------+
+
+
++------------------------------------------------------------+
+; Registers Removed During Synthesis                         ;
++---------------------------------------+--------------------+
+; Register name                         ; Reason for Removal ;
++---------------------------------------+--------------------+
+; state~8                               ; Lost fanout        ;
+; state~9                               ; Lost fanout        ;
+; Total Number of Removed Registers = 2 ;                    ;
++---------------------------------------+--------------------+
 
 
 +------------------------------------------------------+
@@ -196,14 +222,40 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 0     ;
+; Total registers                              ; 236   ;
 ; Number of registers using Synchronous Clear  ; 0     ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 228   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 132   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 7:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; Yes        ; |multiplication|MCAND[2]   ;
+; 7:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |multiplication|MPLIER[28] ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |multiplication|MCAND      ;
+; 3:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |multiplication|PROD       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |multiplication|Selector0  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |multiplication ;
++----------------+-------+-------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                  ;
++----------------+-------+-------------------------------------------------------+
+; INITIAL        ; 00    ; Unsigned Binary                                       ;
+; LOAD           ; 01    ; Unsigned Binary                                       ;
+; MULT           ; 10    ; Unsigned Binary                                       ;
+; DONE           ; 11    ; Unsigned Binary                                       ;
++----------------+-------+-------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
@@ -212,9 +264,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Sun May 14 05:07:21 2017
+    Info: Processing started: Thu May 18 11:06:21 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uc -c uc
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file multiplication.v
+    Info (12023): Found entity 1: multiplication
+Info (12021): Found 1 design units, including 1 entities, in source file mux4to1.v
+    Info (12023): Found entity 1: mux4to1
 Info (12021): Found 1 design units, including 1 entities, in source file ShiftLeft16.v
     Info (12023): Found entity 1: ShiftLeft16
 Info (12021): Found 1 design units, including 1 entities, in source file ShiftLeft2.v
@@ -225,160 +281,17 @@ Info (12021): Found 1 design units, including 1 entities, in source file uContro
     Info (12023): Found entity 1: uControl
 Info (12021): Found 1 design units, including 1 entities, in source file Div.v
     Info (12023): Found entity 1: Div
-Info (12127): Elaborating entity "Div" for the top level hierarchy
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "LO[0]" is stuck at GND
-    Warning (13410): Pin "LO[1]" is stuck at GND
-    Warning (13410): Pin "LO[2]" is stuck at GND
-    Warning (13410): Pin "LO[3]" is stuck at GND
-    Warning (13410): Pin "LO[4]" is stuck at GND
-    Warning (13410): Pin "LO[5]" is stuck at GND
-    Warning (13410): Pin "LO[6]" is stuck at GND
-    Warning (13410): Pin "LO[7]" is stuck at GND
-    Warning (13410): Pin "LO[8]" is stuck at GND
-    Warning (13410): Pin "LO[9]" is stuck at GND
-    Warning (13410): Pin "LO[10]" is stuck at GND
-    Warning (13410): Pin "LO[11]" is stuck at GND
-    Warning (13410): Pin "LO[12]" is stuck at GND
-    Warning (13410): Pin "LO[13]" is stuck at GND
-    Warning (13410): Pin "LO[14]" is stuck at GND
-    Warning (13410): Pin "LO[15]" is stuck at GND
-    Warning (13410): Pin "LO[16]" is stuck at GND
-    Warning (13410): Pin "LO[17]" is stuck at GND
-    Warning (13410): Pin "LO[18]" is stuck at GND
-    Warning (13410): Pin "LO[19]" is stuck at GND
-    Warning (13410): Pin "LO[20]" is stuck at GND
-    Warning (13410): Pin "LO[21]" is stuck at GND
-    Warning (13410): Pin "LO[22]" is stuck at GND
-    Warning (13410): Pin "LO[23]" is stuck at GND
-    Warning (13410): Pin "LO[24]" is stuck at GND
-    Warning (13410): Pin "LO[25]" is stuck at GND
-    Warning (13410): Pin "LO[26]" is stuck at GND
-    Warning (13410): Pin "LO[27]" is stuck at GND
-    Warning (13410): Pin "LO[28]" is stuck at GND
-    Warning (13410): Pin "LO[29]" is stuck at GND
-    Warning (13410): Pin "LO[30]" is stuck at GND
-    Warning (13410): Pin "LO[31]" is stuck at GND
-    Warning (13410): Pin "HI[0]" is stuck at GND
-    Warning (13410): Pin "HI[1]" is stuck at GND
-    Warning (13410): Pin "HI[2]" is stuck at GND
-    Warning (13410): Pin "HI[3]" is stuck at GND
-    Warning (13410): Pin "HI[4]" is stuck at GND
-    Warning (13410): Pin "HI[5]" is stuck at GND
-    Warning (13410): Pin "HI[6]" is stuck at GND
-    Warning (13410): Pin "HI[7]" is stuck at GND
-    Warning (13410): Pin "HI[8]" is stuck at GND
-    Warning (13410): Pin "HI[9]" is stuck at GND
-    Warning (13410): Pin "HI[10]" is stuck at GND
-    Warning (13410): Pin "HI[11]" is stuck at GND
-    Warning (13410): Pin "HI[12]" is stuck at GND
-    Warning (13410): Pin "HI[13]" is stuck at GND
-    Warning (13410): Pin "HI[14]" is stuck at GND
-    Warning (13410): Pin "HI[15]" is stuck at GND
-    Warning (13410): Pin "HI[16]" is stuck at GND
-    Warning (13410): Pin "HI[17]" is stuck at GND
-    Warning (13410): Pin "HI[18]" is stuck at GND
-    Warning (13410): Pin "HI[19]" is stuck at GND
-    Warning (13410): Pin "HI[20]" is stuck at GND
-    Warning (13410): Pin "HI[21]" is stuck at GND
-    Warning (13410): Pin "HI[22]" is stuck at GND
-    Warning (13410): Pin "HI[23]" is stuck at GND
-    Warning (13410): Pin "HI[24]" is stuck at GND
-    Warning (13410): Pin "HI[25]" is stuck at GND
-    Warning (13410): Pin "HI[26]" is stuck at GND
-    Warning (13410): Pin "HI[27]" is stuck at GND
-    Warning (13410): Pin "HI[28]" is stuck at GND
-    Warning (13410): Pin "HI[29]" is stuck at GND
-    Warning (13410): Pin "HI[30]" is stuck at GND
-    Warning (13410): Pin "HI[31]" is stuck at GND
-    Warning (13410): Pin "div0" is stuck at GND
-    Warning (13410): Pin "counter[0]" is stuck at GND
-    Warning (13410): Pin "counter[1]" is stuck at GND
-    Warning (13410): Pin "counter[2]" is stuck at GND
-    Warning (13410): Pin "counter[3]" is stuck at GND
-    Warning (13410): Pin "counter[4]" is stuck at GND
-    Warning (13410): Pin "counter[5]" is stuck at GND
-Warning (21074): Design contains 66 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "clk"
-    Warning (15610): No output dependent on input pin "reset"
-    Warning (15610): No output dependent on input pin "A[0]"
-    Warning (15610): No output dependent on input pin "A[1]"
-    Warning (15610): No output dependent on input pin "A[2]"
-    Warning (15610): No output dependent on input pin "A[3]"
-    Warning (15610): No output dependent on input pin "A[4]"
-    Warning (15610): No output dependent on input pin "A[5]"
-    Warning (15610): No output dependent on input pin "A[6]"
-    Warning (15610): No output dependent on input pin "A[7]"
-    Warning (15610): No output dependent on input pin "A[8]"
-    Warning (15610): No output dependent on input pin "A[9]"
-    Warning (15610): No output dependent on input pin "A[10]"
-    Warning (15610): No output dependent on input pin "A[11]"
-    Warning (15610): No output dependent on input pin "A[12]"
-    Warning (15610): No output dependent on input pin "A[13]"
-    Warning (15610): No output dependent on input pin "A[14]"
-    Warning (15610): No output dependent on input pin "A[15]"
-    Warning (15610): No output dependent on input pin "A[16]"
-    Warning (15610): No output dependent on input pin "A[17]"
-    Warning (15610): No output dependent on input pin "A[18]"
-    Warning (15610): No output dependent on input pin "A[19]"
-    Warning (15610): No output dependent on input pin "A[20]"
-    Warning (15610): No output dependent on input pin "A[21]"
-    Warning (15610): No output dependent on input pin "A[22]"
-    Warning (15610): No output dependent on input pin "A[23]"
-    Warning (15610): No output dependent on input pin "A[24]"
-    Warning (15610): No output dependent on input pin "A[25]"
-    Warning (15610): No output dependent on input pin "A[26]"
-    Warning (15610): No output dependent on input pin "A[27]"
-    Warning (15610): No output dependent on input pin "A[28]"
-    Warning (15610): No output dependent on input pin "A[29]"
-    Warning (15610): No output dependent on input pin "A[30]"
-    Warning (15610): No output dependent on input pin "A[31]"
-    Warning (15610): No output dependent on input pin "B[0]"
-    Warning (15610): No output dependent on input pin "B[1]"
-    Warning (15610): No output dependent on input pin "B[2]"
-    Warning (15610): No output dependent on input pin "B[3]"
-    Warning (15610): No output dependent on input pin "B[4]"
-    Warning (15610): No output dependent on input pin "B[5]"
-    Warning (15610): No output dependent on input pin "B[6]"
-    Warning (15610): No output dependent on input pin "B[7]"
-    Warning (15610): No output dependent on input pin "B[8]"
-    Warning (15610): No output dependent on input pin "B[9]"
-    Warning (15610): No output dependent on input pin "B[10]"
-    Warning (15610): No output dependent on input pin "B[11]"
-    Warning (15610): No output dependent on input pin "B[12]"
-    Warning (15610): No output dependent on input pin "B[13]"
-    Warning (15610): No output dependent on input pin "B[14]"
-    Warning (15610): No output dependent on input pin "B[15]"
-    Warning (15610): No output dependent on input pin "B[16]"
-    Warning (15610): No output dependent on input pin "B[17]"
-    Warning (15610): No output dependent on input pin "B[18]"
-    Warning (15610): No output dependent on input pin "B[19]"
-    Warning (15610): No output dependent on input pin "B[20]"
-    Warning (15610): No output dependent on input pin "B[21]"
-    Warning (15610): No output dependent on input pin "B[22]"
-    Warning (15610): No output dependent on input pin "B[23]"
-    Warning (15610): No output dependent on input pin "B[24]"
-    Warning (15610): No output dependent on input pin "B[25]"
-    Warning (15610): No output dependent on input pin "B[26]"
-    Warning (15610): No output dependent on input pin "B[27]"
-    Warning (15610): No output dependent on input pin "B[28]"
-    Warning (15610): No output dependent on input pin "B[29]"
-    Warning (15610): No output dependent on input pin "B[30]"
-    Warning (15610): No output dependent on input pin "B[31]"
-Info (21057): Implemented 137 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 66 input pins
-    Info (21059): Implemented 71 output pins
-Info (144001): Generated suppressed messages file /home/pet/Documents/Hardware/output_files/uc.map.smsg
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 139 warnings
-    Info: Peak virtual memory: 661 megabytes
-    Info: Processing ended: Sun May 14 05:07:23 2017
-    Info: Elapsed time: 00:00:02
-    Info: Total CPU time (on all processors): 00:00:01
-
-
-+------------------------------------------+
-; Analysis & Synthesis Suppressed Messages ;
-+------------------------------------------+
-The suppressed messages can be found in /home/pet/Documents/Hardware/output_files/uc.map.smsg.
+Info (12127): Elaborating entity "multiplication" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at multiplication.v(96): truncated value with size 32 to match size of target (7)
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (21057): Implemented 798 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 67 input pins
+    Info (21059): Implemented 64 output pins
+    Info (21061): Implemented 667 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 644 megabytes
+    Info: Processing ended: Thu May 18 11:06:25 2017
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

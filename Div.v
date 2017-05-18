@@ -21,15 +21,10 @@ module Div (
 		b <= B;
 		p1 <= 0;
 		counter <= 0;
-		/*if(a[31] == 1)
-			a = 0 - a;
-		if(b[31] == 1)
-			b = 0 - b;*/
 	end
 	
 	always@(posedge clk or posedge reset) begin
-		counter <= 10;
-		/*if(reset == 1) begin
+		if(reset == 1) begin
 			a <= A;
 			b <= B;
 			p1 <= 0;
@@ -38,7 +33,6 @@ module Div (
 		else if(b == 0)
 			div0 <= 1;
 		else begin
-
 			if(counter < 32) begin
 				p1 <= {p1[30:0], a[31]};
 				a[31:1] <= a[30:0];
@@ -57,6 +51,6 @@ module Div (
 				HI <= p1;
 				counter <= 0;
 			end
-		end*/
+		end
 	end
 endmodule 
