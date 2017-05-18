@@ -22,7 +22,6 @@ reg [7:0] contador;
 reg negativeA;
 reg negativeB;
 
-	
 initial begin
 	state <= INITIAL;
 end
