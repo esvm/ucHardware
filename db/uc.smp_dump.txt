@@ -1,5 +1,5 @@
 
-State Machine - |div|state
+State Machine - |Div|state
 Name state.DONE state.DIV state.LOAD state.INITIAL 
 state.INITIAL 0 0 0 0 
 state.LOAD 0 0 1 1 

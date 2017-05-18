@@ -7,18 +7,19 @@ module multiplication (
 	output reg [31:0] HI,
 	output reg [31:0] LO
 	);
+	
+reg [1:0] state;
+reg [63:0] PROD;
+reg [31:0] MPLIER;
+reg [63:0] MCAND;
+reg [6:0] contador;
+reg negative;
 
 parameter INITIAL = 2'b00;
 parameter LOAD = 2'b01;
 parameter MULT = 2'b10;
 parameter DONE = 2'b11;
 
-reg [1:0] state = INITIAL;
-reg [63:0] PROD;
-reg [31:0] MPLIER;
-reg [63:0] MCAND;
-reg [6:0] contador;
-reg negative;
 
 initial begin
 	state <= INITIAL;

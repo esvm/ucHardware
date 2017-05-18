@@ -18,15 +18,15 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "05/18/2017 14:05:22"
+// Generated on "05/18/2017 14:18:22"
                                                                         
-// Verilog Self-Checking Test Bench (with test vectors) for design :    div
+// Verilog Self-Checking Test Bench (with test vectors) for design :    Div
 // 
 // Simulation tool : 3rd Party
 // 
 
 `timescale 1 ps/ 1 ps
-module div_vlg_sample_tst(
+module Div_vlg_sample_tst(
 	A,
 	B,
 	clk,
@@ -62,7 +62,7 @@ end
 assign sampler_tx = sample;
 endmodule
 
-module div_vlg_check_tst (
+module Div_vlg_check_tst (
 	HI,
 	LO,
 	div0,
@@ -1325,7 +1325,7 @@ $finish;
 end 
 endmodule
 
-module div_vlg_vec_tst();
+module Div_vlg_vec_tst();
 // constants                                           
 // general purpose registers
 reg [31:0] A;
@@ -1341,7 +1341,7 @@ wire div0;
 wire sampler;                             
 
 // assign statements (if any)                          
-div i1 (
+Div i1 (
 // port map - connection between master ports and signals/registers   
 	.A(A),
 	.B(B),
@@ -1693,7 +1693,7 @@ begin
 	start = 1'b1;
 end 
 
-div_vlg_sample_tst tb_sample (
+Div_vlg_sample_tst tb_sample (
 	.A(A),
 	.B(B),
 	.clk(clk),
@@ -1702,7 +1702,7 @@ div_vlg_sample_tst tb_sample (
 	.sampler_tx(sampler)
 );
 
-div_vlg_check_tst tb_out(
+Div_vlg_check_tst tb_out(
 	.HI(HI),
 	.LO(LO),
 	.div0(div0),

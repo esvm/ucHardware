@@ -1,11 +1,11 @@
-Fitter Status : Successful - Thu May 18 14:03:13 2017
+Fitter Status : Successful - Thu May 18 14:19:20 2017
 Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
 Revision Name : uc
-Top-level Entity Name : div
+Top-level Entity Name : StoreSize
 Family : MAX V
-Device : 5M1270ZF256C4
+Device : 5M570ZF256C4
 Timing Models : Final
-Total logic elements : 729 / 1,270 ( 57 % )
-Total pins : 132 / 211 ( 63 % )
+Total logic elements : 57 / 570 ( 10 % )
+Total pins : 98 / 159 ( 62 % )
 Total virtual pins : 0
 UFM blocks : 0 / 1 ( 0 % )

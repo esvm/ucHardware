@@ -7,8 +7,8 @@ entity Div is
         clk             : in     vl_logic;
         reset           : in     vl_logic;
         start           : in     vl_logic;
-        LO              : out    vl_logic_vector(31 downto 0);
         HI              : out    vl_logic_vector(31 downto 0);
-        p1              : out    vl_logic_vector(32 downto 0)
+        LO              : out    vl_logic_vector(31 downto 0);
+        div0            : out    vl_logic
     );
 end Div;
