@@ -1,7 +1,6 @@
 
-State Machine - |multiplication|state
-Name state.DONE state.MULT state.LOAD state.INITIAL 
-state.INITIAL 0 0 0 0 
-state.LOAD 0 0 1 1 
-state.MULT 0 1 0 1 
-state.DONE 1 0 0 1 
+State Machine - |Div|state
+Name state.INITIAL state.DONE state.START 
+state.INITIAL 0 0 0 
+state.START 1 0 1 
+state.DONE 1 1 0 

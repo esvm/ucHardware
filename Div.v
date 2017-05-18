@@ -1,56 +1,46 @@
-module Div (
-	input clk,
-	input reset,
+module Div(
 	input [31:0] A,
-	input [31:0] B,
-	output reg [31:0] LO, //quotient
-   output reg [31:0] HI, //modulus
-	output reg div0,
-	output reg [5:0] counter
+    input [31:0] B,
+	 input clk,
+	 input reset,
+	 input start,
+    output reg[31:0] LO,
+	 output reg[31:0] HI
 );
 
-	//variables
-	reg [31:0] a;
-	reg [31:0] b;
-	reg [31:0] q = 0;
-	reg [31:0] r = 0;
-	reg [31:0] p1 = 0;
-	
-	initial begin
-		a <= A;
-		b <= B;
-		p1 <= 0;
-		counter <= 0;
-	end
-	
-	always@(posedge clk or posedge reset) begin
-		if(reset == 1) begin
-			a <= A;
-			b <= B;
-			p1 <= 0;
-			counter <= 0;
-		end
-		else if(b == 0)
-			div0 <= 1;
-		else begin
-			if(counter < 32) begin
-				p1 <= {p1[30:0], a[31]};
-				a[31:1] <= a[30:0];
-				p1 <= p1 - b;
-				if(p1[31] == 1) begin
-					a[0] <= 0;
-					p1 <= p1 + b;
+    //the size of input and output ports of the division module is generic.
+    parameter WIDTH = 32;
+    //input and output ports.
+    //internal variables    
+    reg [31:0] a1,b1;
+    reg [32:0] p1;   
+    integer i = 0;
+
+    always @ (posedge clk or posedge reset)
+    begin
+        //initialize the variables.
+		  if(reset == 1) begin
+			  a1 = A;
+			  b1 = B;
+			  p1= 0;
+		  end
+        else if(i < 32)    begin //start the for loop
+            p1 = {p1[30:0],a1[31]};
+            a1[31:1] = a1[30:0];
+            p1 = p1-b1;
+            if(p1[31] == 1'b1)    begin
+                a1[0] = 0;
+                p1 = p1 + b1;   
 				end
-				else
-					a[0] <= 1;
-					
-				counter <= counter + 1;
-			end
-			else begin
-				LO <= a;
-				HI <= p1;
-				counter <= 0;
-			end
-		end
-	end
-endmodule 
+            else
+                a1[0] = 1;
+					 
+				i = i + 1;
+        end
+		  else begin
+				LO = a1;  
+				HI = p1[31:0];
+		  end
+    end 
+
+endmodule

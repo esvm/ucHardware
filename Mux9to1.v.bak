@@ -12,7 +12,7 @@ module Mux9to1 (
 	output reg [31:0] out
 	);
 	
-always @(*) begin
+always @* begin
 	case (control)
 		4'b0000: out <= in1;
 		4'b0001: out <= in2;

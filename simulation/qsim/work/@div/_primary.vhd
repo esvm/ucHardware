@@ -6,6 +6,7 @@ entity Div is
         reset           : in     vl_logic;
         A               : in     vl_logic_vector(31 downto 0);
         B               : in     vl_logic_vector(31 downto 0);
+        start           : in     vl_logic;
         LO              : out    vl_logic_vector(31 downto 0);
         HI              : out    vl_logic_vector(31 downto 0);
         div0            : out    vl_logic;
