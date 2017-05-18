@@ -48,6 +48,7 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda
 set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR /home/CIN/esvm/Documents/ucHardware/simulation/qsim/ -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name VERILOG_FILE DIVMULT.v
 set_global_assignment -name VERILOG_FILE SignExtend16to32.v
 set_global_assignment -name VERILOG_FILE Div.v
 set_global_assignment -name VERILOG_FILE StoreSize.v
@@ -55,7 +56,6 @@ set_global_assignment -name VERILOG_FILE Mux9to1.v
 set_global_assignment -name VERILOG_FILE Mux5to1.v
 set_global_assignment -name VERILOG_FILE Mux3to1.v
 set_global_assignment -name VERILOG_FILE Mux2to1.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE multiplication.vwf
 set_global_assignment -name VERILOG_FILE multiplication.v
 set_global_assignment -name VERILOG_FILE mux4to1.v
 set_global_assignment -name VERILOG_FILE ShiftLeft16.v
@@ -64,3 +64,4 @@ set_global_assignment -name VERILOG_FILE SignExtend1to32.v
 set_global_assignment -name VERILOG_FILE uControl.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE div.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE StoreSize.vwf
+set_global_assignment -name VERILOG_FILE mult.v
