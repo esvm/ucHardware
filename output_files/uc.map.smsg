@@ -1,3 +1,1 @@
-Info (10281): Verilog HDL Declaration information at Div.v(4): object "A" differs only in case from object "a" in the same scope
-Info (10281): Verilog HDL Declaration information at Div.v(5): object "B" differs only in case from object "b" in the same scope
-Info (10281): Verilog HDL Declaration information at Div.v(6): object "start" differs only in case from object "START" in the same scope
+Warning (10268): Verilog HDL information at div.v(33): always construct contains both blocking and non-blocking assignments
