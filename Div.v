@@ -14,32 +14,37 @@ module Div(
     //internal variables    
     reg [31:0] a1,b1;
     reg [32:0] p1;   
-    integer i = 0;
+    reg [6:0] i;
+	 
+	 initial begin
+		i= 7'b0;
+	 
+	 end
 
     always @ (posedge clk or posedge reset)
     begin
         //initialize the variables.
-		  if(reset == 1) begin
-			  a1 = A;
-			  b1 = B;
-			  p1= 0;
+		  if(i == 7'b0000000) begin
+			  a1 <= A;
+			  b1 <= B;
+			  p1 <= 0;
 		  end
         else if(i < 32)    begin //start the for loop
-            p1 = {p1[30:0],a1[31]};
-            a1[31:1] = a1[30:0];
-            p1 = p1-b1;
+            p1 <= {p1[30:0],a1[31]};
+            a1[31:1] <= a1[30:0];
+            p1 <= p1-b1;
             if(p1[31] == 1'b1)    begin
-                a1[0] = 0;
-                p1 = p1 + b1;   
+                a1[0] <= 0;
+                p1 <= p1 + b1;   
 				end
             else
-                a1[0] = 1;
+                a1[0] <= 1;
 					 
-				i = i + 1;
+				i <= i + 1;
         end
 		  else begin
-				LO = a1;  
-				HI = p1[31:0];
+				LO <= a1;  
+				HI <= p1[31:0];
 		  end
     end 
 
