@@ -2928,7 +2928,8 @@ TRANSITION_LIST("LO[11]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 0 FOR 73.0;
+			LEVEL 1 FOR 927.0;
 		}
 	}
 }
@@ -2967,7 +2968,8 @@ TRANSITION_LIST("LO[8]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 0 FOR 73.0;
+			LEVEL 1 FOR 927.0;
 		}
 	}
 }
@@ -2993,7 +2995,8 @@ TRANSITION_LIST("LO[6]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 0 FOR 73.0;
+			LEVEL 1 FOR 927.0;
 		}
 	}
 }
@@ -3032,7 +3035,8 @@ TRANSITION_LIST("LO[3]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 0 FOR 73.0;
+			LEVEL 1 FOR 927.0;
 		}
 	}
 }
@@ -3045,7 +3049,8 @@ TRANSITION_LIST("LO[2]")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 0 FOR 73.0;
+			LEVEL 1 FOR 927.0;
 		}
 	}
 }
@@ -4122,7 +4127,7 @@ TRANSITION_LIST("load")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 1 FOR 1000.0;
 		}
 	}
 }
@@ -4148,7 +4153,7 @@ TRANSITION_LIST("start")
 		NODE
 		{
 			REPEAT = 1;
-			LEVEL 0 FOR 1000.0;
+			LEVEL 1 FOR 1000.0;
 		}
 	}
 }

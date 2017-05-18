@@ -2,8 +2,8 @@ module Div (
 	input [31:0] A,
 	input [31:0] B,
 	input clk,
-	input reset,
 	input start,
+	input reset,
 	output reg [31:0] HI,
 	output reg [31:0] LO,
 	output reg div0

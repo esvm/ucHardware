@@ -18,7 +18,7 @@
 // the top level entity of the current Quartus project .The user can use this   
 // testbench to simulate his design using a third-party simulation tool .       
 // *****************************************************************************
-// Generated on "05/18/2017 17:14:12"
+// Generated on "05/18/2017 18:00:18"
                                                                         
 // Verilog Self-Checking Test Bench (with test vectors) for design :    teste
 // 
@@ -1698,7 +1698,7 @@ end
 // load
 initial
 begin
-	load = 1'b0;
+	load = 1'b1;
 end 
 
 // reset
@@ -1710,7 +1710,7 @@ end
 // start
 initial
 begin
-	start = 1'b0;
+	start = 1'b1;
 end 
 
 teste_vlg_sample_tst tb_sample (
