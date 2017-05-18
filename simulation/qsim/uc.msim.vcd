@@ -3,7 +3,7 @@ $comment
 		vcd file uc.msim.vcd -direction
 $end
 $date
-	Thu May 18 17:01:52 2017
+	Thu May 18 17:14:19 2017
 $end
 $version
 	ModelSim Version 10.1d
@@ -2240,7 +2240,7 @@ b100010 "
 0$
 0%
 0&
-1'
+0'
 0G
 0F
 0E
@@ -2327,7 +2327,7 @@ xl
 1{
 0|
 1}
-1~
+0~
 0!!
 1"!
 1#!

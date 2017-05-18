@@ -18,10 +18,10 @@ wire [31:0] wLO;
 
 DIVMULT dm(A, B, MDControl, clk, start, reset, div0, wDMtoHI, wDMtoLO);
 
-Registrador RHI(.Clk(clk), .Reset(reset), .Load(load), .Entrada(wDMtoHI), .Saida(HI));
-Registrador RLO(.Clk(clk), .Reset(reset), .Load(load), .Entrada(wDMtoLO), .Saida(LO));
+Registrador RHI(.Clk(clk), .Reset(reset), .Load(load), .Entrada(wDMtoHI), .Saida(wHI));
+Registrador RLO(.Clk(clk), .Reset(reset), .Load(load), .Entrada(wDMtoLO), .Saida(wLO));
 
-//assign HI = wHI;
-//assign LO = wLO;
+assign HI = wHI;
+assign LO = wLO;
 
 endmodule

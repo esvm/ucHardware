@@ -1,5 +1,5 @@
 Fitter report for uc
-Thu May 18 17:00:23 2017
+Thu May 18 17:05:19 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -58,7 +58,7 @@ applicable agreement for further details.
 +------------------------------------------------------------------------+
 ; Fitter Summary                                                         ;
 +---------------------------+--------------------------------------------+
-; Fitter Status             ; Successful - Thu May 18 17:00:23 2017      ;
+; Fitter Status             ; Successful - Thu May 18 17:05:19 2017      ;
 ; Quartus II 64-Bit Version ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name             ; uc                                         ;
 ; Top-level Entity Name     ; teste                                      ;
@@ -2178,7 +2178,7 @@ Info (176215): I/O bank details before I/O pin placement
         Info (176213): I/O bank number 2 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  51 pins available
         Info (176213): I/O bank number 3 does not use VREF pins and has undetermined VCCIO pins. 1 total pin(s) used --  52 pins available
         Info (176213): I/O bank number 4 does not use VREF pins and has undetermined VCCIO pins. 0 total pin(s) used --  50 pins available
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:01
 Info (170191): Fitter placement operations beginning
@@ -2209,13 +2209,13 @@ Info (170195): Router estimated average interconnect usage is 26% of the availab
     Info (170196): Router estimated peak interconnect usage is 37% of the available device resources in the region that extends from location X0_Y0 to location X10_Y14
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:07
 Info (170202): The Fitter performed an Auto Fit compilation.  No optimizations were skipped because the design's timing and routability requirements required full optimization.
-Info (11888): Total time spent on timing analysis during the Fitter is 1.97 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 2.05 seconds.
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info (144001): Generated suppressed messages file /home/CIN/esvm/Documents/ucHardware/output_files/uc.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 731 megabytes
-    Info: Processing ended: Thu May 18 17:00:23 2017
+    Info: Peak virtual memory: 732 megabytes
+    Info: Processing ended: Thu May 18 17:05:19 2017
     Info: Elapsed time: 00:00:53
     Info: Total CPU time (on all processors): 00:00:53
 
