@@ -16,7 +16,7 @@ wire [31:0] wDtoHI;
 wire [31:0] wDtoLO;
 
 mult m(A, B, clk, start, reset, wMtoHI, wMtoLO);
-div d(A, B, clk, start, reset, wDtoHI, wDtoLO, div0); 
+Div d(A, B, clk, start, reset, wDtoHI, wDtoLO, div0); 
 
 assign HI = (MDControl) ? wMtoHI : wDtoHI;
 assign LO = (MDControl) ? wMtoLO : wDtoLO;
