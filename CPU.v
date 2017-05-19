@@ -75,12 +75,12 @@ mux4to1 RegDstMux(rt, immediate[15:11], rdst3, rdst4, RegDst, wRegDstOut);
 wire [31:0] wLSOut;
 wire [31:0] wHIOut;
 wire [31:0] wLOOut;
-wire [31:0] wSE32Out;
+wire [31:0] wSE1Out;
 wire [31:0] wSE16Out;
 wire [31:0] wSL16Out;
 wire [31:0] wShiftRegOut;
 wire [31:0] wDataSrcOut;
-Mux9to1 DataSrcMux(wALUOut, wLSOut, wHIOut, wLOOut, wSE32Out, wSE16Out, wSL16Out, wExcep, wShiftRegOut, DataSrc, wDataSrcOut);
+Mux9to1 DataSrcMux(wALUOut, wLSOut, wHIOut, wLOOut, wSE1Out, wSE16Out, wSL16Out, wExcep, wShiftRegOut, DataSrc, wDataSrcOut);
 
 //BR
 wire [31:0] wA;
@@ -134,25 +134,58 @@ wire [25:0] wSL26In;
 assign wSL26In = {rs, rt, immediate};
 ShiftLeft26to28 SL26(wSL26In, wSL26Out);
 
+//ShiftLeft32
+wire [31:0] wSL2Out;
+ShiftLeft2 SL2(wSE16Out, wSL2Out);
 
-//para o LS
-wire [31:0] Data;
-//para o RegDes
+//MDR
+wire MDRLoad;
+assign MDRLoad = 1;
+wire wMDROut;
+Registrador MDR(clk, reset, MDRLoad, wMemOut, wMDROut);
 
+//StoreSize
+StoreSize SS(SSCtrl, wBOut, wMDROut, wSSOut);
 
+//LoadSize
+LoadSize LS(LSCtrl, wMDROut, wLSOut);
 
+//MULT/DIV
+wire startMULTDIV;
+assign startMULTDIV = 1;
+wire [31:0] wHIIn;
+wire [31:0] wLOIn;
+DIVMULT DM(wAOut, wBOut, MDCtrl, clk, startMULTDIV, reset, div0, wHIIn, wLOIn);
 
+//HI
+wire loadHI;
+assign loadHI = 1;
+Registrador HI(clk, reset, loadHI, wHIIn, wHIOut);
 
+//LO
+wire loadLO;
+assign loadLO = 1;
+Registrador LO(clk, reset, loadLO, wLOIn, wLOOut);
 
+//SignExtend1
+//ver isso depois do ltf se ta certo
+SignExtend1to32 SE1(ltf, wSE1Out);
 
+//SignExtend16
+SignExtend16to32 SE16(immediate, wSE16Out);
 
+//ShiftLeft16
+ShiftLeft16(immediate, wSL16Out);
 
+//ShiftSrcMux
+wire [31:0] wShiftSrcOut;
+Mux2to1 ShiftSrcMux(wAOut, wBOut[4:0], ShiftSrc, wShiftSrcOut);
 
+//ShiftAmtMux
+wire [31:0] wShiftAmtOut;
+Mux2to1 ShiftAmtMux(wBOut[4:0], immediate[10:6], ShiftAmt, wShiftAmtOut);
 
-
-
-
-
-
+//ShiftReg
+RegDesloc(clk, reset, ShiftCtrl, wShiftSrcOut, wShiftAmtOut, wShiftRegOut);
 
 endmodule
