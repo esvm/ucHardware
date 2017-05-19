@@ -135,7 +135,6 @@ assign wSL26In = {rs, rt, immediate};
 ShiftLeft26to28 SL26(wSL26In, wSL26Out);
 
 //ShiftLeft32
-wire [31:0] wSL2Out;
 ShiftLeft2 SL2(wSE16Out, wSL2Out);
 
 //MDR
