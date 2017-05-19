@@ -1,0 +1,11 @@
+module StoreSize (
+	input[1:0] SSControl,
+	input[31:0] B,
+	input[31:0] DataIn,
+	
+	output[31:0] DataOut
+);
+
+
+
+endmodule;

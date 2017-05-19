@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "MAX V"
 set_global_assignment -name DEVICE auto
-set_global_assignment -name TOP_LEVEL_ENTITY teste
+set_global_assignment -name TOP_LEVEL_ENTITY CPU
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:25:32  MAIO 13, 2017"
 set_global_assignment -name LAST_QUARTUS_VERSION 13.1
@@ -77,3 +77,4 @@ set_global_assignment -name VERILOG_FILE teste.v
 set_global_assignment -name VECTOR_WAVEFORM_FILE teste.vwf
 set_global_assignment -name VERILOG_FILE CPU.v
 set_global_assignment -name VERILOG_FILE Main.v
+set_global_assignment -name VECTOR_WAVEFORM_FILE uControl.vwf
