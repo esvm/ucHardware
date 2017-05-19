@@ -28,13 +28,13 @@ module CPU(
 		output wire ov,
 		output wire div0,
 		output wire [5:0] funct,
-		output wire [5:0] opCode
+		output wire [5:0] opCode,
+		output wire [31:0] wPCOut
 );
 
 //PC 
 wire [31:0] wPCData;
-wire [31:0] wPCOut;
-Registrador PC(.Clk(clk), .Reset(reset), .Load(PCCtrl), .Entrada(wPCData), .Saida(wPCOut));
+Registrador PC(clk, reset, PCCtrl, wPCData, wPCOut);
 
 //IorD
 wire [31:0] wIorD;
@@ -107,8 +107,8 @@ Mux3to1 ALUSrcAMux(wPCOut, wAOut, wLSOut, ALUSrcA, wAluSrcAOut);
 wire [31:0] wAluSrcBOut;
 wire [31:0] wSL2Out;
 wire [31:0] w4;
-assign w4 = 4;
-mux4to1 ALUSrcBMux(wBOut, w4, wSE16Out, wSL2Out, AluSrcB, wAluSrcBOut);
+assign w4 = 32'b00000000000000000000000000000100;
+mux4to1 ALUSrcBMux(wBOut, w4, wSE16Out, wSL2Out, ALUSrcB, wAluSrcBOut);
 
 //ULA
 wire neg;
@@ -127,7 +127,7 @@ Registrador EPC(clk, reset, EPCCtrl, wALUResult, wEPCOut);
 wire [27:0] wSL26Out;
 wire [31:0] wPCSrc2;
 assign wPCSrc2 = {wPCOut[31:28], wSL26Out[27:0]};
-Mux5to1 PCSrcMux(wALUResult, wALUOut, wPCSrc2, wLSOut, wEPCOut);
+Mux5to1 PCSrcMux(wALUResult, wALUOut, wPCSrc2, wLSOut, wEPCOut, PCSrc, wPCData);
 
 //ShiftLeft26
 wire [25:0] wSL26In;
