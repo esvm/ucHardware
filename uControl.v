@@ -142,7 +142,7 @@ module uControl(
 	reg counter = 0;
 	reg mdrFlag = 0;
 
-	always @ (posedge clk or negedge reset) begin
+	always @ (posedge clk or posedge reset) begin
 		if(reset) begin
 			MemCtrl = 0;
 			PCCtrl = 0;
@@ -172,11 +172,11 @@ module uControl(
 			case (currentState)
 				stateSTART:
 				begin
-					IorD = 00;
-					MemCtrl = 0;
-					ALUSrcA = 00;
-					ALUSrcB = 01;
-					ALUCtrl = 001;
+					IorD = 2'b00;
+					MemCtrl = 1'b0;
+					ALUSrcA = 2'b00;
+					ALUSrcB = 2'b01;
+					ALUCtrl = 3'b001;
 					currentState = stateSTART2;
 				end
 				stateSTART2:
@@ -185,22 +185,24 @@ module uControl(
 				end
 				stateSTART3:
 				begin
-					PCSrc = 000;
-					PCCtrl = 1;
-					IRWrite = 1;
-					SECtrl = 0;
+					PCSrc = 3'b000;
+					PCCtrl = 1'b1;
+					IRWrite = 1'b1;
+					SECtrl = 1'b0;
 					currentState = stateSTART4;
 				end
 				stateSTART4:
 				begin
-					ALUSrcA = 00;
-					ALUSrcB = 11;
-					ALUCtrl = 001;
+					PCCtrl = 1'b0;
+					IRWrite = 0;
+					ALUSrcA = 2'b00;
+					ALUSrcB = 2'b11;
+					ALUCtrl = 3'b001;
 					currentState = stateSTART5;
 				end
 				stateSTART5:
 				begin
-					ALUOutCtrl = 1;
+					ALUOutCtrl = 1'b1;
 					currentState = stateOP;
 				end
 				stateSHIFT:
@@ -223,14 +225,14 @@ module uControl(
 				end
 				stateSSAVE:
 				begin
-					DataSrc = 1000;
-					RegDst = 01;
-					RegWrite = 1;
+					DataSrc = 4'b1000;
+					RegDst = 2'b01;
+					RegWrite = 1'b1;
 					currentState = stateWAIT;
 				end
 				stateRESULT:
 				begin
-					ALUOutCtrl = 1;
+					ALUOutCtrl = 1'b1;
 					case (op)
 						ADD, SUB, AND:
 						begin
@@ -252,38 +254,38 @@ module uControl(
 				end
 				stateRSAVE:
 				begin
-					DataSrc = 0000;
-					RegDst = 01;
-					RegWrite = 1;
+					DataSrc = 4'b0000;
+					RegDst = 2'b01;
+					RegWrite = 1'b1;
 					currentState = stateWAIT;
 				end
 				stateISAVE:
 				begin
-					DataSrc = 0000;
-					RegDst = 00;
-					RegWrite = 1;
+					DataSrc = 4'b0000;
+					RegDst = 2'b00;
+					RegWrite = 1'b1;
 					currentState = stateWAIT;
 				end
 				stateJR, stateBREAK:
 				begin
-					PCSrc = 000;
-					PCCtrl = 1;
+					PCSrc = 3'b000;
+					PCCtrl = 1'b1;
 					currentState = stateWAIT;
 				end
 				stateSLT:
 				begin
-					DataSrc = 0100;
-					RegDst = 01;
-					RegWrite = 1;
+					DataSrc = 4'b0100;
+					RegDst = 2'b01;
+					RegWrite = 1'b1;
 					currentState = stateWAIT;
 				end
 				stateJAL:
 				begin
-					DataSrc = 0000;
-					RegWrite = 1;
-					RegDst = 11;
-					PCSrc = 010;
-					PCCtrl = 1;
+					DataSrc = 4'b0000;
+					RegWrite = 1'b1;
+					RegDst = 2'b11;
+					PCSrc = 3'b010;
+					PCCtrl = 1'b1;
 					currentState = stateWAIT;
 				end
 				stateWAIT:
@@ -295,42 +297,42 @@ module uControl(
 					case (op)
 						LB:
 						begin
-							LSCtrl = 00;
-							RegDst = 00;
-							DataSrc = 0001;
-							RegWrite = 1;
+							LSCtrl = 2'b00;
+							RegDst = 2'b00;
+							DataSrc = 4'b0001;
+							RegWrite = 1'b1;
 						end
 						LH:
 						begin
-							LSCtrl = 01;
-							RegDst = 00;
-							DataSrc = 0001;
-							RegWrite = 1;
+							LSCtrl = 2'b01;
+							RegDst = 2'b00;
+							DataSrc = 4'b0001;
+							RegWrite = 1'b1;
 						end
 						LW:	
 						begin
-							LSCtrl = 10;
-							RegDst = 00;
-							DataSrc = 0001;
-							RegWrite = 1;
+							LSCtrl = 2'b10;
+							RegDst = 2'b00;
+							DataSrc = 4'b0001;
+							RegWrite = 1'b1;
 						end
 						SB:
 						begin
-							SSCtrl = 00;
-							MemCtrl =  1;
-							IorD = 10;
+							SSCtrl = 2'b00;
+							MemCtrl =  1'b1;
+							IorD = 2'b10;
 						end
 						SH:
 						begin
-							SSCtrl = 01;
-							MemCtrl =  1;
-							IorD = 10;
+							SSCtrl = 2'b01;
+							MemCtrl =  1'b1;
+							IorD = 2'b10;
 						end
 						SW:
 						begin
-							SSCtrl = 10;
-							MemCtrl =  1;
-							IorD = 10;
+							SSCtrl = 2'b10;
+							MemCtrl =  1'b1;
+							IorD = 2'b10;
 						end
 					endcase
 					currentState = stateWAIT;
@@ -358,28 +360,28 @@ module uControl(
 				end
 				stateHILO:
 				begin
-					HILOWrite = 1;
+					HILOWrite = 1'b1;
 					currentState = stateWAIT;
 				end
 				stateMEM:
 				begin
-					IorD = 10;
-					MemCtrl = 0; 
+					IorD = 2'b10;
+					MemCtrl = 1'b0; 
 					currentState = stateMEMWAIT;
 				end
 				stateBEQM:
 				begin
-					ALUOutCtrl = 0;
-					IorD = 01;
-					MemCtrl = 0;
+					ALUOutCtrl = 1'b0;
+					IorD = 2'b01;
+					MemCtrl = 1'b0;
 					currentState = stateMEMWAIT;
 				end
 				stateBEQM2:
 				begin
-					LSCtrl = 10;
-					ALUSrcA = 10;
-					ALUSrcB = 00;
-					ALUCtrl = 111;
+					LSCtrl = 2'b10;
+					ALUSrcA = 2'b10;
+					ALUSrcB = 2'b00;
+					ALUCtrl = 3'b111;
 					if (eqf == 1'b1)
 							currentState = stateBRANCH;
 					else
@@ -387,15 +389,15 @@ module uControl(
 				end
 				stateBRANCH:
 				begin
-					PCSrc = 01;
-					PCCtrl = 1;
+					PCSrc = 2'b01;
+					PCCtrl = 1'b1;
 					currentState = stateWAIT;
 				end
 				stateEXCP:
 				begin
-					ALUSrcA = 00;
-					ALUSrcB = 01;
-					ALUCtrl = 010;
+					ALUSrcA = 2'b00;
+					ALUSrcB = 2'b01;
+					ALUCtrl = 3'b010;
 					case (op)
 						SUB:
 						begin
@@ -413,50 +415,50 @@ module uControl(
 				end
 				stateOF:
 				begin
-					EPCCtrl = 1;
-					ExcptCtrl = 01;
-					MemCtrl = 0; 
-					IorD = 11;
+					EPCCtrl = 1'b1;
+					ExcptCtrl = 2'b01;
+					MemCtrl = 1'b0; 
+					IorD = 2'b11;
 					currentState = stateEXCP2;
 				end
 				stateDIV0:
 				begin
-					EPCCtrl = 1;
-					ExcptCtrl = 10;
-					MemCtrl = 0;
-					IorD = 11;
+					EPCCtrl = 1'b1;
+					ExcptCtrl = 2'b10;
+					MemCtrl = 1'b0;
+					IorD = 2'b11;
 					currentState = stateEXCP2;
 				end
 				stateOPCODE:
 				begin
-					EPCCtrl = 1;
-					ExcptCtrl = 00;
-					MemCtrl = 0;
-					IorD = 11;
+					EPCCtrl = 1'b1;
+					ExcptCtrl = 2'b00;
+					MemCtrl = 1'b0;
+					IorD = 2'b11;
 					currentState = stateEXCP2;
 				end
 				stateEXCP2:
 				begin
 					if(!mdrFlag) begin
-						mdrFlag = 1;
+						mdrFlag = 1'b1;
 						currentState = stateEXCP2;
 					end	
 					else begin
 						currentState = stateEXCP3;
-						mdrFlag = 0;
+						mdrFlag = 1'b0;
 					end
 				end
 				stateEXCP3:
 				begin
-					LSCtrl = 00;
-					ALUSrcA = 10;
-					ALUCtrl = 000;
+					LSCtrl = 2'b00;
+					ALUSrcA = 2'b10;
+					ALUCtrl = 3'b000;
 					currentState = stateEXCP4;
 				end
 				stateEXCP4:
 				begin
-					PCSrc = 000;
-					PCCtrl = 1;
+					PCSrc = 3'b000;
+					PCCtrl = 1'b1;
 					currentState = stateWAIT;
 				end
 				
@@ -466,112 +468,112 @@ module uControl(
 					case (op)
 						ADD:
 						begin
-							ALUSrcA = 01;
-							ALUSrcB = 00;
+							ALUSrcA = 2'b01;
+							ALUSrcB = 2'b00;
 							ALUCtrl = ulaADD;
 							currentState = ov ? stateEXCP : stateRESULT;
 						end
 						AND:
 						begin
-							ALUSrcA = 01;
-							ALUSrcB = 00;
+							ALUSrcA = 2'b01;
+							ALUSrcB = 2'b00;
 							ALUCtrl = ulaAND;
 							currentState = stateRESULT;
 						end
 						DIV:
 						begin
-							MDCtrl = 1;
-							start = 1;
+							MDCtrl = 1'b1;
+							start = 1'b1;
 							currentState = div0 ? stateEXCP : stateMEMWAIT;
 						end
 						MULT:
 						begin
-							MDCtrl = 0;
-							start = 1;
+							MDCtrl = 1'b0;
+							start = 1'b1;
 							currentState = stateMEMWAIT;
 						end
 						JR:
 						begin
-							ALUSrcA = 01;
+							ALUSrcA = 2'b01;
 							ALUCtrl = ulaSA;
 							currentState = stateJR;
 						end
 						MFHI:
 						begin
-							DataSrc = 0010;
-							RegDst = 01;
-							RegWrite = 1;
+							DataSrc = 4'b0010;
+							RegDst = 2'b01;
+							RegWrite = 1'b1;
 							currentState = stateWAIT;
 						end
 						MFLO:
 						begin
-							DataSrc = 0011;
-							RegDst = 01;
-							RegWrite = 1;
+							DataSrc = 4'b0011;
+							RegDst = 2'b01;
+							RegWrite = 1'b1;
 							currentState = stateWAIT;
 						end
 						SLL, SRA, SRL:
 						begin
 							ShiftSrc = 0;
 							ShiftAmt = 0;
-							ShiftCtrl = 001;
+							ShiftCtrl = 3'b001;
 							currentState = stateSHIFT;
 						end
 						SLLV, SRAV:
 						begin
-							ShiftSrc = 1;
-							ShiftAmt = 1;
-							ShiftCtrl = 001;
+							ShiftSrc = 1'b1;
+							ShiftAmt = 1'b1;
+							ShiftCtrl = 3'b001;
 							currentState = stateSHIFT;
 						end
 						SLT:
 						begin
-							ALUSrcA = 01;
-							ALUSrcB = 00;
-							ALUCtrl = 111;
+							ALUSrcA = 2'b01;
+							ALUSrcB = 1'b00;
+							ALUCtrl = 3'b111;
 							currentState = stateSLT;
 						end
 						SUB:
 						begin
-							ALUSrcA = 01;
-							ALUSrcB = 00;
+							ALUSrcA = 2'b01;
+							ALUSrcB = 2'b00;
 							ALUCtrl = ulaSUB;
 							currentState = ov ? stateEXCP : stateRESULT;
 						end
 						BREAK:
 						begin
-							ALUSrcA = 00;
-							ALUSrcB = 01;
-							ALUCtrl = 010;
+							ALUSrcA = 2'b00;
+							ALUSrcB = 2'b01;
+							ALUCtrl = 3'b010;
 							currentState = stateBREAK;
 						end
 						RTE:
 						begin
-							PCSrc = 100;
-							PCCtrl = 1;
+							PCSrc = 3'b100;
+							PCCtrl = 1'b1;
 							currentState = stateWAIT;
 						end
 						ADDI:
 						begin
-							ALUSrcA = 01;
-							ALUSrcB = 10;
-							SECtrl =1;
-							ALUCtrl = 001;
+							ALUSrcA = 2'b01;
+							ALUSrcB = 2'b10;
+							SECtrl = 1'b1;
+							ALUCtrl = 3'b001;
 							currentState = ov ? stateEXCP : stateRESULT;
 						end
 						ADDIU:
 						begin
-							ALUSrcA = 01;
-							ALUSrcB = 10;
-							SECtrl = 0;
-							ALUCtrl = 001;
+							ALUSrcA = 2'b01;
+							ALUSrcB = 2'b10;
+							SECtrl = 1'b0;
+							ALUCtrl = 3'b001;
 							currentState = stateRESULT;
 						end
 						BEQ, BNE, BLE, BGT:
 						begin
-							ALUSrcA = 01;
-							ALUSrcB = 00;
-							ALUCtrl = 111;
+							ALUSrcA = 2'b01;
+							ALUSrcB = 2'b00;
+							ALUCtrl = 3'b111;
 							if (
 									(op == BEQ && eqf == 1'b1) || (op == BNE && eqf == 1'b0) ||
 									(op == BGT && gtf == 1'b1) || (op == BLE && (eqf == 1'b1 || gtf == 1'b0))
@@ -581,44 +583,44 @@ module uControl(
 						end
 						BEQM:
 						begin
-							ALUSrcA = 01;
-							ALUOutCtrl = 0;
-							ALUCtrl = 000;
+							ALUSrcA = 2'b01;
+							ALUOutCtrl = 1'b0;
+							ALUCtrl = 3'b000;
 							currentState = stateBEQM;
 						end
 						LB, LH, LW, SB, SH, SW:
 						begin
-							ALUSrcA = 01;
-							ALUSrcB = 10;
-							SECtrl = 0;
-							ALUCtrl = 001;
+							ALUSrcA = 2'b01;
+							ALUSrcB = 2'b10;
+							SECtrl = 1'b0;
+							ALUCtrl = 3'b001;
 							currentState = stateRESULT;
 						end
 						LUI:
 						begin
-							DataSrc = 0110;
-							RegDst = 00;
-							RegWrite = 1;
+							DataSrc = 4'b0110;
+							RegDst = 2'b00;
+							RegWrite = 1'b1;
 							currentState = stateWAIT;
 						end
 						SLTI:
 						begin
-							SECtrl = 1;
-							ALUSrcB = 10;
-							ALUSrcA=01;
-							ALUCtrl = 111;
+							SECtrl = 1'b1;
+							ALUSrcB = 2'b10;
+							ALUSrcA= 2'b01;
+							ALUCtrl = 3'b111;
 							currentState = stateSLT;
 						end
 						J:
 						begin
-							PCSrc = 010;
-							PCCtrl = 1;
+							PCSrc = 3'b010;
+							PCCtrl = 1'b1;
 							currentState = stateWAIT;
 						end
 						JAL:
 						begin
-							ALUSrcA = 00;
-							ALUCtrl = 000;
+							ALUSrcA = 2'b00;
+							ALUCtrl = 3'b000;
 							currentState = stateRESULT;
 						end
 						default:
