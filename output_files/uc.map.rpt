@@ -1,5 +1,5 @@
 Analysis & Synthesis report for uc
-Thu May 18 17:58:17 2017
+Thu May 18 21:05:43 2017
 Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
 
 
@@ -47,7 +47,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                             ;
 +-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Thu May 18 17:58:17 2017      ;
+; Analysis & Synthesis Status ; Successful - Thu May 18 21:05:43 2017      ;
 ; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
 ; Revision Name               ; uc                                         ;
 ; Top-level Entity Name       ; teste                                      ;
@@ -312,9 +312,29 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Thu May 18 17:58:13 2017
+    Info: Processing started: Thu May 18 21:05:39 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uc -c uc
 Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (12021): Found 1 design units, including 1 entities, in source file ShiftLeft26to28.v
+    Info (12023): Found entity 1: ShiftLeft26to28
+Info (12021): Found 1 design units, including 1 entities, in source file LoadSize.v
+    Info (12023): Found entity 1: LoadSize
+Info (12021): Found 2 design units, including 1 entities, in source file RegDesloc.vhd
+    Info (12022): Found design unit 1: RegDesloc-behavioral_arch
+    Info (12023): Found entity 1: RegDesloc
+Info (12021): Found 3 design units, including 1 entities, in source file Memoria.vhd
+    Info (12022): Found design unit 1: ram_constants
+    Info (12022): Found design unit 2: Memoria-behavioral_arch
+    Info (12023): Found entity 1: Memoria
+Info (12021): Found 2 design units, including 1 entities, in source file Instr_Reg.vhd
+    Info (12022): Found design unit 1: Instr_Reg-behavioral_arch
+    Info (12023): Found entity 1: Instr_Reg
+Info (12021): Found 2 design units, including 1 entities, in source file Banco_reg.vhd
+    Info (12022): Found design unit 1: Banco_reg-behavioral_arch
+    Info (12023): Found entity 1: Banco_reg
+Info (12021): Found 2 design units, including 1 entities, in source file ula32.vhd
+    Info (12022): Found design unit 1: Ula32-behavioral
+    Info (12023): Found entity 1: Ula32
 Info (12021): Found 2 design units, including 1 entities, in source file Registrador.vhd
     Info (12022): Found design unit 1: Registrador-behavioral_arch
     Info (12023): Found entity 1: Registrador
@@ -349,6 +369,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file mult.v
     Info (12023): Found entity 1: mult
 Info (12021): Found 1 design units, including 1 entities, in source file teste.v
     Info (12023): Found entity 1: teste
+Info (12021): Found 1 design units, including 1 entities, in source file CPU.v
+    Info (12023): Found entity 1: CPU
+Info (12021): Found 1 design units, including 1 entities, in source file Main.v
+    Info (12023): Found entity 1: Main
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(55): created implicit net for "exc1"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(56): created implicit net for "exc2"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(57): created implicit net for "exc3"
+Warning (10236): Verilog HDL Implicit Net warning at CPU.v(111): created implicit net for "AluSrcB"
 Info (12127): Elaborating entity "teste" for the top level hierarchy
 Info (12128): Elaborating entity "DIVMULT" for hierarchy "DIVMULT:dm"
 Info (12128): Elaborating entity "mult" for hierarchy "DIVMULT:dm|mult:m"
@@ -364,9 +392,9 @@ Info (21057): Implemented 1448 device resources after synthesis - the final reso
     Info (21059): Implemented 65 output pins
     Info (21061): Implemented 1314 logic cells
 Info (144001): Generated suppressed messages file /home/CIN/esvm/Documents/ucHardware/output_files/uc.map.smsg
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 677 megabytes
-    Info: Processing ended: Thu May 18 17:58:17 2017
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 10 warnings
+    Info: Peak virtual memory: 680 megabytes
+    Info: Processing ended: Thu May 18 21:05:43 2017
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 

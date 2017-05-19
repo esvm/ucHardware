@@ -48,6 +48,13 @@ set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda
 set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR /home/CIN/esvm/Documents/ucHardware/simulation/qsim/ -section_id eda_simulation
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST ON -section_id eda_simulation
 set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name VERILOG_FILE ShiftLeft26to28.v
+set_global_assignment -name VERILOG_FILE LoadSize.v
+set_global_assignment -name VHDL_FILE RegDesloc.vhd
+set_global_assignment -name VHDL_FILE Memoria.vhd
+set_global_assignment -name VHDL_FILE Instr_Reg.vhd
+set_global_assignment -name VHDL_FILE Banco_reg.vhd
+set_global_assignment -name VHDL_FILE ula32.vhd
 set_global_assignment -name VHDL_FILE Registrador.vhd
 set_global_assignment -name VERILOG_FILE DIVMULT.v
 set_global_assignment -name VERILOG_FILE SignExtend16to32.v
@@ -67,5 +74,6 @@ set_global_assignment -name VECTOR_WAVEFORM_FILE div.vwf
 set_global_assignment -name VECTOR_WAVEFORM_FILE StoreSize.vwf
 set_global_assignment -name VERILOG_FILE mult.v
 set_global_assignment -name VERILOG_FILE teste.v
-set_global_assignment -name VECTOR_WAVEFORM_FILE "../../Downloads/drive-download-20170518T194127Z-001/teste.vwf"
 set_global_assignment -name VECTOR_WAVEFORM_FILE teste.vwf
+set_global_assignment -name VERILOG_FILE CPU.v
+set_global_assignment -name VERILOG_FILE Main.v

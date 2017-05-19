@@ -1,0 +1,10 @@
+module Main(
+
+
+);
+
+CPU cpu();
+uControl uc();
+
+
+endmodule 
