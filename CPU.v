@@ -32,6 +32,7 @@ module CPU(
 		output wire [31:0] wPCOut,
 		output wire [31:0] wALUResult,
 		output wire [31:0] wShiftRegOut,
+		output wire [31:0] wMemOut,
 		input wire start
 );
 
@@ -47,7 +48,7 @@ mux4to1 IorDMux(wPCOut, wALUResult, wALUOut, wExcep, IorD, wIorD);
 
 //Memoria
 wire [31:0] wSSOut;
-wire [31:0] wMemOut;
+//wire [31:0] wMemOut;
 Memoria MEM(wIorD, clk, MemCtrl, wSSOut, wMemOut);
 
 //Exception Mux

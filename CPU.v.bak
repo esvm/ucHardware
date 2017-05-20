@@ -124,11 +124,7 @@ Registrador ALUOut(clk, reset, ALUOutCtrl, wALUResult, wALUOut);
 
 //EPC
 wire [31:0] wEPCOut;
-wire [31:0] wEPCTeste;
-assign wEPCTeste = 128;
-wire EPCCtrl2;
-assign EPCCtrl2 = 1;
-Registrador EPC(clk, reset, EPCCtrl2, wEPCTeste, wEPCOut);
+Registrador EPC(clk, reset, EPCCtrl, wALUResult, wEPCOut);
 
 //PCSrcMux
 wire [27:0] wSL26Out;

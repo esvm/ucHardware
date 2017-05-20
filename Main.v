@@ -2,7 +2,8 @@ module Main(
 	input wire clk,
 	output wire [31:0] wPCOut,
 	output wire [31:0] wShiftRegOut,
-	output wire [31:0] wALUResult
+	output wire [31:0] wALUResult,
+	output wire [31:0] wMemOut
 );
 
 wire reset;
@@ -37,7 +38,7 @@ wire [5:0] opCode;
 wire start;
 
 CPU cpu(clk, reset, MemCtrl, PCCtrl, MDCtrl, SECtrl, ShiftSrc, ShiftAmt, IRWrite, RegWrite, ALUOutCtrl, EPCCtrl, HILOWrite, IorD,
-			ALUSrcA, ALUSrcB, RegDst, LSCtrl, SSCtrl, ExcptCtrl, ShiftCtrl, PCSrc, ALUCtrl, DataSrc, eqf, gtf, ov, div0, funct, opCode, wPCOut, wALUResult, wShiftRegOut, start);
+			ALUSrcA, ALUSrcB, RegDst, LSCtrl, SSCtrl, ExcptCtrl, ShiftCtrl, PCSrc, ALUCtrl, DataSrc, eqf, gtf, ov, div0, funct, opCode, wPCOut, wALUResult, wShiftRegOut, wMemOut, start);
 			
 uControl uc(clk, reset, eqf, gtf, ov, div0, funct, opCode, MemCtrl, PCCtrl, MDCtrl, SECtrl, ShiftSrc, ShiftAmt, IRWrite, RegWrite, ALUOutCtrl, EPCCtrl, HILOWrite, IorD,
 			ALUSrcA, ALUSrcB, RegDst, LSCtrl, SSCtrl, ExcptCtrl, ShiftCtrl, PCSrc, ALUCtrl, DataSrc, start);

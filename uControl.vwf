@@ -17392,6 +17392,26 @@ SIGNAL("CPU:cpu|StoreSize:SS|out[0]")
 	PARENT = "CPU:cpu|StoreSize:SS|out";
 }
 
+SIGNAL("CPU:cpu|MemCtrl")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
+SIGNAL("uControl:uc|MemCtrl")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = BURIED;
+	PARENT = "";
+}
+
 TRANSITION_LIST("clk")
 {
 	NODE
@@ -32491,6 +32511,24 @@ TRANSITION_LIST("CPU:cpu|StoreSize:SS|out[1]")
 }
 
 TRANSITION_LIST("CPU:cpu|StoreSize:SS|out[0]")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("CPU:cpu|MemCtrl")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL U FOR 1000.0;
+	}
+}
+
+TRANSITION_LIST("uControl:uc|MemCtrl")
 {
 	NODE
 	{
@@ -49854,6 +49892,24 @@ DISPLAY_LINE
 	TREE_INDEX = 1735;
 	TREE_LEVEL = 1;
 	PARENT = 1703;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "CPU:cpu|MemCtrl";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 1736;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "uControl:uc|MemCtrl";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Signed;
+	TREE_INDEX = 1737;
+	TREE_LEVEL = 0;
 }
 
 TIME_BAR

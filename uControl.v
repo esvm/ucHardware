@@ -273,9 +273,7 @@ module uControl(
 							currentState = stateJAL;
 						end
 						LB, LH, LW, SB, SH, SW:
-						begin
-							IorD = 2'b10;
-							MemCtrl = 1'b0; 
+						begin 
 							currentState = stateMEM;
 						end
 					endcase
@@ -318,58 +316,61 @@ module uControl(
 				end
 				stateWAIT:
 				begin
+					//MemCtrl = 0;
 					currentState = stateSTART;
 				end
 				stateLS:
 				begin
+					case (op)
+						LB:
+						begin
+							LSCtrl = 2'b00;
+							RegDst = 2'b00;
+							DataSrc = 4'b0001;
+							RegWrite = 1'b1;
+						end
+						LH:
+						begin
+							LSCtrl = 2'b01;
+							RegDst = 2'b00;
+							DataSrc = 4'b0001;
+							RegWrite = 1'b1;
+						end
+						LW:	
+						begin
+							LSCtrl = 2'b10;
+							RegDst = 2'b00;
+							DataSrc = 4'b0001;
+							RegWrite = 1'b1;
+						end
+						SB:
+						begin
+							SSCtrl = 2'b00;
+							MemCtrl =  1'b1;
+							IorD = 2'b10;
+						end
+						SH:
+						begin
+							SSCtrl = 2'b01;
+							MemCtrl =  1'b1;
+							IorD = 2'b10;
+						end
+						SW:
+						begin
+							SSCtrl = 2'b10;
+							MemCtrl =  1'b1;
+							IorD = 2'b10;
+							
+						end
+					endcase
 					if(mwait) begin
 						currentState = stateLS;
 						mwait = 0;
 					end
-					else begin	
-						case (op)
-							LB:
-							begin
-								LSCtrl = 2'b00;
-								RegDst = 2'b00;
-								DataSrc = 4'b0001;
-								RegWrite = 1'b1;
-							end
-							LH:
-							begin
-								LSCtrl = 2'b01;
-								RegDst = 2'b00;
-								DataSrc = 4'b0001;
-								RegWrite = 1'b1;
-							end
-							LW:	
-							begin
-								LSCtrl = 2'b10;
-								RegDst = 2'b00;
-								DataSrc = 4'b0001;
-								RegWrite = 1'b1;
-							end
-							SB:
-							begin
-								SSCtrl = 2'b00;
-								MemCtrl =  1'b1;
-								IorD = 2'b10;
-							end
-							SH:
-							begin
-								SSCtrl = 2'b01;
-								MemCtrl =  1'b1;
-								IorD = 2'b10;
-							end
-							SW:
-							begin
-								SSCtrl = 2'b10;
-								MemCtrl =  1'b1;
-								IorD = 2'b10;
-							end
-						endcase
+					else begin 
 						currentState = stateWAIT;
-					end	
+						
+					end
 				end
 				stateMEMWAIT2:
 				begin
@@ -410,8 +411,8 @@ module uControl(
 				stateMEM:
 				begin
 					mwait = 1;
-					ALUOutCtrl = 1'b0;
-					
+					IorD = 2'b10;
+					MemCtrl = 1'b0;
 					currentState = stateMEMWAIT;
 				end
 				stateBEQM:
