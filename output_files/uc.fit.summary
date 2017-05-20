@@ -1,9 +1,18 @@
-Fitter Status : Failed - Fri May 19 15:51:51 2017
-Quartus II 64-Bit Version : 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Fitter Status : Successful - Fri May 19 22:27:49 2017
+Quartus II Version : 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition
 Revision Name : uc
-Top-level Entity Name : CPU
-Family : MAX V
-Total logic elements : 20,173
-Total pins : 56
+Top-level Entity Name : uControl
+Family : Stratix III
+Device : EP3SL50F484C2
+Timing Models : Final
+Logic utilization : < 1 %
+    Combinational ALUTs : 186 / 38,000 ( < 1 % )
+    Memory ALUTs : 0 / 19,000 ( 0 % )
+    Dedicated logic registers : 66 / 38,000 ( < 1 % )
+Total registers : 66
+Total pins : 56 / 296 ( 19 % )
 Total virtual pins : 0
-UFM blocks : 0
+Total block memory bits : 0 / 1,880,064 ( 0 % )
+DSP block 18-bit elements : 0 / 216 ( 0 % )
+Total PLLs : 0 / 4 ( 0 % )
+Total DLLs : 0 / 4 ( 0 % )

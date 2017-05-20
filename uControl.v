@@ -1,7 +1,7 @@
 module uControl(
 		//inputs
 		input clk,
-		input reset,
+		output reg reset,
 		input eqf,
 		input gtf,
 		input ov,
@@ -31,6 +31,7 @@ module uControl(
 		output reg [2:0] PCSrc,
 		output reg [2:0] ALUCtrl,
 		output reg [3:0] DataSrc
+		//output reg [4:0] currentState
 );
 
 	initial begin
@@ -54,9 +55,10 @@ module uControl(
 		ExcptCtrl = 2'b00;
 		ShiftCtrl = 3'b000;
 		PCSrc = 3'b000;
-		
+		reset = 1;
 		ALUCtrl = 3'b000;
 		DataSrc = 4'b0000;
+		currentState = stateSTART;
 	end
 
 	//Defines
@@ -96,7 +98,7 @@ module uControl(
 	parameter ulaADD 					= 3'b001;
 	parameter ulaSUB 					= 3'b010;
 	parameter ulaAND 					= 3'b011;
-	//Valores para as operaÃ§oes
+	//Valores para as operaçoes
 	//FORMATO R
 	parameter ADD 						= 	{ 1'b0, 6'b100000 };
 	parameter AND 						= 	{ 1'b0, 6'b100100 };
@@ -135,8 +137,8 @@ module uControl(
 	parameter JAL						=	{ 1'b1, 6'b000011	};
 
 	//Variables
-	reg [5:0] op;
-	reg [4:0] currentState = stateSTART;
+	reg [6:0] op;
+	reg [4:0] currentState;
 	reg op404;
 	reg start;
 	reg counter = 0;
@@ -144,6 +146,7 @@ module uControl(
 
 	always @ (posedge clk or posedge reset) begin
 		if(reset) begin
+			reset = 0;
 			MemCtrl = 0;
 			PCCtrl = 0;
 			MDCtrl = 0;
@@ -172,6 +175,23 @@ module uControl(
 			case (currentState)
 				stateSTART:
 				begin
+					PCCtrl = 0;
+					MDCtrl = 0;
+					SECtrl = 0;
+					ShiftSrc = 0;
+					ShiftAmt = 0;
+					IRWrite = 0;
+					RegWrite = 0;
+					ALUOutCtrl = 0;
+					EPCCtrl = 0;
+					HILOWrite = 0;
+					RegDst = 2'b00;
+					LSCtrl = 2'b00;
+					SSCtrl = 2'b00;
+					ExcptCtrl = 2'b00;
+					ShiftCtrl = 3'b000;
+					PCSrc = 3'b000;
+					DataSrc = 4'b0000;
 					IorD = 2'b00;
 					MemCtrl = 1'b0;
 					ALUSrcA = 2'b00;
@@ -462,15 +482,16 @@ module uControl(
 					currentState = stateWAIT;
 				end
 				
-				//todas as instruÃ§Ãµes
+				//todas as instruções
 				stateOP:
 				begin
+					ALUOutCtrl = 0;
 					case (op)
 						ADD:
 						begin
 							ALUSrcA = 2'b01;
 							ALUSrcB = 2'b00;
-							ALUCtrl = ulaADD;
+							ALUCtrl = 3'b001;
 							currentState = ov ? stateEXCP : stateRESULT;
 						end
 						AND:
@@ -632,4 +653,4 @@ module uControl(
 			endcase		
 		end
 	end
-endmodule 
+endmodule

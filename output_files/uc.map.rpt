@@ -1,6 +1,6 @@
 Analysis & Synthesis report for uc
-Fri May 19 15:51:48 2017
-Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
+Fri May 19 22:27:34 2017
+Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
 ---------------------
@@ -13,43 +13,20 @@ Quartus II 64-Bit Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
   5. Analysis & Synthesis Source Files Read
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
-  8. State Machine - |CPU|DIVMULT:DM|Div:d|state
-  9. State Machine - |CPU|DIVMULT:DM|mult:m|state
- 10. User-Specified and Inferred Latches
- 11. Registers Removed During Synthesis
- 12. General Register Statistics
- 13. Multiplexer Restructuring Statistics (Restructuring Performed)
- 14. Parameter Settings for User Entity Instance: Memoria:MEM|LPM_RAM_DQ:MEM
- 15. Parameter Settings for User Entity Instance: Memoria:MEM|LPM_RAM_DQ:MEM_plus_One
- 16. Parameter Settings for User Entity Instance: Memoria:MEM|LPM_RAM_DQ:MEM_plus_Two
- 17. Parameter Settings for User Entity Instance: Memoria:MEM|LPM_RAM_DQ:MEM_plus_Three
- 18. Parameter Settings for User Entity Instance: DIVMULT:DM|mult:m
- 19. Parameter Settings for User Entity Instance: DIVMULT:DM|Div:d
- 20. Port Connectivity Checks: "RegDesloc:comb_113"
- 21. Port Connectivity Checks: "Mux2to1:ShiftAmtMux"
- 22. Port Connectivity Checks: "Mux2to1:ShiftSrcMux"
- 23. Port Connectivity Checks: "Registrador:LO"
- 24. Port Connectivity Checks: "Registrador:HI"
- 25. Port Connectivity Checks: "DIVMULT:DM"
- 26. Port Connectivity Checks: "LoadSize:LS"
- 27. Port Connectivity Checks: "StoreSize:SS"
- 28. Port Connectivity Checks: "Registrador:MDR"
- 29. Port Connectivity Checks: "Mux5to1:PCSrcMux"
- 30. Port Connectivity Checks: "Ula32:ULA"
- 31. Port Connectivity Checks: "mux4to1:ALUSrcBMux"
- 32. Port Connectivity Checks: "Registrador:B"
- 33. Port Connectivity Checks: "Registrador:A"
- 34. Port Connectivity Checks: "mux4to1:RegDstMux"
- 35. Port Connectivity Checks: "Mux3to1:ExcptCtrlMux"
- 36. Analysis & Synthesis Messages
- 37. Analysis & Synthesis Suppressed Messages
+  8. State Machine - |uControl|currentState
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |uControl
+ 13. Analysis & Synthesis Messages
+ 14. Analysis & Synthesis Suppressed Messages
 
 
 
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2013 Altera Corporation
+Copyright (C) 1991-2010 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -65,19 +42,26 @@ applicable agreement for further details.
 
 
 
-+--------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                             ;
-+-----------------------------+--------------------------------------------+
-; Analysis & Synthesis Status ; Successful - Fri May 19 15:51:48 2017      ;
-; Quartus II 64-Bit Version   ; 13.1.0 Build 162 10/23/2013 SJ Web Edition ;
-; Revision Name               ; uc                                         ;
-; Top-level Entity Name       ; CPU                                        ;
-; Family                      ; MAX V                                      ;
-; Total logic elements        ; 20,173                                     ;
-; Total pins                  ; 56                                         ;
-; Total virtual pins          ; 0                                          ;
-; UFM blocks                  ; 0 / 1 ( 0 % )                              ;
-+-----------------------------+--------------------------------------------+
++------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                 ;
++-------------------------------+----------------------------------------------+
+; Analysis & Synthesis Status   ; Successful - Fri May 19 22:27:34 2017        ;
+; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
+; Revision Name                 ; uc                                           ;
+; Top-level Entity Name         ; uControl                                     ;
+; Family                        ; Stratix III                                  ;
+; Logic utilization             ; N/A                                          ;
+;     Combinational ALUTs       ; 186                                          ;
+;     Memory ALUTs              ; 0                                            ;
+;     Dedicated logic registers ; 66                                           ;
+; Total registers               ; 66                                           ;
+; Total pins                    ; 56                                           ;
+; Total virtual pins            ; 0                                            ;
+; Total block memory bits       ; 0                                            ;
+; DSP block 18-bit elements     ; 0                                            ;
+; Total PLLs                    ; 0                                            ;
+; Total DLLs                    ; 0                                            ;
++-------------------------------+----------------------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -85,8 +69,12 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Top-level entity name                                                      ; CPU                ; uc                 ;
-; Family name                                                                ; MAX V              ; Cyclone IV GX      ;
+; Top-level entity name                                                      ; uControl           ; uc                 ;
+; Family name                                                                ; Stratix III        ; Stratix II         ;
+; Type of Retiming Performed During Resynthesis                              ; Full               ;                    ;
+; Resynthesis Optimization Effort                                            ; Normal             ;                    ;
+; Physical Synthesis Level for Resynthesis                                   ; Normal             ;                    ;
+; Use Generated Physical Constraints File                                    ; On                 ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -104,8 +92,8 @@ applicable agreement for further details.
 ; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
 ; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
 ; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
-; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
 ; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
 ; NOT Gate Push-Back                                                         ; On                 ; On                 ;
 ; Power-Up Don't Care                                                        ; On                 ; On                 ;
 ; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
@@ -122,33 +110,40 @@ applicable agreement for further details.
 ; Auto Carry Chains                                                          ; On                 ; On                 ;
 ; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
 ; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
 ; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
-; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
 ; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
 ; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
 ; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
 ; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
 ; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
 ; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Report Parameter Settings                                                  ; On                 ; On                 ;
-; Report Source Assignments                                                  ; On                 ; On                 ;
-; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Show Parameter Settings Tables in Synthesis Report                         ; On                 ; On                 ;
 ; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
 ; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
 ; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
 ; HDL message level                                                          ; Level2             ; Level2             ;
 ; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
 ; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
-; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
 ; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
 ; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
 ; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
 ; Synthesis Effort                                                           ; Auto               ; Auto               ;
 ; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
-; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
 ; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
 ; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
-; Synthesis Seed                                                             ; 1                  ; 1                  ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
@@ -163,297 +158,125 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                     ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                 ; Library ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
-; ShiftLeft26to28.v                ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/ShiftLeft26to28.v                             ;         ;
-; LoadSize.v                       ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/LoadSize.v                                    ;         ;
-; RegDesloc.vhd                    ; yes             ; User VHDL File               ; /media/psf/Home/git/ucHardware/RegDesloc.vhd                                 ;         ;
-; Memoria.vhd                      ; yes             ; User VHDL File               ; /media/psf/Home/git/ucHardware/Memoria.vhd                                   ;         ;
-; Instr_Reg.vhd                    ; yes             ; User VHDL File               ; /media/psf/Home/git/ucHardware/Instr_Reg.vhd                                 ;         ;
-; Banco_reg.vhd                    ; yes             ; User VHDL File               ; /media/psf/Home/git/ucHardware/Banco_reg.vhd                                 ;         ;
-; ula32.vhd                        ; yes             ; User VHDL File               ; /media/psf/Home/git/ucHardware/ula32.vhd                                     ;         ;
-; Registrador.vhd                  ; yes             ; User VHDL File               ; /media/psf/Home/git/ucHardware/Registrador.vhd                               ;         ;
-; DIVMULT.v                        ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/DIVMULT.v                                     ;         ;
-; SignExtend16to32.v               ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/SignExtend16to32.v                            ;         ;
-; Div.v                            ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/Div.v                                         ;         ;
-; StoreSize.v                      ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/StoreSize.v                                   ;         ;
-; Mux9to1.v                        ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/Mux9to1.v                                     ;         ;
-; Mux5to1.v                        ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/Mux5to1.v                                     ;         ;
-; Mux3to1.v                        ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/Mux3to1.v                                     ;         ;
-; Mux2to1.v                        ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/Mux2to1.v                                     ;         ;
-; mux4to1.v                        ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/mux4to1.v                                     ;         ;
-; ShiftLeft16.v                    ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/ShiftLeft16.v                                 ;         ;
-; ShiftLeft2.v                     ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/ShiftLeft2.v                                  ;         ;
-; SignExtend1to32.v                ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/SignExtend1to32.v                             ;         ;
-; mult.v                           ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/mult.v                                        ;         ;
-; CPU.v                            ; yes             ; User Verilog HDL File        ; /media/psf/Home/git/ucHardware/CPU.v                                         ;         ;
-; lpm_ram_dq.tdf                   ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/lpm_ram_dq.tdf   ;         ;
-; altram.inc                       ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/altram.inc       ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/lpm_mux.inc      ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/lpm_decode.inc   ;         ;
-; aglobal131.inc                   ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/aglobal131.inc   ;         ;
-; altram.tdf                       ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/altram.tdf       ;         ;
-; memmodes.inc                     ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/others/maxplus2/memmodes.inc   ;         ;
-; altsyncram.inc                   ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/altsyncram.inc   ;         ;
-; lpm_mux.tdf                      ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/lpm_mux.tdf      ;         ;
-; muxlut.inc                       ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/muxlut.inc       ;         ;
-; bypassff.inc                     ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/bypassff.inc     ;         ;
-; altshift.inc                     ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/altshift.inc     ;         ;
-; db/mux_bac.tdf                   ; yes             ; Auto-Generated Megafunction  ; /media/psf/Home/git/ucHardware/db/mux_bac.tdf                                ;         ;
-; lpm_decode.tdf                   ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/lpm_decode.tdf   ;         ;
-; declut.inc                       ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/declut.inc       ;         ;
-; lpm_compare.inc                  ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/lpm_compare.inc  ;         ;
-; lpm_constant.inc                 ; yes             ; Megafunction                 ; /home/parallels/altera/13.1/quartus/libraries/megafunctions/lpm_constant.inc ;         ;
-; db/decode_aef.tdf                ; yes             ; Auto-Generated Megafunction  ; /media/psf/Home/git/ucHardware/db/decode_aef.tdf                             ;         ;
-+----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------+---------+
++------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                     ;
++----------------------------------+-----------------+------------------------+------------------------------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path ;
++----------------------------------+-----------------+------------------------+------------------------------+
+; uControl.v                       ; yes             ; User Verilog HDL File  ; Y:/git/ucHardware/uControl.v ;
++----------------------------------+-----------------+------------------------+------------------------------+
 
 
-+-----------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary         ;
-+---------------------------------------------+-------+
-; Resource                                    ; Usage ;
-+---------------------------------------------+-------+
-; Total logic elements                        ; 20173 ;
-;     -- Combinational with no register       ; 10198 ;
-;     -- Register only                        ; 9415  ;
-;     -- Combinational with a register        ; 560   ;
-;                                             ;       ;
-; Logic element usage by number of LUT inputs ;       ;
-;     -- 4 input functions                    ; 8625  ;
-;     -- 3 input functions                    ; 1739  ;
-;     -- 2 input functions                    ; 382   ;
-;     -- 1 input functions                    ; 12    ;
-;     -- 0 input functions                    ; 0     ;
-;                                             ;       ;
-; Logic elements by mode                      ;       ;
-;     -- normal mode                          ; 19732 ;
-;     -- arithmetic mode                      ; 441   ;
-;     -- qfbk mode                            ; 0     ;
-;     -- register cascade mode                ; 0     ;
-;     -- synchronous clear/load mode          ; 41    ;
-;     -- asynchronous clear/load mode         ; 1481  ;
-;                                             ;       ;
-; Total registers                             ; 9975  ;
-; Total logic cells in carry chains           ; 454   ;
-; I/O pins                                    ; 56    ;
-; Maximum fan-out node                        ; clk   ;
-; Maximum fan-out                             ; 9975  ;
-; Total fan-out                               ; 71107 ;
-; Average fan-out                             ; 3.52  ;
-+---------------------------------------------+-------+
++-----------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary               ;
++-----------------------------------------------+-----------+
+; Resource                                      ; Usage     ;
++-----------------------------------------------+-----------+
+; Estimated ALUTs Used                          ; 186       ;
+;     -- Combinational ALUTs                    ; 186       ;
+;     -- Memory ALUTs                           ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+; Dedicated logic registers                     ; 66        ;
+;                                               ;           ;
+; Estimated ALUTs Unavailable                   ; 34        ;
+;     -- Due to unpartnered combinational logic ; 34        ;
+;     -- Due to Memory ALUTs                    ; 0         ;
+;                                               ;           ;
+; Total combinational functions                 ; 186       ;
+; Combinational ALUT usage by number of inputs  ;           ;
+;     -- 7 input functions                      ; 2         ;
+;     -- 6 input functions                      ; 36        ;
+;     -- 5 input functions                      ; 62        ;
+;     -- 4 input functions                      ; 42        ;
+;     -- <=3 input functions                    ; 44        ;
+;                                               ;           ;
+; Combinational ALUTs by mode                   ;           ;
+;     -- normal mode                            ; 184       ;
+;     -- extended LUT mode                      ; 2         ;
+;     -- arithmetic mode                        ; 0         ;
+;     -- shared arithmetic mode                 ; 0         ;
+;                                               ;           ;
+; Estimated ALUT/register pairs used            ; 225       ;
+;                                               ;           ;
+; Total registers                               ; 66        ;
+;     -- Dedicated logic registers              ; 66        ;
+;     -- I/O registers                          ; 0         ;
+;     -- LUT_REGs                               ; 0         ;
+;                                               ;           ;
+; Estimated ALMs:  partially or completely used ; 113       ;
+;                                               ;           ;
+; I/O pins                                      ; 56        ;
+; Maximum fan-out node                          ; clk~input ;
+; Maximum fan-out                               ; 66        ;
+; Total fan-out                                 ; 1050      ;
+; Average fan-out                               ; 2.88      ;
++-----------------------------------------------+-----------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                 ;
-+--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------+--------------+
-; Compilation Hierarchy Node                 ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name                                                                                ; Library Name ;
-+--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------+--------------+
-; |CPU                                       ; 20173 (0)   ; 9975         ; 0          ; 56   ; 0            ; 10198 (0)    ; 9415 (0)          ; 560 (0)          ; 454 (0)         ; 0 (0)      ; |CPU                                                                                               ; work         ;
-;    |Banco_reg:BR|                          ; 2344 (2344) ; 1024         ; 0          ; 0    ; 0            ; 1320 (1320)  ; 1024 (1024)       ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Banco_reg:BR                                                                                  ; work         ;
-;    |DIVMULT:DM|                            ; 1244 (0)    ; 474          ; 0          ; 0    ; 0            ; 770 (0)      ; 132 (0)           ; 342 (0)          ; 431 (0)         ; 0 (0)      ; |CPU|DIVMULT:DM                                                                                    ; work         ;
-;       |Div:d|                              ; 739 (739)   ; 238          ; 0          ; 0    ; 0            ; 501 (501)    ; 68 (68)           ; 170 (170)        ; 296 (296)       ; 0 (0)      ; |CPU|DIVMULT:DM|Div:d                                                                              ; work         ;
-;       |mult:m|                             ; 505 (505)   ; 236          ; 0          ; 0    ; 0            ; 269 (269)    ; 64 (64)           ; 172 (172)        ; 135 (135)       ; 0 (0)      ; |CPU|DIVMULT:DM|mult:m                                                                             ; work         ;
-;    |Instr_Reg:IR|                          ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 32 (32)           ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Instr_Reg:IR                                                                                  ; work         ;
-;    |LoadSize:LS|                           ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|LoadSize:LS                                                                                   ; work         ;
-;    |Memoria:MEM|                           ; 15378 (23)  ; 8252         ; 0          ; 0    ; 0            ; 7126 (23)    ; 8218 (0)          ; 34 (0)           ; 23 (23)         ; 0 (0)      ; |CPU|Memoria:MEM                                                                                   ; work         ;
-;       |lpm_ram_dq:MEM_plus_One|            ; 3843 (0)    ; 2063         ; 0          ; 0    ; 0            ; 1780 (0)     ; 2055 (0)          ; 8 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_One                                                           ; work         ;
-;          |altram:sram|                     ; 3843 (2063) ; 2063         ; 0          ; 0    ; 0            ; 1780 (0)     ; 2055 (2055)       ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_One|altram:sram                                               ; work         ;
-;             |lpm_decode:decode|            ; 289 (0)     ; 0            ; 0          ; 0    ; 0            ; 289 (0)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_One|altram:sram|lpm_decode:decode                             ; work         ;
-;                |decode_aef:auto_generated| ; 289 (289)   ; 0            ; 0          ; 0    ; 0            ; 289 (289)    ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_One|altram:sram|lpm_decode:decode|decode_aef:auto_generated   ; work         ;
-;             |lpm_mux:mux|                  ; 1491 (0)    ; 0            ; 0          ; 0    ; 0            ; 1491 (0)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_One|altram:sram|lpm_mux:mux                                   ; work         ;
-;                |mux_bac:auto_generated|    ; 1491 (1491) ; 0            ; 0          ; 0    ; 0            ; 1491 (1491)  ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_One|altram:sram|lpm_mux:mux|mux_bac:auto_generated            ; work         ;
-;       |lpm_ram_dq:MEM_plus_Three|          ; 3848 (0)    ; 2064         ; 0          ; 0    ; 0            ; 1784 (0)     ; 2055 (0)          ; 9 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Three                                                         ; work         ;
-;          |altram:sram|                     ; 3848 (2064) ; 2064         ; 0          ; 0    ; 0            ; 1784 (0)     ; 2055 (2055)       ; 9 (9)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Three|altram:sram                                             ; work         ;
-;             |lpm_decode:decode|            ; 289 (0)     ; 0            ; 0          ; 0    ; 0            ; 289 (0)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Three|altram:sram|lpm_decode:decode                           ; work         ;
-;                |decode_aef:auto_generated| ; 289 (289)   ; 0            ; 0          ; 0    ; 0            ; 289 (289)    ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Three|altram:sram|lpm_decode:decode|decode_aef:auto_generated ; work         ;
-;             |lpm_mux:mux|                  ; 1495 (0)    ; 0            ; 0          ; 0    ; 0            ; 1495 (0)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Three|altram:sram|lpm_mux:mux                                 ; work         ;
-;                |mux_bac:auto_generated|    ; 1495 (1495) ; 0            ; 0          ; 0    ; 0            ; 1495 (1495)  ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Three|altram:sram|lpm_mux:mux|mux_bac:auto_generated          ; work         ;
-;       |lpm_ram_dq:MEM_plus_Two|            ; 3833 (0)    ; 2063         ; 0          ; 0    ; 0            ; 1770 (0)     ; 2055 (0)          ; 8 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Two                                                           ; work         ;
-;          |altram:sram|                     ; 3833 (2063) ; 2063         ; 0          ; 0    ; 0            ; 1770 (0)     ; 2055 (2055)       ; 8 (8)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Two|altram:sram                                               ; work         ;
-;             |lpm_decode:decode|            ; 273 (0)     ; 0            ; 0          ; 0    ; 0            ; 273 (0)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Two|altram:sram|lpm_decode:decode                             ; work         ;
-;                |decode_aef:auto_generated| ; 273 (273)   ; 0            ; 0          ; 0    ; 0            ; 273 (273)    ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Two|altram:sram|lpm_decode:decode|decode_aef:auto_generated   ; work         ;
-;             |lpm_mux:mux|                  ; 1497 (0)    ; 0            ; 0          ; 0    ; 0            ; 1497 (0)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Two|altram:sram|lpm_mux:mux                                   ; work         ;
-;                |mux_bac:auto_generated|    ; 1497 (1497) ; 0            ; 0          ; 0    ; 0            ; 1497 (1497)  ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM_plus_Two|altram:sram|lpm_mux:mux|mux_bac:auto_generated            ; work         ;
-;       |lpm_ram_dq:MEM|                     ; 3831 (0)    ; 2062         ; 0          ; 0    ; 0            ; 1769 (0)     ; 2053 (0)          ; 9 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM                                                                    ; work         ;
-;          |altram:sram|                     ; 3831 (2062) ; 2062         ; 0          ; 0    ; 0            ; 1769 (0)     ; 2053 (2053)       ; 9 (9)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM|altram:sram                                                        ; work         ;
-;             |lpm_decode:decode|            ; 272 (0)     ; 0            ; 0          ; 0    ; 0            ; 272 (0)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM|altram:sram|lpm_decode:decode                                      ; work         ;
-;                |decode_aef:auto_generated| ; 272 (272)   ; 0            ; 0          ; 0    ; 0            ; 272 (272)    ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM|altram:sram|lpm_decode:decode|decode_aef:auto_generated            ; work         ;
-;             |lpm_mux:mux|                  ; 1497 (0)    ; 0            ; 0          ; 0    ; 0            ; 1497 (0)     ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM|altram:sram|lpm_mux:mux                                            ; work         ;
-;                |mux_bac:auto_generated|    ; 1497 (1497) ; 0            ; 0          ; 0    ; 0            ; 1497 (1497)  ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Memoria:MEM|lpm_ram_dq:MEM|altram:sram|lpm_mux:mux|mux_bac:auto_generated                     ; work         ;
-;    |Mux2to1:ShiftAmtMux|                   ; 1 (1)       ; 0            ; 0          ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Mux2to1:ShiftAmtMux                                                                           ; work         ;
-;    |Mux2to1:ShiftSrcMux|                   ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Mux2to1:ShiftSrcMux                                                                           ; work         ;
-;    |Mux3to1:ALUSrcAMux|                    ; 65 (65)     ; 0            ; 0          ; 0    ; 0            ; 65 (65)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Mux3to1:ALUSrcAMux                                                                            ; work         ;
-;    |Mux3to1:ExcptCtrlMux|                  ; 2 (2)       ; 0            ; 0          ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Mux3to1:ExcptCtrlMux                                                                          ; work         ;
-;    |Mux9to1:DataSrcMux|                    ; 154 (154)   ; 0            ; 0          ; 0    ; 0            ; 154 (154)    ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Mux9to1:DataSrcMux                                                                            ; work         ;
-;    |RegDesloc:comb_113|                    ; 530 (530)   ; 32           ; 0          ; 0    ; 0            ; 498 (498)    ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |CPU|RegDesloc:comb_113                                                                            ; work         ;
-;    |Registrador:ALUOut|                    ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 8 (8)             ; 24 (24)          ; 0 (0)           ; 0 (0)      ; |CPU|Registrador:ALUOut                                                                            ; work         ;
-;    |Registrador:A|                         ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |CPU|Registrador:A                                                                                 ; work         ;
-;    |Registrador:B|                         ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |CPU|Registrador:B                                                                                 ; work         ;
-;    |Registrador:HI|                        ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |CPU|Registrador:HI                                                                                ; work         ;
-;    |Registrador:LO|                        ; 32 (32)     ; 32           ; 0          ; 0    ; 0            ; 0 (0)        ; 0 (0)             ; 32 (32)          ; 0 (0)           ; 0 (0)      ; |CPU|Registrador:LO                                                                                ; work         ;
-;    |Registrador:MDR|                       ; 1 (1)       ; 1            ; 0          ; 0    ; 0            ; 0 (0)        ; 1 (1)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Registrador:MDR                                                                               ; work         ;
-;    |StoreSize:SS|                          ; 57 (57)     ; 0            ; 0          ; 0    ; 0            ; 57 (57)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|StoreSize:SS                                                                                  ; work         ;
-;    |Ula32:ULA|                             ; 178 (178)   ; 0            ; 0          ; 0    ; 0            ; 178 (178)    ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|Ula32:ULA                                                                                     ; work         ;
-;    |mux4to1:IorDMux|                       ; 15 (15)     ; 0            ; 0          ; 0    ; 0            ; 15 (15)      ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|mux4to1:IorDMux                                                                               ; work         ;
-;    |mux4to1:RegDstMux|                     ; 5 (5)       ; 0            ; 0          ; 0    ; 0            ; 5 (5)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |CPU|mux4to1:RegDstMux                                                                             ; work         ;
-+--------------------------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+----------------------------------------------------------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                       ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+--------------+
+; |uControl                  ; 186 (186)         ; 66 (66)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 56   ; 0            ; |uControl           ; work         ;
++----------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
 Encoding Type:  One-Hot
-+---------------------------------------------------------------------+
-; State Machine - |CPU|DIVMULT:DM|Div:d|state                         ;
-+---------------+------------+-----------+------------+---------------+
-; Name          ; state.DONE ; state.DIV ; state.LOAD ; state.INITIAL ;
-+---------------+------------+-----------+------------+---------------+
-; state.INITIAL ; 0          ; 0         ; 0          ; 0             ;
-; state.LOAD    ; 0          ; 0         ; 1          ; 1             ;
-; state.DIV     ; 0          ; 1         ; 0          ; 1             ;
-; state.DONE    ; 1          ; 0         ; 0          ; 1             ;
-+---------------+------------+-----------+------------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |uControl|currentState                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++---------------------------+--------------------------+--------------------------+--------------------------+--------------------------+----------------------+-------------------------+-------------------------+-------------------------+--------------------------+------------------------+----------------------+------------------------+--------------------------+-------------------------+------------------------+-----------------------+------------------------+---------------------------+----------------------+------------------------+-----------------------+-----------------------+-------------------------+----------------------+-------------------------+-------------------------+--------------------------+-------------------------+-------------------------+-------------------------+
+; Name                      ; currentState.stateSTART5 ; currentState.stateSTART4 ; currentState.stateSTART3 ; currentState.stateSTART2 ; currentState.stateOP ; currentState.stateEXCP4 ; currentState.stateEXCP3 ; currentState.stateEXCP2 ; currentState.stateOPCODE ; currentState.stateDIV0 ; currentState.stateOF ; currentState.stateEXCP ; currentState.stateBRANCH ; currentState.stateBEQM2 ; currentState.stateBEQM ; currentState.stateMEM ; currentState.stateHILO ; currentState.stateMEMWAIT ; currentState.stateLS ; currentState.stateWAIT ; currentState.stateJAL ; currentState.stateSLT ; currentState.stateBREAK ; currentState.stateJR ; currentState.stateISAVE ; currentState.stateRSAVE ; currentState.stateRESULT ; currentState.stateSSAVE ; currentState.stateSHIFT ; currentState.stateSTART ;
++---------------------------+--------------------------+--------------------------+--------------------------+--------------------------+----------------------+-------------------------+-------------------------+-------------------------+--------------------------+------------------------+----------------------+------------------------+--------------------------+-------------------------+------------------------+-----------------------+------------------------+---------------------------+----------------------+------------------------+-----------------------+-----------------------+-------------------------+----------------------+-------------------------+-------------------------+--------------------------+-------------------------+-------------------------+-------------------------+
+; currentState.stateSTART   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 0                       ;
+; currentState.stateSHIFT   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 1                       ; 1                       ;
+; currentState.stateSSAVE   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 1                       ; 0                       ; 1                       ;
+; currentState.stateRESULT  ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 1                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateRSAVE   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 1                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateISAVE   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 1                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateJR      ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 1                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateBREAK   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 1                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateSLT     ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 1                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateJAL     ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 1                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateWAIT    ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 1                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateLS      ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 1                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateMEMWAIT ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 1                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateHILO    ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 1                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateMEM     ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 1                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateBEQM    ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 1                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateBEQM2   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 1                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateBRANCH  ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 1                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateEXCP    ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 1                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateOF      ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 1                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateDIV0    ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 1                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateOPCODE  ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 1                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateEXCP2   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 1                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateEXCP3   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 1                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateEXCP4   ; 0                        ; 0                        ; 0                        ; 0                        ; 0                    ; 1                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateOP      ; 0                        ; 0                        ; 0                        ; 0                        ; 1                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateSTART2  ; 0                        ; 0                        ; 0                        ; 1                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateSTART3  ; 0                        ; 0                        ; 1                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateSTART4  ; 0                        ; 1                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
+; currentState.stateSTART5  ; 1                        ; 0                        ; 0                        ; 0                        ; 0                    ; 0                       ; 0                       ; 0                       ; 0                        ; 0                      ; 0                    ; 0                      ; 0                        ; 0                       ; 0                      ; 0                     ; 0                      ; 0                         ; 0                    ; 0                      ; 0                     ; 0                     ; 0                       ; 0                    ; 0                       ; 0                       ; 0                        ; 0                       ; 0                       ; 1                       ;
++---------------------------+--------------------------+--------------------------+--------------------------+--------------------------+----------------------+-------------------------+-------------------------+-------------------------+--------------------------+------------------------+----------------------+------------------------+--------------------------+-------------------------+------------------------+-----------------------+------------------------+---------------------------+----------------------+------------------------+-----------------------+-----------------------+-------------------------+----------------------+-------------------------+-------------------------+--------------------------+-------------------------+-------------------------+-------------------------+
 
 
-Encoding Type:  One-Hot
-+----------------------------------------------------------------------+
-; State Machine - |CPU|DIVMULT:DM|mult:m|state                         ;
-+---------------+------------+------------+------------+---------------+
-; Name          ; state.DONE ; state.MULT ; state.LOAD ; state.INITIAL ;
-+---------------+------------+------------+------------+---------------+
-; state.INITIAL ; 0          ; 0          ; 0          ; 0             ;
-; state.LOAD    ; 0          ; 0          ; 1          ; 1             ;
-; state.MULT    ; 0          ; 1          ; 0          ; 1             ;
-; state.DONE    ; 1          ; 0          ; 0          ; 1             ;
-+---------------+------------+------------+------------+---------------+
-
-
-+-----------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                       ;
-+-----------------------------------------------------+----------------------------+------------------------+
-; Latch Name                                          ; Latch Enable Signal        ; Free of Timing Hazards ;
-+-----------------------------------------------------+----------------------------+------------------------+
-; Mux3to1:ALUSrcAMux|out[0]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[1]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[2]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[3]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[4]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[5]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[6]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[7]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[8]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[9]                           ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[10]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[11]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[12]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[13]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[14]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[15]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[16]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[17]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[18]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[19]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[20]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[21]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[22]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[23]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[24]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[25]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[26]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[27]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[28]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[29]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[30]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; Mux3to1:ALUSrcAMux|out[31]                          ; Mux3to1:ALUSrcAMux|Mux32   ; yes                    ;
-; LoadSize:LS|out[0]                                  ; LoadSize:LS|Mux24          ; yes                    ;
-; Mux9to1:DataSrcMux|out[0]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[1]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[2]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[3]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[4]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[5]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[6]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[7]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[8]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[9]                           ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[10]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[11]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[12]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[13]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[14]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[15]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[16]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[17]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[18]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[19]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[20]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[21]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[22]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[23]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[24]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[25]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[26]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[27]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[28]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[29]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[30]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux9to1:DataSrcMux|out[31]                          ; Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Mux3to1:ExcptCtrlMux|out[0]                         ; Mux3to1:ExcptCtrlMux|Mux32 ; yes                    ;
-; StoreSize:SS|out[26]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[27]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[28]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[29]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[30]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[31]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[17]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[16]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[19]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[18]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[20]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[22]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[21]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[23]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[24]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[25]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[0]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[11]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[15]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[14]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[13]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[12]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[1]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[2]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[3]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[4]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[5]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[6]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[7]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[8]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[9]                                 ; StoreSize:SS|Mux24         ; yes                    ;
-; StoreSize:SS|out[10]                                ; StoreSize:SS|Mux24         ; yes                    ;
-; Number of user-specified and inferred latches = 98  ;                            ;                        ;
-+-----------------------------------------------------+----------------------------+------------------------+
-Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                        ;
-+--------------------------------------------------------------+----------------------------------------------------------------------------+
-; Register name                                                ; Reason for Removal                                                         ;
-+--------------------------------------------------------------+----------------------------------------------------------------------------+
-; Registrador:PC|Saida[0..31]                                  ; Stuck at GND due to stuck port data_in                                     ;
-; DIVMULT:DM|Div:d|div0                                        ; Stuck at VCC due to stuck port data_in                                     ;
-; Memoria:MEM|lpm_ram_dq:MEM|altram:sram|ffaddress[0]          ; Merged with Memoria:MEM|lpm_ram_dq:MEM_plus_Two|altram:sram|ffaddress[0]   ;
-; Memoria:MEM|lpm_ram_dq:MEM_plus_Two|altram:sram|ffaddress[0] ; Merged with Memoria:MEM|lpm_ram_dq:MEM_plus_Three|altram:sram|ffaddress[0] ;
-; Memoria:MEM|lpm_ram_dq:MEM_plus_One|altram:sram|ffaddress[0] ; Merged with Memoria:MEM|lpm_ram_dq:MEM_plus_Three|altram:sram|ffaddress[0] ;
-; Memoria:MEM|lpm_ram_dq:MEM|altram:sram|ffaddress[1]          ; Merged with Memoria:MEM|lpm_ram_dq:MEM_plus_Two|altram:sram|ffaddress[1]   ;
-; DIVMULT:DM|Div:d|state~8                                     ; Lost fanout                                                                ;
-; DIVMULT:DM|Div:d|state~9                                     ; Lost fanout                                                                ;
-; DIVMULT:DM|mult:m|state~8                                    ; Lost fanout                                                                ;
-; DIVMULT:DM|mult:m|state~9                                    ; Lost fanout                                                                ;
-; Total Number of Removed Registers = 41                       ;                                                                            ;
-+--------------------------------------------------------------+----------------------------------------------------------------------------+
++--------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                             ;
++---------------------------------------+----------------------------------------+
+; Register name                         ; Reason for Removal                     ;
++---------------------------------------+----------------------------------------+
+; ShiftAmt~reg0                         ; Merged with ShiftSrc~reg0              ;
+; HILOWrite~reg0                        ; Stuck at GND due to stuck port data_in ;
+; currentState.stateHILO                ; Lost fanout                            ;
+; currentState~28                       ; Lost fanout                            ;
+; currentState~29                       ; Lost fanout                            ;
+; currentState~30                       ; Lost fanout                            ;
+; currentState~31                       ; Lost fanout                            ;
+; currentState~32                       ; Lost fanout                            ;
+; Total Number of Removed Registers = 8 ;                                        ;
++---------------------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -461,843 +284,208 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 9975  ;
-; Number of registers using Synchronous Clear  ; 39    ;
-; Number of registers using Synchronous Load   ; 10    ;
-; Number of registers using Asynchronous Clear ; 1481  ;
+; Total registers                              ; 66    ;
+; Number of registers using Synchronous Clear  ; 3     ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 9675  ;
+; Number of registers using Clock Enable       ; 5     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                    ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-; 8:1                ; 24 bits   ; 120 LEs       ; 96 LEs               ; 24 LEs                 ; Yes        ; |CPU|Registrador:ALUOut|Saida[15]   ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |CPU|Registrador:B|Saida[11]        ;
-; 32:1               ; 32 bits   ; 672 LEs       ; 672 LEs              ; 0 LEs                  ; Yes        ; |CPU|Registrador:A|Saida[11]        ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |CPU|DIVMULT:DM|mult:m|MPLIER[31]   ;
-; 6:1                ; 62 bits   ; 248 LEs       ; 124 LEs              ; 124 LEs                ; Yes        ; |CPU|DIVMULT:DM|mult:m|MPLIER[21]   ;
-; 6:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |CPU|DIVMULT:DM|Div:d|Divisor[7]    ;
-; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |CPU|DIVMULT:DM|Div:d|Divisor[48]   ;
-; 13:1               ; 9 bits    ; 72 LEs        ; 45 LEs               ; 27 LEs                 ; Yes        ; |CPU|RegDesloc:comb_113|temp[7]     ;
-; 13:1               ; 13 bits   ; 104 LEs       ; 78 LEs               ; 26 LEs                 ; Yes        ; |CPU|RegDesloc:comb_113|temp[20]    ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |CPU|DIVMULT:DM|Div:d|Remainder[0]  ;
-; 8:1                ; 24 bits   ; 120 LEs       ; 72 LEs               ; 48 LEs                 ; Yes        ; |CPU|DIVMULT:DM|Div:d|Remainder[14] ;
-; 14:1               ; 4 bits    ; 36 LEs        ; 24 LEs               ; 12 LEs                 ; Yes        ; |CPU|RegDesloc:comb_113|temp[4]     ;
-; 9:1                ; 31 bits   ; 186 LEs       ; 62 LEs               ; 124 LEs                ; Yes        ; |CPU|DIVMULT:DM|Div:d|Remainder[44] ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 7 LEs                ; 7 LEs                  ; No         ; |CPU|Mux3to1:ALUSrcAMux|Mux7        ;
-; 3:1                ; 25 bits   ; 50 LEs        ; 50 LEs               ; 0 LEs                  ; No         ; |CPU|Mux3to1:ALUSrcAMux|Mux14       ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |CPU|mux4to1:RegDstMux|Mux31        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |CPU|mux4to1:IorDMux|Mux31          ;
-; 3:1                ; 16 bits   ; 32 LEs        ; 16 LEs               ; 16 LEs                 ; No         ; |CPU|StoreSize:SS|Mux15             ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |CPU|StoreSize:SS|Mux0              ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 32 LEs               ; 32 LEs                 ; No         ; |CPU|DIVMULT:DM|mult:m|MCAND        ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 64 LEs               ; 96 LEs                 ; No         ; |CPU|Ula32:ULA|Mux63                ;
-; 8:1                ; 8 bits    ; 40 LEs        ; 24 LEs               ; 16 LEs                 ; No         ; |CPU|Ula32:ULA|Mux26                ;
-; 3:1                ; 64 bits   ; 128 LEs       ; 128 LEs              ; 0 LEs                  ; No         ; |CPU|DIVMULT:DM|mult:m|PROD         ;
-; 5:1                ; 32 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |CPU|DIVMULT:DM|Div:d|Quotient      ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 28 LEs               ; 14 LEs                 ; No         ; |CPU|Mux9to1:DataSrcMux|Mux4        ;
-; 9:1                ; 16 bits   ; 96 LEs        ; 64 LEs               ; 32 LEs                 ; No         ; |CPU|Mux9to1:DataSrcMux|Mux21       ;
-; 9:1                ; 8 bits    ; 48 LEs        ; 40 LEs               ; 8 LEs                  ; No         ; |CPU|Mux9to1:DataSrcMux|Mux9        ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------+
-
-
-+-------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:MEM|LPM_RAM_DQ:MEM ;
-+------------------------+----------------+-------------------------------+
-; Parameter Name         ; Value          ; Type                          ;
-+------------------------+----------------+-------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                       ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                       ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                       ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                       ;
-; USE_EAB                ; ON             ; Untyped                       ;
-; DEVICE_FAMILY          ; MAX V          ; Untyped                       ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                       ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                    ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                  ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                  ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                ;
-+------------------------+----------------+-------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:MEM|LPM_RAM_DQ:MEM_plus_One ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                         ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
-; USE_EAB                ; ON             ; Untyped                                ;
-; DEVICE_FAMILY          ; MAX V          ; Untyped                                ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:MEM|LPM_RAM_DQ:MEM_plus_Two ;
-+------------------------+----------------+----------------------------------------+
-; Parameter Name         ; Value          ; Type                                   ;
-+------------------------+----------------+----------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                         ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                         ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                         ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                ;
-; USE_EAB                ; ON             ; Untyped                                ;
-; DEVICE_FAMILY          ; MAX V          ; Untyped                                ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                             ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                           ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                           ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                         ;
-+------------------------+----------------+----------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: Memoria:MEM|LPM_RAM_DQ:MEM_plus_Three ;
-+------------------------+----------------+------------------------------------------+
-; Parameter Name         ; Value          ; Type                                     ;
-+------------------------+----------------+------------------------------------------+
-; LPM_WIDTH              ; 8              ; Signed Integer                           ;
-; LPM_WIDTHAD            ; 8              ; Signed Integer                           ;
-; LPM_NUMWORDS           ; 0              ; Signed Integer                           ;
-; LPM_INDATA             ; REGISTERED     ; Untyped                                  ;
-; LPM_ADDRESS_CONTROL    ; REGISTERED     ; Untyped                                  ;
-; LPM_OUTDATA            ; REGISTERED     ; Untyped                                  ;
-; LPM_FILE               ; instrucoes.mif ; Untyped                                  ;
-; USE_EAB                ; ON             ; Untyped                                  ;
-; DEVICE_FAMILY          ; MAX V          ; Untyped                                  ;
-; CBXI_PARAMETER         ; NOTHING        ; Untyped                                  ;
-; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                               ;
-; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                             ;
-; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                             ;
-; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                           ;
-+------------------------+----------------+------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DIVMULT:DM|mult:m ;
-+----------------+-------+---------------------------------------+
-; Parameter Name ; Value ; Type                                  ;
-+----------------+-------+---------------------------------------+
-; INITIAL        ; 00    ; Unsigned Binary                       ;
-; LOAD           ; 01    ; Unsigned Binary                       ;
-; MULT           ; 10    ; Unsigned Binary                       ;
-; DONE           ; 11    ; Unsigned Binary                       ;
-+----------------+-------+---------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+---------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: DIVMULT:DM|Div:d ;
-+----------------+-------+--------------------------------------+
-; Parameter Name ; Value ; Type                                 ;
-+----------------+-------+--------------------------------------+
-; INITIAL        ; 00    ; Unsigned Binary                      ;
-; LOAD           ; 01    ; Unsigned Binary                      ;
-; DIV            ; 10    ; Unsigned Binary                      ;
-; DONE           ; 11    ; Unsigned Binary                      ;
-+----------------+-------+--------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
 +-------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "RegDesloc:comb_113"                                                                                            ;
-+------+-------+------------------+---------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity         ; Details                                                                                                 ;
-+------+-------+------------------+---------------------------------------------------------------------------------------------------------+
-; n    ; Input ; Critical Warning ; Can't connect array with 32 elements in array dimension 1 to port with 5 elements in the same dimension ;
-+------+-------+------------------+---------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
+; 132:1              ; 3 bits    ; 264 ALUTs     ; 9 ALUTs              ; 255 ALUTs              ; Yes        ; |uControl|ShiftCtrl[0]~reg0 ;
+; 6:1                ; 3 bits    ; 12 ALUTs      ; 6 ALUTs              ; 6 ALUTs                ; No         ; |uControl|Selector89        ;
+; 6:1                ; 5 bits    ; 20 ALUTs      ; 10 ALUTs             ; 10 ALUTs               ; No         ; |uControl|Selector85        ;
+; 128:1              ; 4 bits    ; 340 ALUTs     ; 24 ALUTs             ; 316 ALUTs              ; No         ; |uControl|Selector6         ;
+; 128:1              ; 2 bits    ; 170 ALUTs     ; 8 ALUTs              ; 162 ALUTs              ; No         ; |uControl|Selector12        ;
+; 128:1              ; 2 bits    ; 170 ALUTs     ; 4 ALUTs              ; 166 ALUTs              ; No         ; |uControl|Selector8         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Mux2to1:ShiftAmtMux"                                                                                                                         ;
-+------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                       ;
-+------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; in1  ; Input ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in1[31..5]" will be connected to GND. ;
-; in2  ; Input ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in2[31..5]" will be connected to GND. ;
-+------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Mux2to1:ShiftSrcMux"                                                                                                                                ;
-+------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type   ; Severity ; Details                                                                                                                                       ;
-+------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; in2        ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in2[31..5]" will be connected to GND. ;
-; out[31..5] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                           ;
-+------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------+
-; Port Connectivity Checks: "Registrador:LO" ;
-+------+-------+----------+------------------+
-; Port ; Type  ; Severity ; Details          ;
-+------+-------+----------+------------------+
-; load ; Input ; Info     ; Stuck at VCC     ;
-+------+-------+----------+------------------+
-
-
-+--------------------------------------------+
-; Port Connectivity Checks: "Registrador:HI" ;
-+------+-------+----------+------------------+
-; Port ; Type  ; Severity ; Details          ;
-+------+-------+----------+------------------+
-; load ; Input ; Info     ; Stuck at VCC     ;
-+------+-------+----------+------------------+
-
-
-+-----------------------------------------+
-; Port Connectivity Checks: "DIVMULT:DM"  ;
-+-------+-------+----------+--------------+
-; Port  ; Type  ; Severity ; Details      ;
-+-------+-------+----------+--------------+
-; start ; Input ; Info     ; Stuck at VCC ;
-+-------+-------+----------+--------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "LoadSize:LS"                                                                                                                                  ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                        ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Data ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "Data[31..1]" will be connected to GND. ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "StoreSize:SS"                                                                                                                                 ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                        ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Data ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "Data[31..1]" will be connected to GND. ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------+
-; Port Connectivity Checks: "Registrador:MDR"                ;
-+-------+--------+------------------+------------------------+
-; Port  ; Type   ; Severity         ; Details                ;
-+-------+--------+------------------+------------------------+
-; load  ; Input  ; Info             ; Stuck at VCC           ;
-; saida ; Output ; Critical Warning ; Types are incompatible ;
-+-------+--------+------------------+------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Mux5to1:PCSrcMux"                                                                                                                               ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port    ; Type   ; Severity ; Details                                                                                                                                      ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-; control ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
-; out     ; Output ; Warning  ; Declared by entity but not connected by instance. Logic that only feeds a dangling port will be removed.                                     ;
-+---------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Ula32:ULA"                                                                              ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; negativo ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-; z        ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux4to1:ALUSrcBMux"                                                                                                                                  ;
-+------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port       ; Type  ; Severity ; Details                                                                                                                                         ;
-+------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-; in2[31..3] ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
-; in2[1..0]  ; Input ; Info     ; Stuck at GND                                                                                                                                    ;
-; in2[2]     ; Input ; Info     ; Stuck at VCC                                                                                                                                    ;
-; control    ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (2 bits) it drives.  Extra input bit(s) "control[1..1]" will be connected to GND. ;
-+------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------+
-; Port Connectivity Checks: "Registrador:B" ;
-+------+-------+----------+-----------------+
-; Port ; Type  ; Severity ; Details         ;
-+------+-------+----------+-----------------+
-; load ; Input ; Info     ; Stuck at VCC    ;
-+------+-------+----------+-----------------+
-
-
-+-------------------------------------------+
-; Port Connectivity Checks: "Registrador:A" ;
-+------+-------+----------+-----------------+
-; Port ; Type  ; Severity ; Details         ;
-+------+-------+----------+-----------------+
-; load ; Input ; Info     ; Stuck at VCC    ;
-+------+-------+----------+-----------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "mux4to1:RegDstMux"                                                                                                                                 ;
-+-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port      ; Type   ; Severity ; Details                                                                                                                                       ;
-+-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; in1       ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in1[31..5]" will be connected to GND. ;
-; in2       ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in2[31..5]" will be connected to GND. ;
-; in3       ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in3[31..5]" will be connected to GND. ;
-; in3[4..1] ; Input  ; Info     ; Stuck at VCC                                                                                                                                  ;
-; in3[27]   ; Input  ; Info     ; Stuck at GND                                                                                                                                  ;
-; in4       ; Input  ; Warning  ; Input port expression (5 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in4[31..5]" will be connected to GND. ;
-; in4       ; Input  ; Info     ; Stuck at VCC                                                                                                                                  ;
-; out       ; Output ; Warning  ; Output or bidir port (32 bits) is wider than the port expression (5 bits) it drives; bit(s) "out[31..5]" have no fanouts                      ;
-+-----------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Mux3to1:ExcptCtrlMux"                                                                                                                        ;
-+------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                       ;
-+------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; in1  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in1[31..1]" will be connected to GND. ;
-; in1  ; Input ; Info     ; Stuck at VCC                                                                                                                                  ;
-; in2  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in2[31..1]" will be connected to GND. ;
-; in2  ; Input ; Info     ; Stuck at GND                                                                                                                                  ;
-; in3  ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "in3[31..1]" will be connected to GND. ;
-; in3  ; Input ; Info     ; Stuck at VCC                                                                                                                                  ;
-+------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |uControl ;
++----------------+---------+-----------------------------------------------+
+; Parameter Name ; Value   ; Type                                          ;
++----------------+---------+-----------------------------------------------+
+; stateSTART     ; 00000   ; Unsigned Binary                               ;
+; stateSHIFT     ; 00001   ; Unsigned Binary                               ;
+; stateSSAVE     ; 00010   ; Unsigned Binary                               ;
+; stateRESULT    ; 00011   ; Unsigned Binary                               ;
+; stateRSAVE     ; 00100   ; Unsigned Binary                               ;
+; stateISAVE     ; 00101   ; Unsigned Binary                               ;
+; stateJR        ; 00110   ; Unsigned Binary                               ;
+; stateBREAK     ; 00111   ; Unsigned Binary                               ;
+; stateSLT       ; 01000   ; Unsigned Binary                               ;
+; stateJAL       ; 01001   ; Unsigned Binary                               ;
+; stateWAIT      ; 01010   ; Unsigned Binary                               ;
+; stateLS        ; 01011   ; Unsigned Binary                               ;
+; stateMEMWAIT   ; 01100   ; Unsigned Binary                               ;
+; stateHILO      ; 01101   ; Unsigned Binary                               ;
+; stateMEM       ; 01110   ; Unsigned Binary                               ;
+; stateBEQM      ; 01111   ; Unsigned Binary                               ;
+; stateBEQM2     ; 10000   ; Unsigned Binary                               ;
+; stateBRANCH    ; 10001   ; Unsigned Binary                               ;
+; stateEXCP      ; 10010   ; Unsigned Binary                               ;
+; stateOF        ; 10011   ; Unsigned Binary                               ;
+; stateDIV0      ; 10100   ; Unsigned Binary                               ;
+; stateOPCODE    ; 10101   ; Unsigned Binary                               ;
+; stateEXCP2     ; 10110   ; Unsigned Binary                               ;
+; stateEXCP3     ; 10111   ; Unsigned Binary                               ;
+; stateEXCP4     ; 11000   ; Unsigned Binary                               ;
+; stateOP        ; 11001   ; Unsigned Binary                               ;
+; stateSTART2    ; 11010   ; Unsigned Binary                               ;
+; stateSTART3    ; 11011   ; Unsigned Binary                               ;
+; stateSTART4    ; 11100   ; Unsigned Binary                               ;
+; stateSTART5    ; 11101   ; Unsigned Binary                               ;
+; ulaSA          ; 000     ; Unsigned Binary                               ;
+; ulaADD         ; 001     ; Unsigned Binary                               ;
+; ulaSUB         ; 010     ; Unsigned Binary                               ;
+; ulaAND         ; 011     ; Unsigned Binary                               ;
+; ADD            ; 0100000 ; Unsigned Binary                               ;
+; AND            ; 0100100 ; Unsigned Binary                               ;
+; DIV            ; 0011010 ; Unsigned Binary                               ;
+; MULT           ; 0011000 ; Unsigned Binary                               ;
+; JR             ; 0001000 ; Unsigned Binary                               ;
+; MFHI           ; 0010000 ; Unsigned Binary                               ;
+; MFLO           ; 0010010 ; Unsigned Binary                               ;
+; SLL            ; 0000000 ; Unsigned Binary                               ;
+; SLLV           ; 0000100 ; Unsigned Binary                               ;
+; SLT            ; 0101010 ; Unsigned Binary                               ;
+; SRA            ; 0000011 ; Unsigned Binary                               ;
+; SRAV           ; 0000111 ; Unsigned Binary                               ;
+; SRL            ; 0000010 ; Unsigned Binary                               ;
+; SUB            ; 0100010 ; Unsigned Binary                               ;
+; BREAK          ; 0001101 ; Unsigned Binary                               ;
+; RTE            ; 0010011 ; Unsigned Binary                               ;
+; ADDI           ; 1001000 ; Unsigned Binary                               ;
+; ADDIU          ; 1001001 ; Unsigned Binary                               ;
+; BEQ            ; 1000100 ; Unsigned Binary                               ;
+; BNE            ; 1000101 ; Unsigned Binary                               ;
+; BLE            ; 1000110 ; Unsigned Binary                               ;
+; BGT            ; 1000111 ; Unsigned Binary                               ;
+; BEQM           ; 1000001 ; Unsigned Binary                               ;
+; LB             ; 1100000 ; Unsigned Binary                               ;
+; LH             ; 1100001 ; Unsigned Binary                               ;
+; LUI            ; 1001111 ; Unsigned Binary                               ;
+; LW             ; 1100011 ; Unsigned Binary                               ;
+; SB             ; 1101000 ; Unsigned Binary                               ;
+; SH             ; 1101001 ; Unsigned Binary                               ;
+; SLTI           ; 1001010 ; Unsigned Binary                               ;
+; SW             ; 1101011 ; Unsigned Binary                               ;
+; J              ; 1000010 ; Unsigned Binary                               ;
+; JAL            ; 1000011 ; Unsigned Binary                               ;
++----------------+---------+-----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings Tables in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
-    Info: Version 13.1.0 Build 162 10/23/2013 SJ Web Edition
-    Info: Processing started: Fri May 19 15:50:33 2017
+Info: Running Quartus II Analysis & Synthesis
+    Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
+    Info: Processing started: Fri May 19 22:27:29 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uc -c uc
-Warning (20028): Parallel compilation is not licensed and has been disabled
-Info (12021): Found 1 design units, including 1 entities, in source file ShiftLeft26to28.v
-    Info (12023): Found entity 1: ShiftLeft26to28
-Info (12021): Found 1 design units, including 1 entities, in source file LoadSize.v
-    Info (12023): Found entity 1: LoadSize
-Info (12021): Found 2 design units, including 1 entities, in source file RegDesloc.vhd
-    Info (12022): Found design unit 1: RegDesloc-behavioral_arch
-    Info (12023): Found entity 1: RegDesloc
-Info (12021): Found 3 design units, including 1 entities, in source file Memoria.vhd
-    Info (12022): Found design unit 1: ram_constants
-    Info (12022): Found design unit 2: Memoria-behavioral_arch
-    Info (12023): Found entity 1: Memoria
-Info (12021): Found 2 design units, including 1 entities, in source file Instr_Reg.vhd
-    Info (12022): Found design unit 1: Instr_Reg-behavioral_arch
-    Info (12023): Found entity 1: Instr_Reg
-Info (12021): Found 2 design units, including 1 entities, in source file Banco_reg.vhd
-    Info (12022): Found design unit 1: Banco_reg-behavioral_arch
-    Info (12023): Found entity 1: Banco_reg
-Info (12021): Found 2 design units, including 1 entities, in source file ula32.vhd
-    Info (12022): Found design unit 1: Ula32-behavioral
-    Info (12023): Found entity 1: Ula32
-Info (12021): Found 2 design units, including 1 entities, in source file Registrador.vhd
-    Info (12022): Found design unit 1: Registrador-behavioral_arch
-    Info (12023): Found entity 1: Registrador
-Info (12021): Found 1 design units, including 1 entities, in source file DIVMULT.v
-    Info (12023): Found entity 1: DIVMULT
-Info (12021): Found 1 design units, including 1 entities, in source file SignExtend16to32.v
-    Info (12023): Found entity 1: SignExtend16to32
-Info (12021): Found 1 design units, including 1 entities, in source file Div.v
-    Info (12023): Found entity 1: Div
-Info (12021): Found 1 design units, including 1 entities, in source file StoreSize.v
-    Info (12023): Found entity 1: StoreSize
-Info (12021): Found 1 design units, including 1 entities, in source file Mux9to1.v
-    Info (12023): Found entity 1: Mux9to1
-Info (12021): Found 1 design units, including 1 entities, in source file Mux5to1.v
-    Info (12023): Found entity 1: Mux5to1
-Info (12021): Found 1 design units, including 1 entities, in source file Mux3to1.v
-    Info (12023): Found entity 1: Mux3to1
-Info (12021): Found 1 design units, including 1 entities, in source file Mux2to1.v
-    Info (12023): Found entity 1: Mux2to1
-Warning (12019): Can't analyze file -- file multiplication.v is missing
-Info (12021): Found 1 design units, including 1 entities, in source file mux4to1.v
-    Info (12023): Found entity 1: mux4to1
-Info (12021): Found 1 design units, including 1 entities, in source file ShiftLeft16.v
-    Info (12023): Found entity 1: ShiftLeft16
-Info (12021): Found 1 design units, including 1 entities, in source file ShiftLeft2.v
-    Info (12023): Found entity 1: ShiftLeft2
-Info (12021): Found 1 design units, including 1 entities, in source file SignExtend1to32.v
-    Info (12023): Found entity 1: SignExtend1to32
-Info (12021): Found 1 design units, including 1 entities, in source file uControl.v
-    Info (12023): Found entity 1: uControl
-Info (12021): Found 1 design units, including 1 entities, in source file mult.v
-    Info (12023): Found entity 1: mult
-Info (12021): Found 1 design units, including 1 entities, in source file teste.v
-    Info (12023): Found entity 1: teste
-Info (12021): Found 1 design units, including 1 entities, in source file CPU.v
-    Info (12023): Found entity 1: CPU
-Info (12021): Found 1 design units, including 1 entities, in source file Main.v
-    Info (12023): Found entity 1: Main
+Info: Found 1 design units, including 1 entities, in source file shiftleft26to28.v
+    Info: Found entity 1: ShiftLeft26to28
+Info: Found 1 design units, including 1 entities, in source file loadsize.v
+    Info: Found entity 1: LoadSize
+Info: Found 2 design units, including 1 entities, in source file regdesloc.vhd
+    Info: Found design unit 1: RegDesloc-behavioral_arch
+    Info: Found entity 1: RegDesloc
+Info: Found 3 design units, including 1 entities, in source file memoria.vhd
+    Info: Found design unit 1: ram_constants
+    Info: Found design unit 2: Memoria-behavioral_arch
+    Info: Found entity 1: Memoria
+Info: Found 2 design units, including 1 entities, in source file instr_reg.vhd
+    Info: Found design unit 1: Instr_Reg-behavioral_arch
+    Info: Found entity 1: Instr_Reg
+Info: Found 2 design units, including 1 entities, in source file banco_reg.vhd
+    Info: Found design unit 1: Banco_reg-behavioral_arch
+    Info: Found entity 1: Banco_reg
+Info: Found 2 design units, including 1 entities, in source file ula32.vhd
+    Info: Found design unit 1: Ula32-behavioral
+    Info: Found entity 1: Ula32
+Info: Found 2 design units, including 1 entities, in source file registrador.vhd
+    Info: Found design unit 1: Registrador-behavioral_arch
+    Info: Found entity 1: Registrador
+Info: Found 1 design units, including 1 entities, in source file divmult.v
+    Info: Found entity 1: DIVMULT
+Info: Found 1 design units, including 1 entities, in source file signextend16to32.v
+    Info: Found entity 1: SignExtend16to32
+Info: Found 1 design units, including 1 entities, in source file div.v
+    Info: Found entity 1: Div
+Info: Found 1 design units, including 1 entities, in source file storesize.v
+    Info: Found entity 1: StoreSize
+Info: Found 1 design units, including 1 entities, in source file mux9to1.v
+    Info: Found entity 1: Mux9to1
+Info: Found 1 design units, including 1 entities, in source file mux5to1.v
+    Info: Found entity 1: Mux5to1
+Info: Found 1 design units, including 1 entities, in source file mux3to1.v
+    Info: Found entity 1: Mux3to1
+Info: Found 1 design units, including 1 entities, in source file mux2to1.v
+    Info: Found entity 1: Mux2to1
+Warning: Can't analyze file -- file multiplication.v is missing
+Info: Found 1 design units, including 1 entities, in source file mux4to1.v
+    Info: Found entity 1: mux4to1
+Info: Found 1 design units, including 1 entities, in source file shiftleft16.v
+    Info: Found entity 1: ShiftLeft16
+Info: Found 1 design units, including 1 entities, in source file shiftleft2.v
+    Info: Found entity 1: ShiftLeft2
+Info: Found 1 design units, including 1 entities, in source file signextend1to32.v
+    Info: Found entity 1: SignExtend1to32
+Info: Found 1 design units, including 1 entities, in source file ucontrol.v
+    Info: Found entity 1: uControl
+Info: Found 1 design units, including 1 entities, in source file mult.v
+    Info: Found entity 1: mult
+Info: Found 1 design units, including 1 entities, in source file teste.v
+    Info: Found entity 1: teste
+Info: Found 1 design units, including 1 entities, in source file cpu.v
+    Info: Found entity 1: CPU
+Info: Found 1 design units, including 1 entities, in source file main.v
+    Info: Found entity 1: Main
 Warning (10236): Verilog HDL Implicit Net warning at CPU.v(55): created implicit net for "exc1"
 Warning (10236): Verilog HDL Implicit Net warning at CPU.v(56): created implicit net for "exc2"
 Warning (10236): Verilog HDL Implicit Net warning at CPU.v(57): created implicit net for "exc3"
-Warning (10236): Verilog HDL Implicit Net warning at CPU.v(111): created implicit net for "AluSrcB"
 Critical Warning (10846): Verilog HDL Instantiation warning at CPU.v(177): instance has no name
 Critical Warning (10846): Verilog HDL Instantiation warning at CPU.v(188): instance has no name
-Info (12127): Elaborating entity "CPU" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at CPU.v(55): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at CPU.v(56): truncated value with size 32 to match size of target (1)
-Warning (10230): Verilog HDL assignment warning at CPU.v(57): truncated value with size 32 to match size of target (1)
-Warning (10034): Output port "funct" at CPU.v(30) has no driver
-Info (12128): Elaborating entity "Registrador" for hierarchy "Registrador:PC"
-Info (12128): Elaborating entity "mux4to1" for hierarchy "mux4to1:IorDMux"
-Info (12128): Elaborating entity "Memoria" for hierarchy "Memoria:MEM"
-Info (12128): Elaborating entity "LPM_RAM_DQ" for hierarchy "Memoria:MEM|LPM_RAM_DQ:MEM"
-Info (12130): Elaborated megafunction instantiation "Memoria:MEM|LPM_RAM_DQ:MEM"
-Info (12133): Instantiated megafunction "Memoria:MEM|LPM_RAM_DQ:MEM" with the following parameter:
-    Info (12134): Parameter "LPM_WIDTH" = "8"
-    Info (12134): Parameter "LPM_WIDTHAD" = "8"
-    Info (12134): Parameter "LPM_NUMWORDS" = "0"
-    Info (12134): Parameter "LPM_INDATA" = "REGISTERED"
-    Info (12134): Parameter "LPM_ADDRESS_CONTROL" = "REGISTERED"
-    Info (12134): Parameter "LPM_OUTDATA" = "REGISTERED"
-    Info (12134): Parameter "LPM_FILE" = "instrucoes.mif"
-    Info (12134): Parameter "LPM_TYPE" = "LPM_RAM_DQ"
-    Info (12134): Parameter "USE_EAB" = "ON"
-    Info (12134): Parameter "INTENDED_DEVICE_FAMILY" = "UNUSED"
-    Info (12134): Parameter "LPM_HINT" = "UNUSED"
-Info (12128): Elaborating entity "altram" for hierarchy "Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram"
-Warning (287001): Assertion warning: Current device family (MAX V) does not support synchronous RAM -- implementing the synchronous RAM as a DFFE array instead
-Warning (287001): Assertion warning: Ignored FILE parameter -- the MAX V device family (for LE implementation) does not support RAM initialization
-Info (12131): Elaborated megafunction instantiation "Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram", which is child of megafunction instantiation "Memoria:MEM|LPM_RAM_DQ:MEM"
-Info (12128): Elaborating entity "lpm_mux" for hierarchy "Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram|lpm_mux:mux"
-Info (12131): Elaborated megafunction instantiation "Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram|lpm_mux:mux", which is child of megafunction instantiation "Memoria:MEM|LPM_RAM_DQ:MEM"
-Info (12021): Found 1 design units, including 1 entities, in source file db/mux_bac.tdf
-    Info (12023): Found entity 1: mux_bac
-Info (12128): Elaborating entity "mux_bac" for hierarchy "Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram|lpm_mux:mux|mux_bac:auto_generated"
-Info (12128): Elaborating entity "lpm_decode" for hierarchy "Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram|lpm_decode:decode"
-Info (12131): Elaborated megafunction instantiation "Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram|lpm_decode:decode", which is child of megafunction instantiation "Memoria:MEM|LPM_RAM_DQ:MEM"
-Info (12021): Found 1 design units, including 1 entities, in source file db/decode_aef.tdf
-    Info (12023): Found entity 1: decode_aef
-Info (12128): Elaborating entity "decode_aef" for hierarchy "Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram|lpm_decode:decode|decode_aef:auto_generated"
-Info (12128): Elaborating entity "Mux3to1" for hierarchy "Mux3to1:ExcptCtrlMux"
-Warning (10240): Verilog HDL Always Construct warning at Mux3to1.v(10): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "out[0]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[1]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[2]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[3]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[4]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[5]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[6]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[7]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[8]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[9]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[10]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[11]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[12]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[13]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[14]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[15]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[16]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[17]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[18]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[19]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[20]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[21]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[22]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[23]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[24]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[25]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[26]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[27]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[28]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[29]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[30]" at Mux3to1.v(10)
-Info (10041): Inferred latch for "out[31]" at Mux3to1.v(10)
-Info (12128): Elaborating entity "Instr_Reg" for hierarchy "Instr_Reg:IR"
-Info (12128): Elaborating entity "Mux9to1" for hierarchy "Mux9to1:DataSrcMux"
-Warning (10240): Verilog HDL Always Construct warning at Mux9to1.v(16): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "out[0]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[1]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[2]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[3]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[4]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[5]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[6]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[7]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[8]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[9]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[10]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[11]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[12]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[13]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[14]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[15]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[16]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[17]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[18]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[19]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[20]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[21]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[22]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[23]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[24]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[25]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[26]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[27]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[28]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[29]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[30]" at Mux9to1.v(16)
-Info (10041): Inferred latch for "out[31]" at Mux9to1.v(16)
-Info (12128): Elaborating entity "Banco_reg" for hierarchy "Banco_reg:BR"
-Info (12128): Elaborating entity "Ula32" for hierarchy "Ula32:ULA"
-Info (12128): Elaborating entity "Mux5to1" for hierarchy "Mux5to1:PCSrcMux"
-Warning (10240): Verilog HDL Always Construct warning at Mux5to1.v(12): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "out[0]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[1]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[2]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[3]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[4]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[5]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[6]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[7]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[8]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[9]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[10]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[11]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[12]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[13]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[14]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[15]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[16]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[17]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[18]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[19]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[20]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[21]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[22]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[23]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[24]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[25]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[26]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[27]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[28]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[29]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[30]" at Mux5to1.v(12)
-Info (10041): Inferred latch for "out[31]" at Mux5to1.v(12)
-Info (12128): Elaborating entity "ShiftLeft26to28" for hierarchy "ShiftLeft26to28:SL26"
-Info (12128): Elaborating entity "ShiftLeft2" for hierarchy "ShiftLeft2:SL2"
-Info (12128): Elaborating entity "StoreSize" for hierarchy "StoreSize:SS"
-Warning (10270): Verilog HDL Case Statement warning at StoreSize.v(11): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at StoreSize.v(11): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "out[0]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[1]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[2]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[3]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[4]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[5]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[6]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[7]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[8]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[9]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[10]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[11]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[12]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[13]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[14]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[15]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[16]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[17]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[18]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[19]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[20]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[21]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[22]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[23]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[24]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[25]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[26]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[27]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[28]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[29]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[30]" at StoreSize.v(11)
-Info (10041): Inferred latch for "out[31]" at StoreSize.v(11)
-Info (12128): Elaborating entity "LoadSize" for hierarchy "LoadSize:LS"
-Warning (10270): Verilog HDL Case Statement warning at LoadSize.v(9): incomplete case statement has no default case item
-Warning (10240): Verilog HDL Always Construct warning at LoadSize.v(9): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "out[0]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[1]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[2]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[3]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[4]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[5]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[6]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[7]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[8]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[9]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[10]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[11]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[12]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[13]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[14]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[15]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[16]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[17]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[18]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[19]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[20]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[21]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[22]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[23]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[24]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[25]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[26]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[27]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[28]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[29]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[30]" at LoadSize.v(9)
-Info (10041): Inferred latch for "out[31]" at LoadSize.v(9)
-Info (12128): Elaborating entity "DIVMULT" for hierarchy "DIVMULT:DM"
-Info (12128): Elaborating entity "mult" for hierarchy "DIVMULT:DM|mult:m"
-Warning (10230): Verilog HDL assignment warning at mult.v(95): truncated value with size 32 to match size of target (7)
-Info (12128): Elaborating entity "Div" for hierarchy "DIVMULT:DM|Div:d"
-Warning (10230): Verilog HDL assignment warning at Div.v(104): truncated value with size 32 to match size of target (8)
-Info (12128): Elaborating entity "SignExtend1to32" for hierarchy "SignExtend1to32:SE1"
-Info (12128): Elaborating entity "SignExtend16to32" for hierarchy "SignExtend16to32:SE16"
-Info (12128): Elaborating entity "ShiftLeft16" for hierarchy "ShiftLeft16:comb_112"
-Info (12128): Elaborating entity "Mux2to1" for hierarchy "Mux2to1:ShiftSrcMux"
-Info (12128): Elaborating entity "RegDesloc" for hierarchy "RegDesloc:comb_113"
-Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(1072): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (12241): 10 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[1]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux3to1:ALUSrcAMux|out[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ALUSrcA[0]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[0]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[0]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[0]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[0]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[0]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[0]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[0]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[0]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux9to1:DataSrcMux|out[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal DataSrc[3]
-Warning (13012): Latch Mux3to1:ExcptCtrlMux|out[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal ExcptCtrl[0]
-Warning (13012): Latch StoreSize:SS|out[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[1]
-Warning (13012): Latch StoreSize:SS|out[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[0]
-Warning (13012): Latch StoreSize:SS|out[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[0]
-Warning (13012): Latch StoreSize:SS|out[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[0]
-Warning (13012): Latch StoreSize:SS|out[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[0]
-Warning (13012): Latch StoreSize:SS|out[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[0]
-Warning (13012): Latch StoreSize:SS|out[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[0]
-Warning (13012): Latch StoreSize:SS|out[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[0]
-Warning (13012): Latch StoreSize:SS|out[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal SSCtrl[0]
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "div0" is stuck at VCC
-    Warning (13410): Pin "funct[0]" is stuck at GND
-    Warning (13410): Pin "funct[1]" is stuck at GND
-    Warning (13410): Pin "funct[2]" is stuck at GND
-    Warning (13410): Pin "funct[3]" is stuck at GND
-    Warning (13410): Pin "funct[4]" is stuck at GND
-    Warning (13410): Pin "funct[5]" is stuck at GND
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
-Warning (21074): Design contains 9 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "PCCtrl"
-    Warning (15610): No output dependent on input pin "SECtrl"
-    Warning (15610): No output dependent on input pin "EPCCtrl"
-    Warning (15610): No output dependent on input pin "HILOWrite"
-    Warning (15610): No output dependent on input pin "ALUSrcB[0]"
-    Warning (15610): No output dependent on input pin "ALUSrcB[1]"
-    Warning (15610): No output dependent on input pin "PCSrc[0]"
-    Warning (15610): No output dependent on input pin "PCSrc[1]"
-    Warning (15610): No output dependent on input pin "PCSrc[2]"
-Info (21057): Implemented 20229 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 40 input pins
-    Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 20173 logic cells
-Info (144001): Generated suppressed messages file /media/psf/Home/git/ucHardware/output_files/uc.map.smsg
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 221 warnings
-    Info: Peak virtual memory: 853 megabytes
-    Info: Processing ended: Fri May 19 15:51:48 2017
-    Info: Elapsed time: 00:01:15
-    Info: Total CPU time (on all processors): 00:01:14
+Info: Elaborating entity "uControl" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at uControl.v(143): object "start" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at uControl.v(375): truncated value with size 32 to match size of target (1)
+Warning (10240): Verilog HDL Always Construct warning at uControl.v(147): inferring latch(es) for variable "reset", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "reset" at uControl.v(174)
+Warning: Output pins are stuck at VCC or GND
+    Warning (13410): Pin "reset" is stuck at GND
+    Warning (13410): Pin "HILOWrite" is stuck at GND
+Info: Timing-Driven Synthesis is running
+Info: 6 registers lost all their fanouts during netlist optimizations. The first 6 are displayed below.
+    Info: Register "currentState.stateHILO" lost all its fanouts during netlist optimizations.
+    Info: Register "currentState~28" lost all its fanouts during netlist optimizations.
+    Info: Register "currentState~29" lost all its fanouts during netlist optimizations.
+    Info: Register "currentState~30" lost all its fanouts during netlist optimizations.
+    Info: Register "currentState~31" lost all its fanouts during netlist optimizations.
+    Info: Register "currentState~32" lost all its fanouts during netlist optimizations.
+Info: Implemented 249 device resources after synthesis - the final resource count might be different
+    Info: Implemented 17 input pins
+    Info: Implemented 39 output pins
+    Info: Implemented 193 logic cells
+Info: Generated suppressed messages file Y:/git/ucHardware/output_files/uc.map.smsg
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 12 warnings
+    Info: Peak virtual memory: 262 megabytes
+    Info: Processing ended: Fri May 19 22:27:34 2017
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:08
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in /media/psf/Home/git/ucHardware/output_files/uc.map.smsg.
+The suppressed messages can be found in Y:/git/ucHardware/output_files/uc.map.smsg.
 
 

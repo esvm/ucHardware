@@ -29,7 +29,8 @@ module CPU(
 		output wire div0,
 		output wire [5:0] funct,
 		output wire [5:0] opCode,
-		output wire [31:0] wPCOut
+		output wire [31:0] wPCOut,
+		output wire [31:0] wALUResult
 );
 
 //PC 
@@ -38,7 +39,6 @@ Registrador PC(clk, reset, PCCtrl, wPCData, wPCOut);
 
 //IorD
 wire [31:0] wIorD;
-wire [31:0] wALUResult;
 wire [31:0] wALUOut;
 wire [31:0] wExcep;
 mux4to1 IorDMux(wPCOut, wALUResult, wALUOut, wExcep, IorD, wIorD);
@@ -58,8 +58,8 @@ assign exc3 = 255;
 Mux3to1 ExcptCtrlMux(exc1, exc2, exc3, ExcptCtrl, wExcep);
 
 //IR
-wire [25:21] rs;
-wire [20:16] rt;
+wire [4:0] rs;
+wire [4:0] rt;
 wire [15:0] immediate;
 Instr_Reg IR(clk, reset, IRWrite, wMemOut, opCode, rs, rt, immediate);
 
