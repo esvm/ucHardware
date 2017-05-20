@@ -1,5 +1,5 @@
 Analysis & Synthesis report for uc
-Sat May 20 09:34:08 2017
+Sat May 20 12:56:38 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -19,32 +19,31 @@ Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
  11. State Machine - |Main|CPU:cpu|DIVMULT:DM|mult:m|state
  12. User-Specified and Inferred Latches
  13. Registers Removed During Synthesis
- 14. General Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_njg1:auto_generated
- 17. Source assignments for CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_njg1:auto_generated
- 18. Source assignments for CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_njg1:auto_generated
- 19. Source assignments for CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_njg1:auto_generated
- 20. Parameter Settings for User Entity Instance: CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM
- 21. Parameter Settings for User Entity Instance: CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_One
- 22. Parameter Settings for User Entity Instance: CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_Two
- 23. Parameter Settings for User Entity Instance: CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_Three
- 24. Parameter Settings for User Entity Instance: CPU:cpu|DIVMULT:DM|mult:m
- 25. Parameter Settings for User Entity Instance: CPU:cpu|DIVMULT:DM|Div:d
- 26. Parameter Settings for User Entity Instance: uControl:uc
- 27. Port Connectivity Checks: "CPU:cpu|RegDesloc:comb_116"
- 28. Port Connectivity Checks: "CPU:cpu|Mux2to1:ShiftAmtMux"
- 29. Port Connectivity Checks: "CPU:cpu|LoadSize:LS"
- 30. Port Connectivity Checks: "CPU:cpu|StoreSize:SS"
- 31. Port Connectivity Checks: "CPU:cpu|Registrador:MDR"
- 32. Port Connectivity Checks: "CPU:cpu|Ula32:ULA"
- 33. Port Connectivity Checks: "CPU:cpu|mux4to1:ALUSrcBMux"
- 34. Port Connectivity Checks: "CPU:cpu|Registrador:B"
- 35. Port Connectivity Checks: "CPU:cpu|Registrador:A"
- 36. Port Connectivity Checks: "CPU:cpu|mux4to1:RegDstMux"
- 37. Port Connectivity Checks: "CPU:cpu|Mux3to1:ExcptCtrlMux"
- 38. Analysis & Synthesis Messages
- 39. Analysis & Synthesis Suppressed Messages
+ 14. Removed Registers Triggering Further Register Optimizations
+ 15. General Register Statistics
+ 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 17. Source assignments for CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_njg1:auto_generated
+ 18. Source assignments for CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_One|altram:sram|altsyncram:ram_block|altsyncram_njg1:auto_generated
+ 19. Source assignments for CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_Two|altram:sram|altsyncram:ram_block|altsyncram_njg1:auto_generated
+ 20. Source assignments for CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_Three|altram:sram|altsyncram:ram_block|altsyncram_njg1:auto_generated
+ 21. Parameter Settings for User Entity Instance: CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM
+ 22. Parameter Settings for User Entity Instance: CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_One
+ 23. Parameter Settings for User Entity Instance: CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_Two
+ 24. Parameter Settings for User Entity Instance: CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM_plus_Three
+ 25. Parameter Settings for User Entity Instance: CPU:cpu|DIVMULT:DM|mult:m
+ 26. Parameter Settings for User Entity Instance: CPU:cpu|DIVMULT:DM|Div:d
+ 27. Parameter Settings for User Entity Instance: uControl:uc
+ 28. Port Connectivity Checks: "CPU:cpu|RegDesloc:comb_116"
+ 29. Port Connectivity Checks: "CPU:cpu|Mux2to1:ShiftAmtMux"
+ 30. Port Connectivity Checks: "CPU:cpu|Registrador:MDR"
+ 31. Port Connectivity Checks: "CPU:cpu|Ula32:ULA"
+ 32. Port Connectivity Checks: "CPU:cpu|mux4to1:ALUSrcBMux"
+ 33. Port Connectivity Checks: "CPU:cpu|Registrador:B"
+ 34. Port Connectivity Checks: "CPU:cpu|Registrador:A"
+ 35. Port Connectivity Checks: "CPU:cpu|mux4to1:RegDstMux"
+ 36. Port Connectivity Checks: "CPU:cpu|Mux3to1:ExcptCtrlMux"
+ 37. Analysis & Synthesis Messages
+ 38. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -70,17 +69,17 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                 ;
 +-------------------------------+----------------------------------------------+
-; Analysis & Synthesis Status   ; Successful - Sat May 20 09:34:08 2017        ;
+; Analysis & Synthesis Status   ; Successful - Sat May 20 12:56:38 2017        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; uc                                           ;
 ; Top-level Entity Name         ; Main                                         ;
 ; Family                        ; Stratix III                                  ;
 ; Logic utilization             ; N/A                                          ;
-;     Combinational ALUTs       ; 2,614                                        ;
+;     Combinational ALUTs       ; 1,950                                        ;
 ;     Memory ALUTs              ; 0                                            ;
-;     Dedicated logic registers ; 1,867                                        ;
-; Total registers               ; 1867                                         ;
-; Total pins                    ; 129                                          ;
+;     Dedicated logic registers ; 1,350                                        ;
+; Total registers               ; 1350                                         ;
+; Total pins                    ; 130                                          ;
 ; Total virtual pins            ; 0                                            ;
 ; Total block memory bits       ; 8,192                                        ;
 ; DSP block 18-bit elements     ; 0                                            ;
@@ -178,7 +177,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 ; Processors                 ; Number ;
 +----------------------------+--------+
-; Number detected on machine ; 2      ;
+; Number detected on machine ; 6      ;
 ; Maximum allowed            ; 1      ;
 +----------------------------+--------+
 
@@ -225,46 +224,46 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-----------------------------------------------+-----------+
 ; Resource                                      ; Usage     ;
 +-----------------------------------------------+-----------+
-; Estimated ALUTs Used                          ; 2614      ;
-;     -- Combinational ALUTs                    ; 2614      ;
+; Estimated ALUTs Used                          ; 1950      ;
+;     -- Combinational ALUTs                    ; 1950      ;
 ;     -- Memory ALUTs                           ; 0         ;
 ;     -- LUT_REGs                               ; 0         ;
-; Dedicated logic registers                     ; 1867      ;
+; Dedicated logic registers                     ; 1350      ;
 ;                                               ;           ;
-; Estimated ALUTs Unavailable                   ; 180       ;
-;     -- Due to unpartnered combinational logic ; 180       ;
+; Estimated ALUTs Unavailable                   ; 225       ;
+;     -- Due to unpartnered combinational logic ; 225       ;
 ;     -- Due to Memory ALUTs                    ; 0         ;
 ;                                               ;           ;
-; Total combinational functions                 ; 2614      ;
+; Total combinational functions                 ; 1950      ;
 ; Combinational ALUT usage by number of inputs  ;           ;
-;     -- 7 input functions                      ; 60        ;
-;     -- 6 input functions                      ; 936       ;
-;     -- 5 input functions                      ; 480       ;
-;     -- 4 input functions                      ; 283       ;
-;     -- <=3 input functions                    ; 855       ;
+;     -- 7 input functions                      ; 16        ;
+;     -- 6 input functions                      ; 939       ;
+;     -- 5 input functions                      ; 341       ;
+;     -- 4 input functions                      ; 145       ;
+;     -- <=3 input functions                    ; 509       ;
 ;                                               ;           ;
 ; Combinational ALUTs by mode                   ;           ;
-;     -- normal mode                            ; 2155      ;
-;     -- extended LUT mode                      ; 60        ;
-;     -- arithmetic mode                        ; 399       ;
+;     -- normal mode                            ; 1911      ;
+;     -- extended LUT mode                      ; 16        ;
+;     -- arithmetic mode                        ; 23        ;
 ;     -- shared arithmetic mode                 ; 0         ;
 ;                                               ;           ;
-; Estimated ALUT/register pairs used            ; 3904      ;
+; Estimated ALUT/register pairs used            ; 3027      ;
 ;                                               ;           ;
-; Total registers                               ; 1867      ;
-;     -- Dedicated logic registers              ; 1867      ;
+; Total registers                               ; 1350      ;
+;     -- Dedicated logic registers              ; 1350      ;
 ;     -- I/O registers                          ; 0         ;
 ;     -- LUT_REGs                               ; 0         ;
 ;                                               ;           ;
-; Estimated ALMs:  partially or completely used ; 1,952     ;
+; Estimated ALMs:  partially or completely used ; 1,514     ;
 ;                                               ;           ;
-; I/O pins                                      ; 129       ;
+; I/O pins                                      ; 130       ;
 ; Total MLAB memory bits                        ; 0         ;
 ; Total block memory bits                       ; 8192      ;
 ; Maximum fan-out node                          ; clk~input ;
-; Maximum fan-out                               ; 1899      ;
-; Total fan-out                                 ; 18353     ;
-; Average fan-out                               ; 3.85      ;
+; Maximum fan-out                               ; 1382      ;
+; Total fan-out                                 ; 14001     ;
+; Average fan-out                               ; 3.90      ;
 +-----------------------------------------------+-----------+
 
 
@@ -273,14 +272,11 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                         ; LC Combinationals ; LC Registers ; Block Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 12x12 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                 ; Library Name ;
 +----------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
-; |Main                                              ; 2614 (0)          ; 1867 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 129  ; 0            ; |Main                                                                                                               ; work         ;
-;    |CPU:cpu|                                       ; 2403 (0)          ; 1787 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu                                                                                                       ; work         ;
+; |Main                                              ; 1950 (1)          ; 1350 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 130  ; 0            ; |Main                                                                                                               ; work         ;
+;    |CPU:cpu|                                       ; 1732 (0)          ; 1280 (0)     ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu                                                                                                       ; work         ;
 ;       |Banco_reg:BR|                               ; 736 (736)         ; 1024 (1024)  ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Banco_reg:BR                                                                                          ; work         ;
-;       |DIVMULT:DM|                                 ; 711 (0)           ; 474 (0)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|DIVMULT:DM                                                                                            ; work         ;
-;          |Div:d|                                   ; 492 (492)         ; 238 (238)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|DIVMULT:DM|Div:d                                                                                      ; work         ;
-;          |mult:m|                                  ; 219 (219)         ; 236 (236)    ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|DIVMULT:DM|mult:m                                                                                     ; work         ;
 ;       |Instr_Reg:IR|                               ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Instr_Reg:IR                                                                                          ; work         ;
-;       |LoadSize:LS|                                ; 2 (2)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|LoadSize:LS                                                                                           ; work         ;
+;       |LoadSize:LS|                                ; 57 (57)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|LoadSize:LS                                                                                           ; work         ;
 ;       |Memoria:MEM|                                ; 23 (23)           ; 0 (0)        ; 8192              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Memoria:MEM                                                                                           ; work         ;
 ;          |lpm_ram_dq:MEM_plus_One|                 ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Memoria:MEM|lpm_ram_dq:MEM_plus_One                                                                   ; work         ;
 ;             |altram:sram|                          ; 0 (0)             ; 0 (0)        ; 2048              ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Memoria:MEM|lpm_ram_dq:MEM_plus_One|altram:sram                                                       ; work         ;
@@ -302,23 +298,21 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |Mux2to1:ShiftSrcMux|                        ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Mux2to1:ShiftSrcMux                                                                                   ; work         ;
 ;       |Mux3to1:ALUSrcAMux|                         ; 65 (65)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Mux3to1:ALUSrcAMux                                                                                    ; work         ;
 ;       |Mux3to1:ExcptCtrlMux|                       ; 2 (2)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Mux3to1:ExcptCtrlMux                                                                                  ; work         ;
-;       |Mux5to1:PCSrcMux|                           ; 86 (86)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Mux5to1:PCSrcMux                                                                                      ; work         ;
-;       |Mux9to1:DataSrcMux|                         ; 135 (135)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Mux9to1:DataSrcMux                                                                                    ; work         ;
-;       |RegDesloc:comb_116|                         ; 358 (358)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|RegDesloc:comb_116                                                                                    ; work         ;
+;       |Mux5to1:PCSrcMux|                           ; 98 (98)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Mux5to1:PCSrcMux                                                                                      ; work         ;
+;       |Mux9to1:DataSrcMux|                         ; 133 (133)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Mux9to1:DataSrcMux                                                                                    ; work         ;
+;       |RegDesloc:comb_116|                         ; 355 (355)         ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|RegDesloc:comb_116                                                                                    ; work         ;
 ;       |Registrador:ALUOut|                         ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Registrador:ALUOut                                                                                    ; work         ;
 ;       |Registrador:A|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Registrador:A                                                                                         ; work         ;
 ;       |Registrador:B|                              ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Registrador:B                                                                                         ; work         ;
 ;       |Registrador:EPC|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Registrador:EPC                                                                                       ; work         ;
-;       |Registrador:HI|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Registrador:HI                                                                                        ; work         ;
-;       |Registrador:LO|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Registrador:LO                                                                                        ; work         ;
-;       |Registrador:MDR|                            ; 0 (0)             ; 1 (1)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Registrador:MDR                                                                                       ; work         ;
+;       |Registrador:MDR|                            ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Registrador:MDR                                                                                       ; work         ;
 ;       |Registrador:PC|                             ; 0 (0)             ; 32 (32)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Registrador:PC                                                                                        ; work         ;
 ;       |StoreSize:SS|                               ; 57 (57)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|StoreSize:SS                                                                                          ; work         ;
-;       |Ula32:ULA|                                  ; 171 (171)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Ula32:ULA                                                                                             ; work         ;
+;       |Ula32:ULA|                                  ; 149 (149)         ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|Ula32:ULA                                                                                             ; work         ;
 ;       |mux4to1:ALUSrcBMux|                         ; 34 (34)           ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|mux4to1:ALUSrcBMux                                                                                    ; work         ;
 ;       |mux4to1:IorDMux|                            ; 8 (8)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|mux4to1:IorDMux                                                                                       ; work         ;
 ;       |mux4to1:RegDstMux|                          ; 5 (5)             ; 0 (0)        ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|CPU:cpu|mux4to1:RegDstMux                                                                                     ; work         ;
-;    |uControl:uc|                                   ; 211 (211)         ; 80 (80)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|uControl:uc                                                                                                   ; work         ;
+;    |uControl:uc|                                   ; 217 (217)         ; 70 (70)      ; 0                 ; 0            ; 0       ; 0         ; 0         ; 0         ; 0    ; 0            ; |Main|uControl:uc                                                                                                   ; work         ;
 +----------------------------------------------------+-------------------+--------------+-------------------+--------------+---------+-----------+-----------+-----------+------+--------------+---------------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -472,64 +466,598 @@ Encoding Type:  One-Hot
 ; CPU:cpu|Mux5to1:PCSrcMux|out[30]                     ; CPU:cpu|Mux5to1:PCSrcMux|Mux32     ; yes                    ;
 ; CPU:cpu|Mux5to1:PCSrcMux|out[31]                     ; CPU:cpu|Mux5to1:PCSrcMux|Mux32     ; yes                    ;
 ; CPU:cpu|LoadSize:LS|out[0]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[1]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[2]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[3]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[4]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[5]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[6]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[7]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[8]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[9]                           ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[10]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[11]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[12]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[13]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[14]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[15]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[16]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[17]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[18]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[19]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[20]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[21]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[22]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[23]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[24]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[25]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[26]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[27]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[28]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[29]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[30]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
+; CPU:cpu|LoadSize:LS|out[31]                          ; CPU:cpu|LoadSize:LS|Mux24          ; yes                    ;
 ; CPU:cpu|StoreSize:SS|out[0]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
 ; CPU:cpu|Mux3to1:ExcptCtrlMux|out[0]                  ; CPU:cpu|Mux3to1:ExcptCtrlMux|Mux32 ; yes                    ;
 ; CPU:cpu|StoreSize:SS|out[1]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
 ; CPU:cpu|StoreSize:SS|out[2]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[3]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[4]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[5]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[6]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[7]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[8]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[9]                          ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[10]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[11]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[12]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[13]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[14]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[15]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[16]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[17]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[18]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[19]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[20]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[21]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[22]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[23]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[24]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[25]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[26]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[27]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[28]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[29]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[30]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|StoreSize:SS|out[31]                         ; CPU:cpu|StoreSize:SS|Mux24         ; yes                    ;
-; CPU:cpu|Mux9to1:DataSrcMux|out[0]                    ; CPU:cpu|Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; CPU:cpu|Mux9to1:DataSrcMux|out[1]                    ; CPU:cpu|Mux9to1:DataSrcMux|Mux32   ; yes                    ;
-; Number of user-specified and inferred latches = 130  ;                                    ;                        ;
+; Number of user-specified and inferred latches = 161  ;                                    ;                        ;
 +------------------------------------------------------+------------------------------------+------------------------+
 Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+---------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                              ;
-+----------------------------------------+----------------------------------------+
-; Register name                          ; Reason for Removal                     ;
-+----------------------------------------+----------------------------------------+
-; CPU:cpu|DIVMULT:DM|Div:d|div0          ; Stuck at VCC due to stuck port data_in ;
-; uControl:uc|ShiftAmt                   ; Merged with uControl:uc|ShiftSrc       ;
-; uControl:uc|currentState~29            ; Lost fanout                            ;
-; uControl:uc|currentState~30            ; Lost fanout                            ;
-; uControl:uc|currentState~31            ; Lost fanout                            ;
-; uControl:uc|currentState~32            ; Lost fanout                            ;
-; uControl:uc|currentState~33            ; Lost fanout                            ;
-; CPU:cpu|DIVMULT:DM|Div:d|state~8       ; Lost fanout                            ;
-; CPU:cpu|DIVMULT:DM|Div:d|state~9       ; Lost fanout                            ;
-; CPU:cpu|DIVMULT:DM|mult:m|state~8      ; Lost fanout                            ;
-; CPU:cpu|DIVMULT:DM|mult:m|state~9      ; Lost fanout                            ;
-; Total Number of Removed Registers = 11 ;                                        ;
-+----------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                  ;
++--------------------------------------------+----------------------------------------+
+; Register name                              ; Reason for Removal                     ;
++--------------------------------------------+----------------------------------------+
+; CPU:cpu|DIVMULT:DM|Div:d|div0              ; Stuck at VCC due to stuck port data_in ;
+; uControl:uc|counter[0..7]                  ; Lost fanout                            ;
+; uControl:uc|ShiftAmt                       ; Merged with uControl:uc|ShiftSrc       ;
+; uControl:uc|start                          ; Stuck at VCC due to stuck port data_in ;
+; uControl:uc|HILOWrite                      ; Stuck at GND due to stuck port data_in ;
+; CPU:cpu|Registrador:HI|Saida[0]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[0]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[0]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[0]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[0]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[0]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[1]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[1]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[1]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[1]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[1]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[1]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[2]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[2]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[2]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[2]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[2]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[2]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[3]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[3]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[3]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[3]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[3]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[3]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[4]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[4]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[4]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[4]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[4]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[4]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[5]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[5]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[5]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[5]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[5]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[5]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[6]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[6]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[6]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[6]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[6]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[6]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[7]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[7]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[7]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[7]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[7]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[7]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[8]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[8]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[8]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[8]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[8]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[8]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[9]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[9]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[9]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[9]            ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[9]            ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[9]             ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[10]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[10]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[10]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[10]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[10]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[10]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[11]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[11]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[11]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[11]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[11]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[11]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[12]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[12]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[12]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[12]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[12]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[12]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[13]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[13]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[13]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[13]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[13]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[13]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[14]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[14]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[14]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[14]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[14]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[14]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[15]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[15]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[15]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[15]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[15]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[15]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[16]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[16]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[16]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[16]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[16]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[16]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[17]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[17]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[17]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[17]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[17]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[17]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[18]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[18]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[18]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[18]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[18]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[18]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[19]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[19]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[19]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[19]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[19]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[19]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[20]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[20]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[20]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[20]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[20]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[20]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[21]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[21]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[21]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[21]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[21]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[21]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[22]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[22]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[22]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[22]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[22]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[22]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[23]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[23]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[23]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[23]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[23]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[23]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[24]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[24]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[24]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[24]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[24]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[24]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[25]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[25]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[25]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[25]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[25]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[25]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[26]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[26]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[26]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[26]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[26]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[26]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[27]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[27]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[27]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[27]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[27]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[27]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[28]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[28]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[28]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[28]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[28]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[28]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[29]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[29]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[29]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[29]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[29]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[29]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[30]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[30]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[30]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[30]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[30]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[30]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:HI|Saida[31]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|HI[31]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|HI[31]            ; Lost fanout                            ;
+; CPU:cpu|Registrador:LO|Saida[31]           ; Stuck at GND due to stuck port clock   ;
+; CPU:cpu|DIVMULT:DM|mult:m|LO[31]           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|LO[31]            ; Lost fanout                            ;
+; uControl:uc|MDCtrl                         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[32]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[0]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[0]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[0]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[33]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[1]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[1]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[1]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[34]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[2]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[2]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[2]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[35]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[3]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[3]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[3]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[36]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[4]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[4]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[4]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[37]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[5]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[5]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[5]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[38]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[6]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[6]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[6]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[39]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[7]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[7]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[7]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[40]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[8]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[8]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[8]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[41]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[9]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[9]          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[9]       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[42]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[10]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[10]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[10]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[43]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[11]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[11]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[11]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[44]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[12]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[12]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[12]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[45]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[13]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[13]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[13]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[46]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[14]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[14]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[14]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[47]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[15]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[15]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[15]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[48]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[16]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[16]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[16]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[49]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[17]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[17]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[17]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[50]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[18]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[18]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[18]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[51]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[19]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[19]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[19]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[52]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[20]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[20]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[20]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[53]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[21]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[21]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[21]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[54]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[22]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[22]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[22]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[55]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[23]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[23]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[23]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[56]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[24]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[24]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[24]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[57]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[25]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[25]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[25]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[58]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[26]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[26]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[26]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[59]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[27]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[27]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[27]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[60]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[28]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[28]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[28]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[61]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[29]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[29]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[29]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[62]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[30]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[30]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[30]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[63]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[31]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|PROD[31]         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Quotient[31]      ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|negative         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|MCAND[0..63]     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[0]        ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[32..63] ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|Divisor[0..63]    ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|negativeA         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|negativeB         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[1..31]    ; Lost fanout                            ;
+; uControl:uc|currentState.stateHILO         ; Lost fanout                            ;
+; uControl:uc|currentState~29                ; Lost fanout                            ;
+; uControl:uc|currentState~30                ; Lost fanout                            ;
+; uControl:uc|currentState~31                ; Lost fanout                            ;
+; uControl:uc|currentState~32                ; Lost fanout                            ;
+; uControl:uc|currentState~33                ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|state~8           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|state~9           ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|state~8          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|state~9          ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|contador[0..7]    ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|contador[0..6]   ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|state.INITIAL     ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|state.LOAD        ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|state.DIV         ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|Div:d|state.DONE        ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|state.INITIAL    ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|state.LOAD       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|state.MULT       ; Lost fanout                            ;
+; CPU:cpu|DIVMULT:DM|mult:m|state.DONE       ; Lost fanout                            ;
+; Total Number of Removed Registers = 561    ;                                        ;
++--------------------------------------------+----------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                       ;
++----------------------------------------+---------------------------+------------------------------------------------------------------------------+
+; Register name                          ; Reason for Removal        ; Registers Removed due to This Register                                       ;
++----------------------------------------+---------------------------+------------------------------------------------------------------------------+
+; uControl:uc|HILOWrite                  ; Stuck at GND              ; CPU:cpu|Registrador:HI|Saida[0], CPU:cpu|DIVMULT:DM|mult:m|HI[0],            ;
+;                                        ; due to stuck port data_in ; CPU:cpu|DIVMULT:DM|Div:d|HI[0], CPU:cpu|Registrador:LO|Saida[0],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[0], CPU:cpu|DIVMULT:DM|Div:d|LO[0],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[1], CPU:cpu|DIVMULT:DM|mult:m|HI[1],            ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[1], CPU:cpu|Registrador:LO|Saida[1],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[1], CPU:cpu|DIVMULT:DM|Div:d|LO[1],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[2], CPU:cpu|DIVMULT:DM|mult:m|HI[2],            ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[2], CPU:cpu|Registrador:LO|Saida[2],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[2], CPU:cpu|DIVMULT:DM|Div:d|LO[2],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[3], CPU:cpu|DIVMULT:DM|mult:m|HI[3],            ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[3], CPU:cpu|Registrador:LO|Saida[3],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[3], CPU:cpu|DIVMULT:DM|Div:d|LO[3],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[4], CPU:cpu|DIVMULT:DM|mult:m|HI[4],            ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[4], CPU:cpu|Registrador:LO|Saida[4],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[4], CPU:cpu|DIVMULT:DM|Div:d|LO[4],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[5], CPU:cpu|DIVMULT:DM|mult:m|HI[5],            ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[5], CPU:cpu|Registrador:LO|Saida[5],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[5], CPU:cpu|DIVMULT:DM|Div:d|LO[5],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[6], CPU:cpu|DIVMULT:DM|mult:m|HI[6],            ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[6], CPU:cpu|Registrador:LO|Saida[6],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[6], CPU:cpu|DIVMULT:DM|Div:d|LO[6],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[7], CPU:cpu|DIVMULT:DM|mult:m|HI[7],            ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[7], CPU:cpu|Registrador:LO|Saida[7],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[7], CPU:cpu|DIVMULT:DM|Div:d|LO[7],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[8], CPU:cpu|DIVMULT:DM|mult:m|HI[8],            ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[8], CPU:cpu|Registrador:LO|Saida[8],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[8], CPU:cpu|DIVMULT:DM|Div:d|LO[8],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[9], CPU:cpu|DIVMULT:DM|mult:m|HI[9],            ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[9], CPU:cpu|Registrador:LO|Saida[9],             ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[9], CPU:cpu|DIVMULT:DM|Div:d|LO[9],             ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[10], CPU:cpu|DIVMULT:DM|mult:m|HI[10],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[10], CPU:cpu|Registrador:LO|Saida[10],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[10], CPU:cpu|DIVMULT:DM|Div:d|LO[10],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[11], CPU:cpu|DIVMULT:DM|mult:m|HI[11],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[11], CPU:cpu|Registrador:LO|Saida[11],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[11], CPU:cpu|DIVMULT:DM|Div:d|LO[11],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[12], CPU:cpu|DIVMULT:DM|mult:m|HI[12],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[12], CPU:cpu|Registrador:LO|Saida[12],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[12], CPU:cpu|DIVMULT:DM|Div:d|LO[12],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[13], CPU:cpu|DIVMULT:DM|mult:m|HI[13],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[13], CPU:cpu|Registrador:LO|Saida[13],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[13], CPU:cpu|DIVMULT:DM|Div:d|LO[13],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[14], CPU:cpu|DIVMULT:DM|mult:m|HI[14],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[14], CPU:cpu|Registrador:LO|Saida[14],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[14], CPU:cpu|DIVMULT:DM|Div:d|LO[14],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[15], CPU:cpu|DIVMULT:DM|mult:m|HI[15],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[15], CPU:cpu|Registrador:LO|Saida[15],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[15], CPU:cpu|DIVMULT:DM|Div:d|LO[15],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[16], CPU:cpu|DIVMULT:DM|mult:m|HI[16],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[16], CPU:cpu|Registrador:LO|Saida[16],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[16], CPU:cpu|DIVMULT:DM|Div:d|LO[16],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[17], CPU:cpu|DIVMULT:DM|mult:m|HI[17],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[17], CPU:cpu|Registrador:LO|Saida[17],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[17], CPU:cpu|DIVMULT:DM|Div:d|LO[17],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[18], CPU:cpu|DIVMULT:DM|mult:m|HI[18],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[18], CPU:cpu|Registrador:LO|Saida[18],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[18], CPU:cpu|DIVMULT:DM|Div:d|LO[18],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[19], CPU:cpu|DIVMULT:DM|mult:m|HI[19],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[19], CPU:cpu|Registrador:LO|Saida[19],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[19], CPU:cpu|DIVMULT:DM|Div:d|LO[19],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[20], CPU:cpu|DIVMULT:DM|mult:m|HI[20],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[20], CPU:cpu|Registrador:LO|Saida[20],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[20], CPU:cpu|DIVMULT:DM|Div:d|LO[20],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[21], CPU:cpu|DIVMULT:DM|mult:m|HI[21],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[21], CPU:cpu|Registrador:LO|Saida[21],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[21], CPU:cpu|DIVMULT:DM|Div:d|LO[21],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[22], CPU:cpu|DIVMULT:DM|mult:m|HI[22],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[22], CPU:cpu|Registrador:LO|Saida[22],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[22], CPU:cpu|DIVMULT:DM|Div:d|LO[22],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[23], CPU:cpu|DIVMULT:DM|mult:m|HI[23],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[23], CPU:cpu|Registrador:LO|Saida[23],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[23], CPU:cpu|DIVMULT:DM|Div:d|LO[23],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[24], CPU:cpu|DIVMULT:DM|mult:m|HI[24],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[24], CPU:cpu|Registrador:LO|Saida[24],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[24], CPU:cpu|DIVMULT:DM|Div:d|LO[24],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[25], CPU:cpu|DIVMULT:DM|mult:m|HI[25],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[25], CPU:cpu|Registrador:LO|Saida[25],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[25], CPU:cpu|DIVMULT:DM|Div:d|LO[25],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[26], CPU:cpu|DIVMULT:DM|mult:m|HI[26],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[26], CPU:cpu|Registrador:LO|Saida[26],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[26], CPU:cpu|DIVMULT:DM|Div:d|LO[26],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[27], CPU:cpu|DIVMULT:DM|mult:m|HI[27],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[27], CPU:cpu|Registrador:LO|Saida[27],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[27], CPU:cpu|DIVMULT:DM|Div:d|LO[27],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[28], CPU:cpu|DIVMULT:DM|mult:m|HI[28],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[28], CPU:cpu|Registrador:LO|Saida[28],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[28], CPU:cpu|DIVMULT:DM|Div:d|LO[28],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[29], CPU:cpu|DIVMULT:DM|mult:m|HI[29],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[29], CPU:cpu|Registrador:LO|Saida[29],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[29], CPU:cpu|DIVMULT:DM|Div:d|LO[29],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[30], CPU:cpu|DIVMULT:DM|mult:m|HI[30],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[30], CPU:cpu|Registrador:LO|Saida[30],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[30], CPU:cpu|DIVMULT:DM|Div:d|LO[30],           ;
+;                                        ;                           ; CPU:cpu|Registrador:HI|Saida[31], CPU:cpu|DIVMULT:DM|mult:m|HI[31],          ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|HI[31], CPU:cpu|Registrador:LO|Saida[31],           ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|LO[31], CPU:cpu|DIVMULT:DM|Div:d|LO[31],           ;
+;                                        ;                           ; uControl:uc|MDCtrl, CPU:cpu|DIVMULT:DM|mult:m|PROD[32],                      ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[0], CPU:cpu|DIVMULT:DM|mult:m|PROD[0],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[0], CPU:cpu|DIVMULT:DM|mult:m|PROD[33],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[1], CPU:cpu|DIVMULT:DM|mult:m|PROD[1],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[1], CPU:cpu|DIVMULT:DM|mult:m|PROD[34],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[2], CPU:cpu|DIVMULT:DM|mult:m|PROD[2],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[2], CPU:cpu|DIVMULT:DM|mult:m|PROD[35],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[3], CPU:cpu|DIVMULT:DM|mult:m|PROD[3],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[3], CPU:cpu|DIVMULT:DM|mult:m|PROD[36],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[4], CPU:cpu|DIVMULT:DM|mult:m|PROD[4],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[4], CPU:cpu|DIVMULT:DM|mult:m|PROD[37],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[5], CPU:cpu|DIVMULT:DM|mult:m|PROD[5],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[5], CPU:cpu|DIVMULT:DM|mult:m|PROD[38],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[6], CPU:cpu|DIVMULT:DM|mult:m|PROD[6],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[6], CPU:cpu|DIVMULT:DM|mult:m|PROD[39],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[7], CPU:cpu|DIVMULT:DM|mult:m|PROD[7],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[7], CPU:cpu|DIVMULT:DM|mult:m|PROD[40],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[8], CPU:cpu|DIVMULT:DM|mult:m|PROD[8],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[8], CPU:cpu|DIVMULT:DM|mult:m|PROD[41],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[9], CPU:cpu|DIVMULT:DM|mult:m|PROD[9],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[9], CPU:cpu|DIVMULT:DM|mult:m|PROD[42],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[10], CPU:cpu|DIVMULT:DM|mult:m|PROD[10],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[10], CPU:cpu|DIVMULT:DM|mult:m|PROD[43],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[11], CPU:cpu|DIVMULT:DM|mult:m|PROD[11],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[11], CPU:cpu|DIVMULT:DM|mult:m|PROD[44],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[12], CPU:cpu|DIVMULT:DM|mult:m|PROD[12],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[12], CPU:cpu|DIVMULT:DM|mult:m|PROD[45],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[13], CPU:cpu|DIVMULT:DM|mult:m|PROD[13],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[13], CPU:cpu|DIVMULT:DM|mult:m|PROD[46],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[14], CPU:cpu|DIVMULT:DM|mult:m|PROD[14],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[14], CPU:cpu|DIVMULT:DM|mult:m|PROD[47],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[15], CPU:cpu|DIVMULT:DM|mult:m|PROD[15],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[15], CPU:cpu|DIVMULT:DM|mult:m|PROD[48],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[16], CPU:cpu|DIVMULT:DM|mult:m|PROD[16],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[16], CPU:cpu|DIVMULT:DM|mult:m|PROD[49],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[17], CPU:cpu|DIVMULT:DM|mult:m|PROD[17],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[17], CPU:cpu|DIVMULT:DM|mult:m|PROD[50],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[18], CPU:cpu|DIVMULT:DM|mult:m|PROD[18],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[18], CPU:cpu|DIVMULT:DM|mult:m|PROD[51],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[19], CPU:cpu|DIVMULT:DM|mult:m|PROD[19],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[19], CPU:cpu|DIVMULT:DM|mult:m|PROD[52],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[20], CPU:cpu|DIVMULT:DM|mult:m|PROD[20],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[20], CPU:cpu|DIVMULT:DM|mult:m|PROD[53],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[21], CPU:cpu|DIVMULT:DM|mult:m|PROD[21],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[21], CPU:cpu|DIVMULT:DM|mult:m|PROD[54],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[22], CPU:cpu|DIVMULT:DM|mult:m|PROD[22],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[22], CPU:cpu|DIVMULT:DM|mult:m|PROD[55],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[23], CPU:cpu|DIVMULT:DM|mult:m|PROD[23],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[23], CPU:cpu|DIVMULT:DM|mult:m|PROD[56],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[24], CPU:cpu|DIVMULT:DM|mult:m|PROD[24],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[24], CPU:cpu|DIVMULT:DM|mult:m|PROD[57],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[25], CPU:cpu|DIVMULT:DM|mult:m|PROD[25],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[25], CPU:cpu|DIVMULT:DM|mult:m|PROD[58],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[26], CPU:cpu|DIVMULT:DM|mult:m|PROD[26],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[26], CPU:cpu|DIVMULT:DM|mult:m|PROD[59],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[27], CPU:cpu|DIVMULT:DM|mult:m|PROD[27],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[27], CPU:cpu|DIVMULT:DM|mult:m|PROD[60],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[28], CPU:cpu|DIVMULT:DM|mult:m|PROD[28],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[28], CPU:cpu|DIVMULT:DM|mult:m|PROD[61],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[29], CPU:cpu|DIVMULT:DM|mult:m|PROD[29],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[29], CPU:cpu|DIVMULT:DM|mult:m|PROD[62],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[30], CPU:cpu|DIVMULT:DM|mult:m|PROD[30],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[30], CPU:cpu|DIVMULT:DM|mult:m|PROD[63],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Remainder[31], CPU:cpu|DIVMULT:DM|mult:m|PROD[31],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Quotient[31], CPU:cpu|DIVMULT:DM|Div:d|Divisor[63], ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Divisor[62], CPU:cpu|DIVMULT:DM|Div:d|Divisor[61],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|contador[7]                                         ;
+; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[0]    ; Lost Fanouts              ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[1], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[2],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[3], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[4],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[5], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[6],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[7], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[8],    ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[9], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[10],   ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[11], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[12],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[13], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[14],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[15], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[16],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[17], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[18],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[19], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[20],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[21], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[22],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[23], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[24],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[25], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[26],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[27], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[28],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[29], CPU:cpu|DIVMULT:DM|mult:m|MPLIER[30],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|mult:m|MPLIER[31]                                         ;
+; CPU:cpu|DIVMULT:DM|Div:d|Remainder[62] ; Lost Fanouts              ; CPU:cpu|DIVMULT:DM|Div:d|Divisor[60], CPU:cpu|DIVMULT:DM|Div:d|Divisor[59],  ;
+;                                        ;                           ; CPU:cpu|DIVMULT:DM|Div:d|Divisor[58]                                         ;
+; CPU:cpu|DIVMULT:DM|Div:d|div0          ; Stuck at VCC              ; uControl:uc|counter[7]                                                       ;
+;                                        ; due to stuck port data_in ;                                                                              ;
++----------------------------------------+---------------------------+------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -537,12 +1065,12 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1867  ;
-; Number of registers using Synchronous Clear  ; 225   ;
-; Number of registers using Synchronous Load   ; 158   ;
+; Total registers                              ; 1350  ;
+; Number of registers using Synchronous Clear  ; 29    ;
+; Number of registers using Synchronous Load   ; 4     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1575  ;
+; Number of registers using Clock Enable       ; 1198  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -552,45 +1080,46 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Main|CPU:cpu|Registrador:B|Saida[6]         ;
-; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Main|CPU:cpu|Registrador:A|Saida[3]         ;
-; 5:1                ; 8 bits    ; 24 ALUTs      ; 0 ALUTs              ; 24 ALUTs               ; Yes        ; |Main|uControl:uc|counter[0]                 ;
-; 6:1                ; 2 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|mult:m|MPLIER[31]   ;
-; 6:1                ; 62 bits   ; 248 ALUTs     ; 0 ALUTs              ; 248 ALUTs              ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|mult:m|MPLIER[3]    ;
-; 6:1                ; 32 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Divisor[8]    ;
-; 6:1                ; 31 bits   ; 124 ALUTs     ; 0 ALUTs              ; 124 ALUTs              ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Divisor[54]   ;
-; 8:1                ; 8 bits    ; 40 ALUTs      ; 16 ALUTs             ; 24 ALUTs               ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Remainder[7]  ;
-; 8:1                ; 24 bits   ; 120 ALUTs     ; 48 ALUTs             ; 72 ALUTs               ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Remainder[26] ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Main|CPU:cpu|Registrador:B|Saida[8]         ;
+; 32:1               ; 32 bits   ; 672 ALUTs     ; 672 ALUTs            ; 0 ALUTs                ; Yes        ; |Main|CPU:cpu|Registrador:A|Saida[19]        ;
+; 6:1                ; 2 bits    ; 8 ALUTs       ; 4 ALUTs              ; 4 ALUTs                ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|mult:m|MCAND[0]     ;
+; 6:1                ; 62 bits   ; 248 ALUTs     ; 0 ALUTs              ; 248 ALUTs              ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|mult:m|MPLIER[9]    ;
+; 6:1                ; 32 bits   ; 128 ALUTs     ; 0 ALUTs              ; 128 ALUTs              ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Divisor[7]    ;
+; 6:1                ; 31 bits   ; 124 ALUTs     ; 0 ALUTs              ; 124 ALUTs              ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Divisor[32]   ;
+; 8:1                ; 8 bits    ; 40 ALUTs      ; 16 ALUTs             ; 24 ALUTs               ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Remainder[0]  ;
+; 8:1                ; 24 bits   ; 120 ALUTs     ; 48 ALUTs             ; 72 ALUTs               ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Remainder[23] ;
 ; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Main|CPU:cpu|RegDesloc:comb_116|temp[9]     ;
 ; 14:1               ; 13 bits   ; 117 ALUTs     ; 78 ALUTs             ; 39 ALUTs               ; Yes        ; |Main|CPU:cpu|RegDesloc:comb_116|temp[29]    ;
-; 9:1                ; 31 bits   ; 186 ALUTs     ; 62 ALUTs             ; 124 ALUTs              ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Remainder[61] ;
+; 9:1                ; 31 bits   ; 186 ALUTs     ; 62 ALUTs             ; 124 ALUTs              ; Yes        ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Remainder[35] ;
+; 132:1              ; 2 bits    ; 176 ALUTs     ; 18 ALUTs             ; 158 ALUTs              ; Yes        ; |Main|uControl:uc|ALUSrcA[0]                 ;
 ; 132:1              ; 3 bits    ; 264 ALUTs     ; 9 ALUTs              ; 255 ALUTs              ; Yes        ; |Main|uControl:uc|ShiftCtrl[2]               ;
+; 132:1              ; 2 bits    ; 176 ALUTs     ; 6 ALUTs              ; 170 ALUTs              ; Yes        ; |Main|uControl:uc|LSCtrl[0]                  ;
 ; 3:1                ; 2 bits    ; 4 ALUTs       ; 4 ALUTs              ; 0 ALUTs                ; No         ; |Main|CPU:cpu|mux4to1:ALUSrcBMux|Mux30       ;
-; 3:1                ; 14 bits   ; 28 ALUTs      ; 28 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|mux4to1:ALUSrcBMux|Mux13       ;
-; 3:1                ; 7 bits    ; 14 ALUTs      ; 14 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux3to1:ALUSrcAMux|Mux3        ;
-; 3:1                ; 25 bits   ; 50 ALUTs      ; 50 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux3to1:ALUSrcAMux|Mux24       ;
-; 4:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|mux4to1:IorDMux|Mux24          ;
-; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|mux4to1:RegDstMux|Mux30        ;
-; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |Main|CPU:cpu|StoreSize:SS|Mux12             ;
+; 3:1                ; 14 bits   ; 28 ALUTs      ; 28 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|mux4to1:ALUSrcBMux|Mux11       ;
+; 3:1                ; 32 bits   ; 64 ALUTs      ; 64 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux3to1:ALUSrcAMux|Mux31       ;
+; 4:1                ; 8 bits    ; 16 ALUTs      ; 16 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|mux4to1:IorDMux|Mux31          ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |Main|CPU:cpu|LoadSize:LS|Mux15              ;
+; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |Main|CPU:cpu|LoadSize:LS|Mux5               ;
+; 4:1                ; 5 bits    ; 10 ALUTs      ; 10 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|mux4to1:RegDstMux|Mux31        ;
+; 3:1                ; 16 bits   ; 32 ALUTs      ; 16 ALUTs             ; 16 ALUTs               ; No         ; |Main|CPU:cpu|StoreSize:SS|Mux8              ;
 ; 3:1                ; 8 bits    ; 16 ALUTs      ; 8 ALUTs              ; 8 ALUTs                ; No         ; |Main|CPU:cpu|StoreSize:SS|Mux1              ;
 ; 3:1                ; 64 bits   ; 128 ALUTs     ; 64 ALUTs             ; 64 ALUTs               ; No         ; |Main|CPU:cpu|DIVMULT:DM|mult:m|Add2         ;
 ; 3:1                ; 96 bits   ; 192 ALUTs     ; 96 ALUTs             ; 96 ALUTs               ; No         ; |Main|CPU:cpu|DIVMULT:DM|mult:m|Add2         ;
-; 4:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|mux4to1:ALUSrcBMux|Mux14       ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |Main|CPU:cpu|Ula32:ULA|Mux47                ;
-; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |Main|CPU:cpu|Ula32:ULA|Mux16                ;
-; 5:1                ; 6 bits    ; 18 ALUTs      ; 18 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux5to1:PCSrcMux|Mux4          ;
-; 5:1                ; 24 bits   ; 72 ALUTs      ; 72 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux5to1:PCSrcMux|Mux14         ;
+; 4:1                ; 16 bits   ; 32 ALUTs      ; 32 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|mux4to1:ALUSrcBMux|Mux17       ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 64 ALUTs             ; 96 ALUTs               ; No         ; |Main|CPU:cpu|Ula32:ULA|Mux35                ;
+; 8:1                ; 32 bits   ; 160 ALUTs     ; 128 ALUTs            ; 32 ALUTs               ; No         ; |Main|CPU:cpu|Ula32:ULA|Mux25                ;
+; 5:1                ; 2 bits    ; 6 ALUTs       ; 6 ALUTs              ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux5to1:PCSrcMux|Mux1          ;
+; 5:1                ; 30 bits   ; 90 ALUTs      ; 90 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux5to1:PCSrcMux|Mux28         ;
 ; 3:1                ; 64 bits   ; 128 ALUTs     ; 64 ALUTs             ; 64 ALUTs               ; No         ; |Main|CPU:cpu|DIVMULT:DM|mult:m|PROD         ;
 ; 5:1                ; 32 bits   ; 96 ALUTs      ; 64 ALUTs             ; 32 ALUTs               ; No         ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Quotient      ;
 ; 6:1                ; 2 bits    ; 8 ALUTs       ; 6 ALUTs              ; 2 ALUTs                ; No         ; |Main|CPU:cpu|DIVMULT:DM|Div:d|Selector2     ;
 ; 6:1                ; 2 bits    ; 8 ALUTs       ; 6 ALUTs              ; 2 ALUTs                ; No         ; |Main|CPU:cpu|DIVMULT:DM|mult:m|Selector2    ;
 ; 128:1              ; 2 bits    ; 170 ALUTs     ; 4 ALUTs              ; 166 ALUTs              ; No         ; |Main|uControl:uc|Selector8                  ;
-; 128:1              ; 2 bits    ; 170 ALUTs     ; 10 ALUTs             ; 160 ALUTs              ; No         ; |Main|uControl:uc|Selector28                 ;
-; 8:1                ; 16 bits   ; 80 ALUTs      ; 80 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux9to1:DataSrcMux|Mux25       ;
-; 9:1                ; 7 bits    ; 42 ALUTs      ; 42 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux9to1:DataSrcMux|Mux7        ;
-; 9:1                ; 8 bits    ; 48 ALUTs      ; 48 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux9to1:DataSrcMux|Mux15       ;
-; 132:1              ; 3 bits    ; 264 ALUTs     ; 21 ALUTs             ; 243 ALUTs              ; No         ; |Main|uControl:uc|Selector121                ;
-; 132:1              ; 6 bits    ; 528 ALUTs     ; 42 ALUTs             ; 486 ALUTs              ; No         ; |Main|uControl:uc|Selector130                ;
+; 8:1                ; 3 bits    ; 15 ALUTs      ; 12 ALUTs             ; 3 ALUTs                ; No         ; |Main|uControl:uc|Selector119                ;
+; 8:1                ; 6 bits    ; 30 ALUTs      ; 24 ALUTs             ; 6 ALUTs                ; No         ; |Main|uControl:uc|Selector130                ;
+; 8:1                ; 16 bits   ; 80 ALUTs      ; 80 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux9to1:DataSrcMux|Mux16       ;
+; 9:1                ; 15 bits   ; 90 ALUTs      ; 90 ALUTs             ; 0 ALUTs                ; No         ; |Main|CPU:cpu|Mux9to1:DataSrcMux|Mux7        ;
+; 133:1              ; 3 bits    ; 264 ALUTs     ; 24 ALUTs             ; 240 ALUTs              ; No         ; |Main|uControl:uc|Selector114                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------+
 
 
@@ -846,32 +1375,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:cpu|LoadSize:LS"                                                                                                                          ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                        ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Data ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "Data[31..1]" will be connected to GND. ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:cpu|StoreSize:SS"                                                                                                                         ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type  ; Severity ; Details                                                                                                                                        ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Data ; Input ; Warning  ; Input port expression (1 bits) is smaller than the input port (32 bits) it drives.  Extra input bit(s) "Data[31..1]" will be connected to GND. ;
-+------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
-+------------------------------------------------------------+
-; Port Connectivity Checks: "CPU:cpu|Registrador:MDR"        ;
-+-------+--------+------------------+------------------------+
-; Port  ; Type   ; Severity         ; Details                ;
-+-------+--------+------------------+------------------------+
-; load  ; Input  ; Info             ; Stuck at VCC           ;
-; saida ; Output ; Critical Warning ; Types are incompatible ;
-+-------+--------+------------------+------------------------+
++-----------------------------------------------------+
+; Port Connectivity Checks: "CPU:cpu|Registrador:MDR" ;
++------+-------+----------+---------------------------+
+; Port ; Type  ; Severity ; Details                   ;
++------+-------+----------+---------------------------+
+; load ; Input ; Info     ; Stuck at VCC              ;
++------+-------+----------+---------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -949,7 +1459,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II Analysis & Synthesis
     Info: Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
-    Info: Processing started: Sat May 20 09:33:45 2017
+    Info: Processing started: Sat May 20 12:56:11 2017
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off uc -c uc
 Info: Found 1 design units, including 1 entities, in source file shiftleft26to28.v
     Info: Found entity 1: ShiftLeft26to28
@@ -1044,7 +1554,6 @@ Info: Elaborated megafunction instantiation "CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM|
 Info: Found 1 design units, including 1 entities, in source file db/altsyncram_njg1.tdf
     Info: Found entity 1: altsyncram_njg1
 Info: Elaborating entity "altsyncram_njg1" for hierarchy "CPU:cpu|Memoria:MEM|LPM_RAM_DQ:MEM|altram:sram|altsyncram:ram_block|altsyncram_njg1:auto_generated"
-Critical Warning: Memory depth (256) in the design file differs from memory depth (40) in the Memory Initialization File "instrucoes.mif" -- setting initial value for remaining addresses to 0
 Info: Elaborating entity "Mux3to1" for hierarchy "CPU:cpu|Mux3to1:ExcptCtrlMux"
 Warning (10240): Verilog HDL Always Construct warning at Mux3to1.v(10): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct
 Info (10041): Inferred latch for "out[0]" at Mux3to1.v(10)
@@ -1234,10 +1743,11 @@ Info: Elaborating entity "Mux2to1" for hierarchy "CPU:cpu|Mux2to1:ShiftSrcMux"
 Info: Elaborating entity "RegDesloc" for hierarchy "CPU:cpu|RegDesloc:comb_116"
 Warning (10492): VHDL Process Statement warning at RegDesloc.vhd(1072): signal "temp" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info: Elaborating entity "uControl" for hierarchy "uControl:uc"
-Warning (10230): Verilog HDL assignment warning at uControl.v(400): truncated value with size 32 to match size of target (8)
-Warning (10240): Verilog HDL Always Construct warning at uControl.v(150): inferring latch(es) for variable "reset", which holds its previous value in one or more paths through the always construct
-Info (10041): Inferred latch for "reset" at uControl.v(177)
-Warning: 7 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (10036): Verilog HDL or VHDL warning at uControl.v(149): object "qwe" assigned a value but never read
+Warning (10230): Verilog HDL assignment warning at uControl.v(404): truncated value with size 32 to match size of target (8)
+Warning (10240): Verilog HDL Always Construct warning at uControl.v(153): inferring latch(es) for variable "reset", which holds its previous value in one or more paths through the always construct
+Info (10041): Inferred latch for "reset" at uControl.v(180)
+Warning: 4 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: Latch CPU:cpu|Mux3to1:ALUSrcAMux|out[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|ALUSrcA[0]
 Warning: Latch CPU:cpu|Mux3to1:ALUSrcAMux|out[1] has unsafe behavior
@@ -1305,7 +1815,7 @@ Warning: Latch CPU:cpu|Mux3to1:ALUSrcAMux|out[31] has unsafe behavior
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[2]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[2]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[2] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[3] has unsafe behavior
@@ -1319,53 +1829,101 @@ Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[6] has unsafe behavior
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[7] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[8] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[9] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[10] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[11] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[12] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[13] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[14] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[15] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[16] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[17] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[18] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[19] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[20] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[21] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[22] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[23] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[24] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[25] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[26] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[27] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[28] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[29] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[30] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
 Warning: Latch CPU:cpu|Mux5to1:PCSrcMux|out[31] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[0]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|PCSrc[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[8] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[9] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[10] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[11] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[12] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[13] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[14] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[15] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[16] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[17] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[18] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[19] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[20] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[21] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[22] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[23] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[24] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[25] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[26] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[27] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[28] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[29] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[30] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
+Warning: Latch CPU:cpu|LoadSize:LS|out[31] has unsafe behavior
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|LSCtrl[1]
 Warning: Latch CPU:cpu|Mux3to1:ExcptCtrlMux|out[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|ExcptCtrl[0]
 Warning: Latch CPU:cpu|StoreSize:SS|out[8] has unsafe behavior
@@ -1419,19 +1977,19 @@ Warning: Latch CPU:cpu|StoreSize:SS|out[31] has unsafe behavior
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[0] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[3]
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[1] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[1]
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[2] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[1]
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[3] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[1]
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[4] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[1]
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[5] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[1]
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[6] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[1]
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[7] has unsafe behavior
-    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[2]
+    Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[1]
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[8] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[1]
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[9] has unsafe behavior
@@ -1481,7 +2039,468 @@ Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[30] has unsafe behavior
 Warning: Latch CPU:cpu|Mux9to1:DataSrcMux|out[31] has unsafe behavior
     Warning: Ports D and ENA on the latch are fed by the same signal uControl:uc|DataSrc[1]
 Info: Timing-Driven Synthesis is running
-Info: 9 registers lost all their fanouts during netlist optimizations. The first 9 are displayed below.
+Info: 493 registers lost all their fanouts during netlist optimizations. The first 493 are displayed below.
+    Info: Register "uControl:uc|counter[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "uControl:uc|counter[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "uControl:uc|counter[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "uControl:uc|counter[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "uControl:uc|counter[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "uControl:uc|counter[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "uControl:uc|counter[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "uControl:uc|counter[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|HI[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|HI[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|LO[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|LO[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "uControl:uc|MDCtrl" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[32]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[33]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[34]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[35]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[36]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[37]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[38]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[39]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[40]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[41]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[42]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[43]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[44]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[45]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[46]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[47]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[48]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[49]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[50]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[51]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[52]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[53]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[54]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[55]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[56]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[57]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[58]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[59]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[60]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[61]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[62]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[63]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|PROD[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Quotient[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|negative" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[32]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[33]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[34]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[35]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[36]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[37]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[38]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[39]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[40]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[41]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[42]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[43]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[44]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[45]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[46]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[47]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[48]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[49]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[50]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[51]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[52]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[53]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[54]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[55]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[56]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[57]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[58]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[59]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[60]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[61]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[62]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MCAND[63]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[63]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[62]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[61]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[60]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[59]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[58]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[57]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[56]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[55]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[54]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[53]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[52]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[51]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[50]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[49]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[48]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[47]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[46]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[45]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[44]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[43]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[42]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[41]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[40]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[39]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[38]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[37]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[36]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[35]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[34]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[33]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Remainder[32]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[63]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[62]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[61]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[60]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[59]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[58]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[57]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[56]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[55]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[54]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[53]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[52]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[51]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[50]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[49]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[48]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[47]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[46]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[45]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[44]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[43]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[42]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[41]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[40]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[39]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[38]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[37]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[36]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[35]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[34]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[33]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[32]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|Divisor[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|negativeA" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|negativeB" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[8]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[9]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[10]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[11]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[12]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[13]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[14]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[15]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[16]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[17]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[18]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[19]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[20]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[21]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[22]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[23]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[24]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[25]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[26]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[27]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[28]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[29]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[30]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|MPLIER[31]" lost all its fanouts during netlist optimizations.
+    Info: Register "uControl:uc|currentState.stateHILO" lost all its fanouts during netlist optimizations.
     Info: Register "uControl:uc|currentState~29" lost all its fanouts during netlist optimizations.
     Info: Register "uControl:uc|currentState~30" lost all its fanouts during netlist optimizations.
     Info: Register "uControl:uc|currentState~31" lost all its fanouts during netlist optimizations.
@@ -1491,17 +2510,40 @@ Info: 9 registers lost all their fanouts during netlist optimizations. The first
     Info: Register "CPU:cpu|DIVMULT:DM|Div:d|state~9" lost all its fanouts during netlist optimizations.
     Info: Register "CPU:cpu|DIVMULT:DM|mult:m|state~8" lost all its fanouts during netlist optimizations.
     Info: Register "CPU:cpu|DIVMULT:DM|mult:m|state~9" lost all its fanouts during netlist optimizations.
-Info: Implemented 4255 device resources after synthesis - the final resource count might be different
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|contador[7]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|contador[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|contador[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|contador[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|contador[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|contador[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|contador[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|contador[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|contador[6]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|contador[5]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|contador[4]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|contador[3]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|contador[2]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|contador[1]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|contador[0]" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|state.INITIAL" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|state.LOAD" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|state.DIV" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|Div:d|state.DONE" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|state.INITIAL" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|state.LOAD" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|state.MULT" lost all its fanouts during netlist optimizations.
+    Info: Register "CPU:cpu|DIVMULT:DM|mult:m|state.DONE" lost all its fanouts during netlist optimizations.
+Info: Implemented 3305 device resources after synthesis - the final resource count might be different
     Info: Implemented 1 input pins
-    Info: Implemented 128 output pins
-    Info: Implemented 4094 logic cells
+    Info: Implemented 129 output pins
+    Info: Implemented 3143 logic cells
     Info: Implemented 32 RAM segments
 Info: Generated suppressed messages file Y:/git/ucHardware/output_files/uc.map.smsg
-Info: Quartus II Analysis & Synthesis was successful. 0 errors, 266 warnings
-    Info: Peak virtual memory: 298 megabytes
-    Info: Processing ended: Sat May 20 09:34:08 2017
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:41
+Info: Quartus II Analysis & Synthesis was successful. 0 errors, 314 warnings
+    Info: Peak virtual memory: 297 megabytes
+    Info: Processing ended: Sat May 20 12:56:38 2017
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:30
 
 
 +------------------------------------------+

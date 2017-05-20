@@ -2,256 +2,256 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1100mV 85C Model Setup 'clk'
-Slack : -4.952
-TNS   : -4278.442
-
 Type  : Slow 1100mV 85C Model Setup 'uControl:uc|PCSrc[0]'
-Slack : -4.309
-TNS   : -113.351
+Slack : -5.071
+TNS   : -130.458
+
+Type  : Slow 1100mV 85C Model Setup 'clk'
+Slack : -4.836
+TNS   : -3414.548
 
 Type  : Slow 1100mV 85C Model Setup 'uControl:uc|DataSrc[0]'
-Slack : -3.707
-TNS   : -64.995
-
-Type  : Slow 1100mV 85C Model Setup 'uControl:uc|LSCtrl[0]'
-Slack : -1.815
-TNS   : -1.815
+Slack : -4.303
+TNS   : -54.769
 
 Type  : Slow 1100mV 85C Model Setup 'uControl:uc|ALUSrcA[0]'
-Slack : -1.005
-TNS   : -23.667
+Slack : -1.076
+TNS   : -26.368
+
+Type  : Slow 1100mV 85C Model Setup 'uControl:uc|LSCtrl[0]'
+Slack : -1.061
+TNS   : -19.127
 
 Type  : Slow 1100mV 85C Model Setup 'uControl:uc|SSCtrl[0]'
-Slack : -0.584
-TNS   : -9.121
+Slack : -0.484
+TNS   : -7.357
 
 Type  : Slow 1100mV 85C Model Setup 'uControl:uc|ExcptCtrl[0]'
-Slack : -0.010
-TNS   : -0.010
+Slack : 0.271
+TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Hold 'uControl:uc|DataSrc[0]'
-Slack : -1.185
-TNS   : -31.568
+Slack : -1.245
+TNS   : -35.134
 
 Type  : Slow 1100mV 85C Model Hold 'uControl:uc|PCSrc[0]'
-Slack : -0.497
-TNS   : -7.378
+Slack : -0.639
+TNS   : -12.206
 
 Type  : Slow 1100mV 85C Model Hold 'uControl:uc|ALUSrcA[0]'
-Slack : -0.311
-TNS   : -2.381
+Slack : -0.560
+TNS   : -11.168
 
 Type  : Slow 1100mV 85C Model Hold 'uControl:uc|SSCtrl[0]'
-Slack : -0.248
-TNS   : -0.935
-
-Type  : Slow 1100mV 85C Model Hold 'clk'
-Slack : 0.024
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Hold 'uControl:uc|ExcptCtrl[0]'
-Slack : 0.089
-TNS   : 0.000
+Slack : -0.553
+TNS   : -3.371
 
 Type  : Slow 1100mV 85C Model Hold 'uControl:uc|LSCtrl[0]'
-Slack : 2.246
+Slack : -0.391
+TNS   : -2.857
+
+Type  : Slow 1100mV 85C Model Hold 'uControl:uc|ExcptCtrl[0]'
+Slack : -0.160
+TNS   : -0.160
+
+Type  : Slow 1100mV 85C Model Hold 'clk'
+Slack : 0.044
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clk'
 Slack : -0.769
-TNS   : -1862.210
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'uControl:uc|SSCtrl[0]'
-Slack : 0.322
-TNS   : 0.000
-
-Type  : Slow 1100mV 85C Model Minimum Pulse Width 'uControl:uc|PCSrc[0]'
-Slack : 0.338
-TNS   : 0.000
+TNS   : -1361.337
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'uControl:uc|ALUSrcA[0]'
-Slack : 0.366
+Slack : 0.319
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'uControl:uc|DataSrc[0]'
-Slack : 0.399
+Slack : 0.354
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'uControl:uc|SSCtrl[0]'
+Slack : 0.356
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'uControl:uc|LSCtrl[0]'
-Slack : 0.464
+Slack : 0.419
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'uControl:uc|PCSrc[0]'
+Slack : 0.444
 TNS   : 0.000
 
 Type  : Slow 1100mV 85C Model Minimum Pulse Width 'uControl:uc|ExcptCtrl[0]'
-Slack : 0.481
+Slack : 0.483
 TNS   : 0.000
 
-Type  : Slow 1100mV 0C Model Setup 'clk'
-Slack : -4.472
-TNS   : -3847.574
-
 Type  : Slow 1100mV 0C Model Setup 'uControl:uc|PCSrc[0]'
-Slack : -3.905
-TNS   : -102.527
+Slack : -4.553
+TNS   : -116.745
+
+Type  : Slow 1100mV 0C Model Setup 'clk'
+Slack : -4.310
+TNS   : -3055.590
 
 Type  : Slow 1100mV 0C Model Setup 'uControl:uc|DataSrc[0]'
-Slack : -3.323
-TNS   : -59.716
+Slack : -3.820
+TNS   : -49.972
 
 Type  : Slow 1100mV 0C Model Setup 'uControl:uc|LSCtrl[0]'
-Slack : -1.598
-TNS   : -1.598
+Slack : -0.985
+TNS   : -17.314
 
 Type  : Slow 1100mV 0C Model Setup 'uControl:uc|ALUSrcA[0]'
-Slack : -0.908
-TNS   : -21.103
+Slack : -0.978
+TNS   : -24.097
 
 Type  : Slow 1100mV 0C Model Setup 'uControl:uc|SSCtrl[0]'
-Slack : -0.528
-TNS   : -7.320
+Slack : -0.418
+TNS   : -6.111
 
 Type  : Slow 1100mV 0C Model Setup 'uControl:uc|ExcptCtrl[0]'
-Slack : 0.025
+Slack : 0.289
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Hold 'uControl:uc|DataSrc[0]'
-Slack : -1.059
-TNS   : -28.358
+Slack : -1.132
+TNS   : -31.633
 
 Type  : Slow 1100mV 0C Model Hold 'uControl:uc|PCSrc[0]'
-Slack : -0.405
-TNS   : -5.007
-
-Type  : Slow 1100mV 0C Model Hold 'uControl:uc|ALUSrcA[0]'
-Slack : -0.234
-TNS   : -1.145
+Slack : -0.537
+TNS   : -9.920
 
 Type  : Slow 1100mV 0C Model Hold 'uControl:uc|SSCtrl[0]'
-Slack : -0.183
-TNS   : -0.638
+Slack : -0.479
+TNS   : -2.775
 
-Type  : Slow 1100mV 0C Model Hold 'clk'
-Slack : 0.036
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Hold 'uControl:uc|ExcptCtrl[0]'
-Slack : 0.081
-TNS   : 0.000
+Type  : Slow 1100mV 0C Model Hold 'uControl:uc|ALUSrcA[0]'
+Slack : -0.453
+TNS   : -8.072
 
 Type  : Slow 1100mV 0C Model Hold 'uControl:uc|LSCtrl[0]'
-Slack : 2.083
+Slack : -0.298
+TNS   : -1.930
+
+Type  : Slow 1100mV 0C Model Hold 'uControl:uc|ExcptCtrl[0]'
+Slack : -0.143
+TNS   : -0.143
+
+Type  : Slow 1100mV 0C Model Hold 'clk'
+Slack : 0.073
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clk'
 Slack : -0.769
-TNS   : -1863.248
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'uControl:uc|SSCtrl[0]'
-Slack : 0.308
-TNS   : 0.000
-
-Type  : Slow 1100mV 0C Model Minimum Pulse Width 'uControl:uc|PCSrc[0]'
-Slack : 0.319
-TNS   : 0.000
+TNS   : -1361.922
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'uControl:uc|ALUSrcA[0]'
-Slack : 0.363
+Slack : 0.305
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'uControl:uc|SSCtrl[0]'
+Slack : 0.354
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'uControl:uc|DataSrc[0]'
-Slack : 0.412
+Slack : 0.371
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'uControl:uc|LSCtrl[0]'
-Slack : 0.465
+Slack : 0.416
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'uControl:uc|PCSrc[0]'
+Slack : 0.448
 TNS   : 0.000
 
 Type  : Slow 1100mV 0C Model Minimum Pulse Width 'uControl:uc|ExcptCtrl[0]'
-Slack : 0.481
+Slack : 0.488
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Setup 'clk'
-Slack : -3.006
-TNS   : -2526.372
-
 Type  : Fast 1100mV 0C Model Setup 'uControl:uc|PCSrc[0]'
-Slack : -2.423
-TNS   : -61.459
+Slack : -3.084
+TNS   : -78.418
+
+Type  : Fast 1100mV 0C Model Setup 'clk'
+Slack : -2.871
+TNS   : -1993.805
 
 Type  : Fast 1100mV 0C Model Setup 'uControl:uc|DataSrc[0]'
-Slack : -2.015
-TNS   : -35.512
+Slack : -2.505
+TNS   : -29.332
 
 Type  : Fast 1100mV 0C Model Setup 'uControl:uc|LSCtrl[0]'
-Slack : -0.960
-TNS   : -0.960
+Slack : -0.491
+TNS   : -7.257
 
 Type  : Fast 1100mV 0C Model Setup 'uControl:uc|ALUSrcA[0]'
-Slack : -0.378
-TNS   : -5.978
+Slack : -0.452
+TNS   : -8.658
 
 Type  : Fast 1100mV 0C Model Setup 'uControl:uc|SSCtrl[0]'
-Slack : -0.223
-TNS   : -1.234
+Slack : -0.078
+TNS   : -0.105
 
 Type  : Fast 1100mV 0C Model Setup 'uControl:uc|ExcptCtrl[0]'
-Slack : 0.204
+Slack : 0.368
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Hold 'uControl:uc|DataSrc[0]'
-Slack : -0.865
-TNS   : -23.352
-
-Type  : Fast 1100mV 0C Model Hold 'uControl:uc|PCSrc[0]'
-Slack : -0.300
-TNS   : -4.301
+Slack : -0.941
+TNS   : -24.248
 
 Type  : Fast 1100mV 0C Model Hold 'uControl:uc|ALUSrcA[0]'
-Slack : -0.096
-TNS   : -0.215
+Slack : -0.282
+TNS   : -5.031
+
+Type  : Fast 1100mV 0C Model Hold 'uControl:uc|PCSrc[0]'
+Slack : -0.280
+TNS   : -4.452
 
 Type  : Fast 1100mV 0C Model Hold 'uControl:uc|SSCtrl[0]'
-Slack : -0.036
-TNS   : -0.055
-
-Type  : Fast 1100mV 0C Model Hold 'clk'
-Slack : -0.024
-TNS   : -0.024
+Slack : -0.242
+TNS   : -1.452
 
 Type  : Fast 1100mV 0C Model Hold 'uControl:uc|ExcptCtrl[0]'
-Slack : 0.045
-TNS   : 0.000
+Slack : -0.119
+TNS   : -0.119
 
 Type  : Fast 1100mV 0C Model Hold 'uControl:uc|LSCtrl[0]'
-Slack : 1.582
+Slack : -0.113
+TNS   : -0.655
+
+Type  : Fast 1100mV 0C Model Hold 'clk'
+Slack : 0.096
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clk'
-Slack : -0.328
-TNS   : -1136.749
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'uControl:uc|SSCtrl[0]'
-Slack : 0.398
-TNS   : 0.000
+Slack : -0.338
+TNS   : -827.005
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'uControl:uc|ALUSrcA[0]'
-Slack : 0.412
+Slack : 0.394
 TNS   : 0.000
 
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'uControl:uc|DataSrc[0]'
-Slack : 0.412
-TNS   : 0.000
-
-Type  : Fast 1100mV 0C Model Minimum Pulse Width 'uControl:uc|PCSrc[0]'
-Slack : 0.429
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'uControl:uc|SSCtrl[0]'
+Slack : 0.396
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'uControl:uc|LSCtrl[0]'
-Slack : 0.475
+Slack : 0.424
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'uControl:uc|DataSrc[0]'
+Slack : 0.430
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'uControl:uc|PCSrc[0]'
+Slack : 0.440
 TNS   : 0.000
 
 Type  : Fast 1100mV 0C Model Minimum Pulse Width 'uControl:uc|ExcptCtrl[0]'
-Slack : 0.489
+Slack : 0.491
 TNS   : 0.000
 
 ------------------------------------------------------------

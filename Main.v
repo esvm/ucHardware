@@ -3,7 +3,8 @@ module Main(
 	output wire [31:0] wPCOut,
 	output wire [31:0] wShiftRegOut,
 	output wire [31:0] wALUResult,
-	output wire [31:0] wMemOut
+	output wire [31:0] wMemOut,
+	output wire eqf
 );
 
 wire reset;
@@ -29,7 +30,7 @@ wire [2:0] ShiftCtrl;
 wire [2:0] PCSrc;
 wire [2:0] ALUCtrl;
 wire [3:0] DataSrc;
-wire eqf;
+//wire eqf;
 wire gtf;
 wire ov;
 wire div0;

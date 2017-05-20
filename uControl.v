@@ -144,6 +144,9 @@ module uControl(
 	reg [4:0] currentState;
 	reg op404;
 	reg mwait = 0;
+	reg BEQMCtrl = 0;
+	reg BEQMCtrl2 = 0;
+	reg qwe = 0;
 	reg [7:0] counter = 0;
 	reg mdrFlag = 0;
 
@@ -316,7 +319,7 @@ module uControl(
 				end
 				stateWAIT:
 				begin
-					//MemCtrl = 0;
+					PCCtrl = 0;
 					currentState = stateSTART;
 				end
 				stateLS:
@@ -395,11 +398,14 @@ module uControl(
 						end
 						DIV, MULT:
 						begin
-							start = 0;
-							if(counter < 40)
-								counter = counter + 1;
-							else 
-								currentState = stateHILO;
+							if(!div0) begin
+								start = 0;
+								if(counter < 40)
+									counter = counter + 1;
+								else 
+									currentState = stateHILO;
+							end
+							else currentState = stateEXCP;
 						end
 					endcase
 				end
@@ -424,18 +430,27 @@ module uControl(
 				end
 				stateBEQM2:
 				begin
-					LSCtrl = 2'b10;
-					ALUSrcA = 2'b10;
-					ALUSrcB = 2'b00;
-					ALUCtrl = 3'b111;
-					if (eqf == 1'b1)
-							currentState = stateBRANCH;
-					else
-							currentState = stateWAIT;
+					if(!BEQMCtrl) begin
+						BEQMCtrl = 1;
+						LSCtrl = 2'b10;
+						ALUSrcA = 2'b10;
+						ALUSrcB = 2'b00;
+						ALUCtrl = 3'b111;
+					end
+					else 
+					if(BEQMCtrl && !BEQMCtrl2) begin
+				BEQMCtrl2 = 1;
+				end
+					else begin
+						if (eqf)
+								currentState = stateBRANCH;
+						else
+								currentState = stateWAIT;
+					end
 				end
 				stateBRANCH:
 				begin
-					PCSrc = 2'b01;
+					PCSrc = 2'b001;
 					PCCtrl = 1'b1;
 					currentState = stateWAIT;
 				end

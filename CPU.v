@@ -144,7 +144,7 @@ ShiftLeft2 SL2(wSE16Out, wSL2Out);
 //MDR
 wire MDRLoad;
 assign MDRLoad = 1;
-wire wMDROut;
+wire [31:0] wMDROut;
 Registrador MDR(clk, reset, MDRLoad, wMemOut, wMDROut);
 
 //StoreSize
