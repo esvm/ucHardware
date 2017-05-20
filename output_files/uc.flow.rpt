@@ -1,5 +1,5 @@
 Flow report for uc
-Fri May 19 22:27:58 2017
+Sat May 20 07:29:09 2017
 Quartus II Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Web Edition
 
 
@@ -38,20 +38,20 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------+
 ; Flow Summary                                                                 ;
 +-------------------------------+----------------------------------------------+
-; Flow Status                   ; Successful - Fri May 19 22:27:58 2017        ;
+; Flow Status                   ; Successful - Sat May 20 07:29:09 2017        ;
 ; Quartus II Version            ; 9.1 Build 350 03/24/2010 SP 2 SJ Web Edition ;
 ; Revision Name                 ; uc                                           ;
-; Top-level Entity Name         ; uControl                                     ;
+; Top-level Entity Name         ; Main                                         ;
 ; Family                        ; Stratix III                                  ;
 ; Met timing requirements       ; N/A                                          ;
-; Logic utilization             ; < 1 %                                        ;
-;     Combinational ALUTs       ; 186 / 38,000 ( < 1 % )                       ;
+; Logic utilization             ; 11 %                                         ;
+;     Combinational ALUTs       ; 2,634 / 38,000 ( 7 % )                       ;
 ;     Memory ALUTs              ; 0 / 19,000 ( 0 % )                           ;
-;     Dedicated logic registers ; 66 / 38,000 ( < 1 % )                        ;
-; Total registers               ; 66                                           ;
-; Total pins                    ; 56 / 296 ( 19 % )                            ;
+;     Dedicated logic registers ; 1,873 / 38,000 ( 5 % )                       ;
+; Total registers               ; 1873                                         ;
+; Total pins                    ; 97 / 296 ( 33 % )                            ;
 ; Total virtual pins            ; 0                                            ;
-; Total block memory bits       ; 0 / 1,880,064 ( 0 % )                        ;
+; Total block memory bits       ; 8,192 / 1,880,064 ( < 1 % )                  ;
 ; DSP block 18-bit elements     ; 0 / 216 ( 0 % )                              ;
 ; Total PLLs                    ; 0 / 4 ( 0 % )                                ;
 ; Total DLLs                    ; 0 / 4 ( 0 % )                                ;
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/19/2017 22:27:30 ;
+; Start date & time ; 05/20/2017 07:27:42 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; uc                  ;
 +-------------------+---------------------+
@@ -76,7 +76,7 @@ applicable agreement for further details.
 +---------------------------------+------------------------------------------------------+------------------------------+-------------+----------------+
 ; Assignment Name                 ; Value                                                ; Default Value                ; Entity Name ; Section Id     ;
 +---------------------------------+------------------------------------------------------+------------------------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID           ; 121372141975.149524365006644                         ; --                           ; --          ; --             ;
+; COMPILER_SIGNATURE_ID           ; 121372141975.149527606207280                         ; --                           ; --          ; --             ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST ; On                                                   ; --                           ; --          ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR   ; /home/CIN/esvm/Documents/ucHardware/simulation/qsim/ ; --                           ; --          ; eda_simulation ;
 ; EDA_OUTPUT_DATA_FORMAT          ; Verilog Hdl                                          ; --                           ; --          ; eda_simulation ;
@@ -85,7 +85,7 @@ applicable agreement for further details.
 ; FITTER_EFFORT                   ; Standard Fit                                         ; Auto Fit                     ; --          ; --             ;
 ; INCREMENTAL_COMPILATION         ; Off                                                  ; FULL_INCREMENTAL_COMPILATION ; --          ; --             ;
 ; PROJECT_OUTPUT_DIRECTORY        ; output_files                                         ; --                           ; --          ; --             ;
-; TOP_LEVEL_ENTITY                ; uControl                                             ; uc                           ; --          ; --             ;
+; TOP_LEVEL_ENTITY                ; Main                                                 ; uc                           ; --          ; --             ;
 +---------------------------------+------------------------------------------------------+------------------------------+-------------+----------------+
 
 
@@ -94,12 +94,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:05     ; 1.0                     ; 262 MB              ; 00:00:08                           ;
-; Fitter                    ; 00:00:12     ; 1.0                     ; 360 MB              ; 00:00:23                           ;
-; TimeQuest Timing Analyzer ; 00:00:06     ; 1.0                     ; 298 MB              ; 00:00:03                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 335 MB              ; 00:00:06                           ;
-; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 208 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:24     ; --                      ; --                  ; 00:00:38                           ;
+; Analysis & Synthesis      ; 00:00:23     ; 1.0                     ; 292 MB              ; 00:00:39                           ;
+; Fitter                    ; 00:00:47     ; 1.0                     ; 391 MB              ; 00:00:51                           ;
+; TimeQuest Timing Analyzer ; 00:00:11     ; 1.0                     ; 312 MB              ; 00:00:07                           ;
+; Assembler                 ; 00:00:06     ; 1.0                     ; 338 MB              ; 00:00:05                           ;
+; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 231 MB              ; 00:00:04                           ;
+; Total                     ; 00:01:23     ; --                      ; --                  ; 00:01:41                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

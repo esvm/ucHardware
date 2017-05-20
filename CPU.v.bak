@@ -30,7 +30,9 @@ module CPU(
 		output wire [5:0] funct,
 		output wire [5:0] opCode,
 		output wire [31:0] wPCOut,
-		output wire [31:0] wALUResult
+		output wire [31:0] wALUResult,
+		output wire [31:0] wShiftRegOut,
+		input wire start
 );
 
 //PC 
@@ -61,6 +63,7 @@ Mux3to1 ExcptCtrlMux(exc1, exc2, exc3, ExcptCtrl, wExcep);
 wire [4:0] rs;
 wire [4:0] rt;
 wire [15:0] immediate;
+assign funct = immediate[5:0];
 Instr_Reg IR(clk, reset, IRWrite, wMemOut, opCode, rs, rt, immediate);
 
 //RegDstMux
@@ -78,12 +81,12 @@ wire [31:0] wLOOut;
 wire [31:0] wSE1Out;
 wire [31:0] wSE16Out;
 wire [31:0] wSL16Out;
-wire [31:0] wShiftRegOut;
+//wire [31:0] wShiftRegOut;
 wire [31:0] wDataSrcOut;
 Mux9to1 DataSrcMux(wALUOut, wLSOut, wHIOut, wLOOut, wSE1Out, wSE16Out, wSL16Out, wExcep, wShiftRegOut, DataSrc, wDataSrcOut);
 
 //BR
-wire [31:s0] wA;
+wire [31:0] wA;
 wire [31:0] wB;
 Banco_reg BR(clk, reset, RegWrite, rs, rt, wRegDstOut, wDataSrcOut, wA, wB);
 
@@ -121,7 +124,11 @@ Registrador ALUOut(clk, reset, ALUOutCtrl, wALUResult, wALUOut);
 
 //EPC
 wire [31:0] wEPCOut;
-Registrador EPC(clk, reset, EPCCtrl, wALUResult, wEPCOut);
+wire [31:0] wEPCTeste;
+assign wEPCTeste = 128;
+wire EPCCtrl2;
+assign EPCCtrl2 = 1;
+Registrador EPC(clk, reset, EPCCtrl2, wEPCTeste, wEPCOut);
 
 //PCSrcMux
 wire [27:0] wSL26Out;
@@ -150,41 +157,34 @@ StoreSize SS(SSCtrl, wBOut, wMDROut, wSSOut);
 LoadSize LS(LSCtrl, wMDROut, wLSOut);
 
 //MULT/DIV
-wire startMULTDIV;
-assign startMULTDIV = 1;
 wire [31:0] wHIIn;
 wire [31:0] wLOIn;
-DIVMULT DM(wAOut, wBOut, MDCtrl, clk, startMULTDIV, reset, div0, wHIIn, wLOIn);
+DIVMULT DM(wAOut, wBOut, MDCtrl, clk, start, reset, div0, wHIIn, wLOIn);
 
 //HI
-wire loadHI;
-assign loadHI = 1;
-Registrador HI(clk, reset, loadHI, wHIIn, wHIOut);
+Registrador HI(clk, reset, HILOWrite, wHIIn, wHIOut);
 
 //LO
-wire loadLO;
-assign loadLO = 1;
-Registrador LO(clk, reset, loadLO, wLOIn, wLOOut);
+Registrador LO(clk, reset, HILOWrite, wLOIn, wLOOut);
 
 //SignExtend1
-//ver isso depois do ltf se ta certo
 SignExtend1to32 SE1(ltf, wSE1Out);
 
 //SignExtend16
-SignExtend16to32 SE16(immediate, wSE16Out);
+SignExtend16to32 SE16(immediate, SECtrl, wSE16Out);
 
 //ShiftLeft16
 ShiftLeft16(immediate, wSL16Out);
 
 //ShiftSrcMux
 wire [31:0] wShiftSrcOut;
-Mux2to1 ShiftSrcMux(wAOut, wBOut[4:0], ShiftSrc, wShiftSrcOut);
+Mux2to1 ShiftSrcMux(wAOut, wBOut, ShiftSrc, wShiftSrcOut);
 
 //ShiftAmtMux
 wire [31:0] wShiftAmtOut;
 Mux2to1 ShiftAmtMux(wBOut[4:0], immediate[10:6], ShiftAmt, wShiftAmtOut);
 
 //ShiftReg
-RegDesloc(clk, reset, ShiftCtrl, wShiftSrcOut, wShiftAmtOut, wShiftRegOut);
+RegDesloc(clk, reset, ShiftCtrl, wShiftAmtOut, wShiftSrcOut, wShiftRegOut);
 
 endmodule
